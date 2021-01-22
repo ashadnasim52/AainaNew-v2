@@ -20,6 +20,7 @@ import StepThree from '../assests/onboarding/step3.png';
 import StepFour from '../assests/onboarding/step5.png';
 import StepFive from '../assests/onboarding/step5.png';
 import {PRIMARY} from '../theme/colors';
+import {useNavigation} from '@react-navigation/native';
 
 const slides = [
   {
@@ -65,6 +66,7 @@ const Onboarding = () => {
     // setDisplayCard('flex');
     setIsDisplayCard(true);
   };
+  const nav = useNavigation();
 
   return (
     <>
@@ -78,7 +80,7 @@ const Onboarding = () => {
           <Animatable.View
             animation="slideInUp"
             onAnimationEnd={showCards}
-            duration={1500}>
+            duration={2500}>
             <Image
               source={LOGO}
               style={{
@@ -137,6 +139,7 @@ const Onboarding = () => {
               <Button
                 full
                 rounded
+                onPress={() => nav.navigate('Choose')}
                 style={{
                   marginHorizontal: 10,
                   marginVertical: 10,

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {
   Image,
+  ScrollView,
   StatusBar,
   StyleSheet,
   TouchableWithoutFeedback,
@@ -14,20 +15,9 @@ import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {useNavigation} from '@react-navigation/native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
-const Signin = () => {
+const ForgetPassword = () => {
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [secureTextEntry, setSecureTextEntry] = useState(true);
 
-  const toggleSecureEntry = () => {
-    setSecureTextEntry(!secureTextEntry);
-  };
-
-  const renderIcon = (props) => (
-    <TouchableWithoutFeedback onPress={toggleSecureEntry}>
-      <Icon {...props} name={secureTextEntry ? 'eye-off' : 'eye'} />
-    </TouchableWithoutFeedback>
-  );
   const nav = useNavigation();
 
   return (
@@ -41,7 +31,15 @@ const Signin = () => {
         <Layout style={styles.container}>
           <Layout style={styles.topContainer}>
             <Text style={styles.text} category="h3">
-              Welcome to Aaina
+              Forget Pasword?
+            </Text>
+            <Text
+              appearance="hint"
+              style={{
+                textAlign: 'center',
+              }}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+              id, molestiae maiores quis aperiam voluptates.
             </Text>
           </Layout>
           <Layout style={styles.imageContainer}>
@@ -49,7 +47,7 @@ const Signin = () => {
           </Layout>
           <Layout style={styles.mainContainer}>
             <Input
-              placeholder="Place your Text"
+              placeholder="Email"
               value={email}
               style={styles.input}
               accessoryLeft={(props) => (
@@ -57,29 +55,8 @@ const Signin = () => {
               )}
               onChangeText={(nextValue) => setEmail(nextValue)}
             />
-            <Input
-              value={password}
-              placeholder="Place your Text"
-              style={styles.input}
-              caption="Should contain at least 8 symbols"
-              accessoryLeft={(props) => <Icon name="lock-outline" {...props} />}
-              accessoryRight={renderIcon}
-              secureTextEntry={secureTextEntry}
-              onChangeText={(nextValue) => setPassword(nextValue)}
-            />
-            <View
-              style={{
-                alignItems: 'flex-end',
-                width: '100%',
-                marginVertical: 10,
-              }}>
-              <TouchableOpacity onPress={() => nav.navigate('ForgetPassword')}>
-                <Text appearance="hint" status="primary">
-                  Foget Password?
-                </Text>
-              </TouchableOpacity>
-            </View>
-            <Button style={styles.button}>Login</Button>
+
+            <Button style={styles.button}>Recover Password</Button>
             <Text appearance="hint" status="primary">
               OR
             </Text>
@@ -106,14 +83,14 @@ const Signin = () => {
             </Layout>
             <TouchableOpacity
               onPress={() => {
-                nav.navigate('SignUp');
+                nav.navigate('SignIn');
               }}>
               <Text
                 style={{
-                  marginVertical: 25,
+                  marginVertical: 10,
                 }}
                 appearance="hint">
-                Do not have an account? SignUp here
+                Remember your account? SignIn here
               </Text>
             </TouchableOpacity>
           </Layout>
@@ -123,7 +100,7 @@ const Signin = () => {
   );
 };
 
-export default Signin;
+export default ForgetPassword;
 
 const styles = StyleSheet.create({
   container: {
@@ -133,13 +110,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   imageContainer: {
-    flex: 0.4,
+    flex: 0.5,
     justifyContent: 'center',
     alignItems: 'center',
   },
   mainContainer: {
-    flex: 0.6,
-    justifyContent: 'space-around',
+    flex: 0.5,
+    justifyContent: 'flex-start',
     alignItems: 'center',
     paddingHorizontal: 20,
   },
@@ -148,14 +125,13 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   image: {
-    width: '100%',
-    height: 180,
+    width: '80%',
     resizeMode: 'contain',
   },
   button: {
     width: '100%',
     borderRadius: 25,
-    marginVertical: 10,
+    marginVertical: 5,
   },
   icon: {
     width: 32,

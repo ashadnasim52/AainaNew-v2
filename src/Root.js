@@ -16,6 +16,8 @@ import AsyncStorage from '@react-native-community/async-storage';
 import Signin from './screens/Signin';
 import Signup from './screens/Signup';
 import Onboarding from './screens/Onboarding';
+import Choose from './screens/Choose';
+import ForgetPassword from './screens/ForgetPassword';
 
 AsyncStorage.removeItem('@aaina_login');
 
@@ -50,35 +52,42 @@ const Root = () => {
                 // header: (props) => <CustomHeader {...props} />,
               }
             }
-            initialRouteName="SignIn">
-            {isAuthenticated ? (
-              <></>
-            ) : (
-              <>
-                <Stack.Screen
-                  name="SignIn"
-                  component={Signin}
-                  options={{
-                    headerShown: false,
-                  }}
-                />
-
-                <Stack.Screen
-                  name="Signup"
-                  component={Signup}
-                  options={{
-                    headerShown: false,
-                  }}
-                />
-                <Stack.Screen
-                  name="Onboarding"
-                  component={Onboarding}
-                  options={{
-                    headerShown: false,
-                  }}
-                />
-              </>
-            )}
+            initialRouteName="Choose">
+            <Stack.Screen
+              name="SignUp"
+              component={Signup}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="ForgetPassword"
+              component={ForgetPassword}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="Choose"
+              component={Choose}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="SignIn"
+              component={Signin}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="Onboarding"
+              component={Onboarding}
+              options={{
+                headerShown: false,
+              }}
+            />
           </Stack.Navigator>
         </NavigationContainer>
       </AuthContext.Provider>
