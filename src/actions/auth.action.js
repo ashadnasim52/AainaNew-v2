@@ -8,6 +8,7 @@ import {
   AUTH_CHECKING,
   AUTH_CHECKING_DONE,
   AUTH_FAILED,
+  CHANGE_CLIENT_TYPE,
   DOING_SIGNIN,
   NO_PROFILE,
   SET_PROFILE,
@@ -165,4 +166,12 @@ export const checkAuth = async (dispatch) => {
       });
     }
   }
+};
+
+export const setClientType = async (dispatch) => {
+  // console.log({payload});
+  dispatch({
+    type: CHANGE_CLIENT_TYPE,
+    payload: false,
+  });
 };

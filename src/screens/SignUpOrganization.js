@@ -26,7 +26,7 @@ import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {useNavigation} from '@react-navigation/native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
-const SignUp = () => {
+const SignUpOrganization = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
@@ -71,9 +71,9 @@ const SignUp = () => {
                 marginBottom: 20,
                 color: PRIMARY,
               }}>
-              SignUp to get Started
+              SignUp as Organization
             </Text>
-            <Button
+            {/* <Button
               style={{
                 width: '100%',
                 marginBottom: 10,
@@ -81,14 +81,13 @@ const SignUp = () => {
               appearance="outline"
               status="primary"
               size="small"
-              onPress={() => nav.navigate('SignUpOrganization')}
               accessoryRight={(props) => (
                 <Icon {...props} name="arrow-ios-forward-outline" />
               )}>
               <Text category="p1" style={{}}>
                 Signup as Organization
               </Text>
-            </Button>
+            </Button> */}
             <Select
               style={{
                 width: '100%',
@@ -178,7 +177,7 @@ const SignUp = () => {
               onPress={() => nav.navigate('CompanyCreateProfile')}>
               Get Started
             </Button>
-            <Text appearance="hint" status="primary">
+            {/* <Text appearance="hint" status="primary">
               OR
             </Text>
             <Layout
@@ -203,7 +202,7 @@ const SignUp = () => {
                 status="primary"
                 accessoryLeft={(props) => <Icon {...props} name="facebook" />}
               />
-            </Layout>
+            </Layout> */}
             {/* <Layout
               style={{
                 flexDirection: 'column',
@@ -240,7 +239,7 @@ const SignUp = () => {
               }}>
               <Text
                 style={{
-                  marginVertical: 5,
+                  marginVertical: 10,
                 }}
                 appearance="hint">
                 Have an account? SignIn here
@@ -253,7 +252,7 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default SignUpOrganization;
 
 const styles = StyleSheet.create({
   container: {
@@ -264,12 +263,12 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   imageContainer: {
-    flex: 0.1,
+    flex: 0.2,
     justifyContent: 'center',
     alignItems: 'center',
   },
   mainContainer: {
-    flex: 0.9,
+    flex: 0.8,
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 20,
@@ -279,7 +278,7 @@ const styles = StyleSheet.create({
     // fontWeight: 'bold',
   },
   image: {
-    height: 100,
+    height: 160,
     width: '100%',
     resizeMode: 'contain',
   },
@@ -293,6 +292,6 @@ const styles = StyleSheet.create({
     height: 32,
   },
   input: {
-    marginTop: 6,
+    marginTop: 8,
   },
 });

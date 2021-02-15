@@ -135,41 +135,46 @@ const Onboarding = () => {
                 />
               </View>
             </Animatable.View>
-            {activeSlide == slides.length - 1 ? (
-              <Button
-                full
-                rounded
-                onPress={() => nav.navigate('Choose')}
-                style={{
-                  marginHorizontal: 10,
-                  marginVertical: 10,
-                }}>
-                Get Started Now
-              </Button>
-            ) : (
-              <Pagination
-                dotsLength={slides.length}
-                activeDotIndex={activeSlide}
-                containerStyle={{
-                  backgroundColor: 'transparent',
-                  width: '100%',
-                }}
-                dotStyle={{
-                  width: '100%',
-                  height: 10,
-                  borderRadius: 5,
-                  marginHorizontal: 8,
-                  backgroundColor: PRIMARY,
-                }}
-                inactiveDotStyle={
-                  {
-                    // Define styles for inactive dots here
+            <View
+              style={{
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
+              {activeSlide == slides.length - 1 ? (
+                <Button
+                  onPress={() => nav.navigate('Choose')}
+                  style={{
+                    marginVertical: 10,
+                    borderRadius: 25,
+                    width: '90%',
+                  }}>
+                  Get Started Now
+                </Button>
+              ) : (
+                <Pagination
+                  dotsLength={slides.length}
+                  activeDotIndex={activeSlide}
+                  containerStyle={{
+                    backgroundColor: 'transparent',
+                    width: '100%',
+                  }}
+                  dotStyle={{
+                    width: '100%',
+                    height: 10,
+                    borderRadius: 5,
+                    marginHorizontal: 8,
+                    backgroundColor: PRIMARY,
+                  }}
+                  inactiveDotStyle={
+                    {
+                      // Define styles for inactive dots here
+                    }
                   }
-                }
-                inactiveDotOpacity={0.4}
-                inactiveDotScale={0.6}
-              />
-            )}
+                  inactiveDotOpacity={0.4}
+                  inactiveDotScale={0.6}
+                />
+              )}
+            </View>
           </>
         )}
       </Layout>

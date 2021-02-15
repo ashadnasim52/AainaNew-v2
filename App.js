@@ -31,6 +31,7 @@ import {ACCENT, PRIMARY} from './src/theme/colors';
  * https://akveo.github.io/eva-icons
  */
 const HeartIcon = (props) => <Icon {...props} name="heart" />;
+console.disableYellowBox = true;
 
 export default () => (
   <>

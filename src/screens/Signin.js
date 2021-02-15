@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useContext, useRef} from 'react';
 import {
   Image,
   StatusBar,
@@ -7,18 +7,21 @@ import {
   View,
 } from 'react-native';
 import {Button, Icon, Input, Layout, Text} from '@ui-kitten/components';
-
+import RBSheet from 'react-native-raw-bottom-sheet';
 import Logo from '../assests/image1.png';
 import {ACCENT, PRIMARY} from '../theme/colors';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {useNavigation} from '@react-navigation/native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import {AuthContext} from '../context/context';
 
 const Signin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [secureTextEntry, setSecureTextEntry] = useState(true);
 
+  const {state, dispatch} = useContext(AuthContext);
+  console.log(state.isB2B);
   const toggleSecureEntry = () => {
     setSecureTextEntry(!secureTextEntry);
   };
@@ -29,6 +32,7 @@ const Signin = () => {
     </TouchableWithoutFeedback>
   );
   const nav = useNavigation();
+  const refRBSheet = useRef();
 
   return (
     <>
@@ -73,37 +77,45 @@ const Signin = () => {
                 width: '100%',
                 marginVertical: 10,
               }}>
-              <TouchableOpacity onPress={() => nav.navigate('ForgetPassword')}>
+              <TouchableOpacity onPress={() => refRBSheet.current.open()}>
                 <Text appearance="hint" status="primary">
                   Foget Password?
                 </Text>
               </TouchableOpacity>
             </View>
-            <Button style={styles.button}>Login</Button>
-            <Text appearance="hint" status="primary">
-              OR
-            </Text>
-            <Layout
-              style={{
-                flexDirection: 'row',
-              }}>
-              <Button
-                style={{
-                  marginRight: 15,
-                  borderRadius: 25,
-                }}
-                status="danger"
-                accessoryLeft={(props) => <Icon {...props} name="google" />}
-              />
-              <Button
-                style={{
-                  marginLeft: 15,
-                  borderRadius: 25,
-                }}
-                status="primary"
-                accessoryLeft={(props) => <Icon {...props} name="facebook" />}
-              />
-            </Layout>
+            <Button style={styles.button} onPress={() => nav.navigate('Home')}>
+              Login
+            </Button>
+            {!state.isB2B && (
+              <>
+                <Text appearance="hint" status="primary">
+                  OR
+                </Text>
+                <Layout
+                  style={{
+                    flexDirection: 'row',
+                  }}>
+                  <Button
+                    style={{
+                      marginRight: 15,
+                      borderRadius: 25,
+                    }}
+                    status="danger"
+                    accessoryLeft={(props) => <Icon {...props} name="google" />}
+                  />
+                  <Button
+                    style={{
+                      marginLeft: 15,
+                      borderRadius: 25,
+                    }}
+                    status="primary"
+                    accessoryLeft={(props) => (
+                      <Icon {...props} name="facebook" />
+                    )}
+                  />
+                </Layout>
+              </>
+            )}
             <TouchableOpacity
               onPress={() => {
                 nav.navigate('SignUp');
@@ -119,6 +131,65 @@ const Signin = () => {
           </Layout>
         </Layout>
       </KeyboardAwareScrollView>
+
+      <RBSheet
+        ref={refRBSheet}
+        closeOnDragDown={true}
+        closeOnPressMask={false}
+        customStyles={{
+          wrapper: {
+            backgroundColor: 'transparent',
+          },
+          draggableIcon: {
+            backgroundColor: PRIMARY,
+          },
+          container: {
+            backgroundColor: '#CAD5E2',
+            borderTopLeftRadius: 25,
+            borderTopRightRadius: 25,
+          },
+        }}>
+        <Layout
+          style={{
+            paddingHorizontal: 30,
+
+            flex: 1,
+            justifyContent: 'center',
+          }}>
+          <Text
+            style={{
+              textAlign: 'left',
+              fontWeight: 'bold',
+              fontSize: 20,
+              color: PRIMARY,
+            }}
+            category="h6">
+            Enter Email
+          </Text>
+          <Text category="p1">
+            An email with the password reset link will sent to your registered
+            email address
+          </Text>
+          <Input
+            placeholder="Email"
+            value={email}
+            style={[
+              {
+                marginVertical: 20,
+              },
+            ]}
+            accessoryLeft={(props) => <Icon name="email-outline" {...props} />}
+            onChangeText={(nextValue) => setEmail(nextValue)}
+          />
+          <Button
+            style={{}}
+            onPress={() => {
+              nav.navigate('Home');
+            }}>
+            Login
+          </Button>
+        </Layout>
+      </RBSheet>
     </>
   );
 };
@@ -131,6 +202,7 @@ const styles = StyleSheet.create({
   },
   topContainer: {
     justifyContent: 'center',
+    marginTop: 30,
   },
   imageContainer: {
     flex: 0.4,

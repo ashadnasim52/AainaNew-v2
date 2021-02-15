@@ -8,15 +8,16 @@ import {
   View,
 } from 'react-native';
 import {Button, Icon, Input, Layout, Text} from '@ui-kitten/components';
-import * as Animatable from 'react-native-animatable';
 
-import Logo from '../assests/welcome.png';
+import Logo from '../assests/image1.png';
 import {ACCENT, PRIMARY} from '../theme/colors';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {useNavigation} from '@react-navigation/native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
-const Choose = () => {
+const OPTVerification = () => {
+  const [email, setEmail] = useState('');
+
   const nav = useNavigation();
 
   return (
@@ -28,48 +29,36 @@ const Choose = () => {
           flexGrow: 1,
         }}>
         <Layout style={styles.container}>
+          <Layout style={styles.topContainer}>
+            <Text style={styles.text} category="h3">
+              Forget Pasword?
+            </Text>
+            <Text
+              appearance="hint"
+              style={{
+                textAlign: 'center',
+              }}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+              id, molestiae maiores quis aperiam voluptates.
+            </Text>
+          </Layout>
           <Layout style={styles.imageContainer}>
             <Image source={Logo} style={styles.image} />
           </Layout>
           <Layout style={styles.mainContainer}>
-            <Animatable.View animation="zoomIn" duration={2000}>
-              <Text style={styles.text} category="h3">
-                Welcome
-              </Text>
-              <Text
-                appearance="hint"
-                style={{
-                  textAlign: 'center',
-                }}>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde
-                quas quidem ullam cupid
-              </Text>
-            </Animatable.View>
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                width: '100%',
-              }}>
-              <Button
-                style={styles.button}
-                onPress={() => {
-                  nav.navigate('SelectRole');
-                }}>
-                Login
-              </Button>
-              <Button
-                style={styles.button}
-                appearance="outline"
-                status="primary"
-                onPress={() => {
-                  nav.navigate('SignUp');
-                }}>
-                Sign Up
-              </Button>
-            </View>
+            <Input
+              placeholder="please enter your OTP"
+              value={email}
+              style={styles.input}
+              accessoryLeft={(props) => (
+                <Icon name="email-outline" {...props} />
+              )}
+              onChangeText={(nextValue) => setEmail(nextValue)}
+            />
+
+            <Button style={styles.button}>Verify</Button>
             <Text appearance="hint" status="primary">
-              Or via Social Media
+              OR
             </Text>
             <Layout
               style={{
@@ -99,13 +88,15 @@ const Choose = () => {
   );
 };
 
-export default Choose;
+export default OPTVerification;
 
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
   },
-
+  topContainer: {
+    justifyContent: 'center',
+  },
   imageContainer: {
     flex: 0.5,
     justifyContent: 'center',
@@ -113,22 +104,22 @@ const styles = StyleSheet.create({
   },
   mainContainer: {
     flex: 0.5,
-    justifyContent: 'space-around',
+    justifyContent: 'flex-start',
     alignItems: 'center',
-    paddingHorizontal: 10,
+    paddingHorizontal: 20,
   },
   text: {
     textAlign: 'center',
     fontWeight: 'bold',
   },
   image: {
-    width: '90%',
+    width: '80%',
     resizeMode: 'contain',
   },
   button: {
+    width: '100%',
     borderRadius: 25,
     marginVertical: 5,
-    paddingHorizontal: 45,
   },
   icon: {
     width: 32,

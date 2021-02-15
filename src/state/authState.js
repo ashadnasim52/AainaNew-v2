@@ -6,4 +6,6 @@ export default initialState = {
   profile: null,
   isAuthenticating: false,
   isProfile: false,
+
+  isB2B: false,
 };

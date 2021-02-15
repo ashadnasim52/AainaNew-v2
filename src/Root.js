@@ -18,6 +18,11 @@ import Signup from './screens/Signup';
 import Onboarding from './screens/Onboarding';
 import Choose from './screens/Choose';
 import ForgetPassword from './screens/ForgetPassword';
+import OPTVerification from './screens/OTPVerification';
+import SelectRole from './screens/SelectRole';
+import CreateProfile from './screens/CreateProfile';
+import Home from './screens/Home';
+import SignUpOrganization from './screens/SignUpOrganization';
 
 AsyncStorage.removeItem('@aaina_login');
 
@@ -39,7 +44,7 @@ const Root = () => {
     Axios.defaults.baseURL = API;
   }, []);
 
-  console.log(authState.isAuthenticated);
+  // console.log(authState.isAuthenticated);
 
   return (
     <>
@@ -52,7 +57,7 @@ const Root = () => {
                 // header: (props) => <CustomHeader {...props} />,
               }
             }
-            initialRouteName="Choose">
+            initialRouteName="Onboarding">
             <Stack.Screen
               name="SignUp"
               component={Signup}
@@ -61,8 +66,29 @@ const Root = () => {
               }}
             />
             <Stack.Screen
+              name="SignUpOrganization"
+              component={SignUpOrganization}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
               name="ForgetPassword"
               component={ForgetPassword}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="OPTVerification"
+              component={OPTVerification}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="SelectRole"
+              component={SelectRole}
               options={{
                 headerShown: false,
               }}
@@ -87,6 +113,25 @@ const Root = () => {
               options={{
                 headerShown: false,
               }}
+            />
+
+            <Stack.Screen
+              name="CreateProfile"
+              component={CreateProfile}
+              options={
+                {
+                  // headerShown: false,
+                }
+              }
+            />
+            <Stack.Screen
+              name="Home"
+              component={Home}
+              options={
+                {
+                  // headerShown: false,
+                }
+              }
             />
           </Stack.Navigator>
         </NavigationContainer>
