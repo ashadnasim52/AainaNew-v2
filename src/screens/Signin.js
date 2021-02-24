@@ -184,7 +184,7 @@ const Signin = () => {
           <Button
             style={{}}
             onPress={() => {
-              nav.navigate('Home');
+              nav.navigate('Main');
             }}>
             Login
           </Button>

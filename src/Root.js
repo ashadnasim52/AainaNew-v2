@@ -23,6 +23,9 @@ import SelectRole from './screens/SelectRole';
 import CreateProfile from './screens/CreateProfile';
 import Home from './screens/Home';
 import SignUpOrganization from './screens/SignUpOrganization';
+import Main from './Main';
+import CustomHeader from './layouts/CustomHeader';
+import DetailScreen from './screens/DetailScreen';
 
 AsyncStorage.removeItem('@aaina_login');
 
@@ -52,12 +55,10 @@ const Root = () => {
       <AuthContext.Provider value={{state: authState, dispatch: dispatchAuth}}>
         <NavigationContainer>
           <Stack.Navigator
-            screenOptions={
-              {
-                // header: (props) => <CustomHeader {...props} />,
-              }
-            }
-            initialRouteName="Onboarding">
+            screenOptions={{
+              header: (props) => <CustomHeader {...props} />,
+            }}
+            initialRouteName="Main">
             <Stack.Screen
               name="SignUp"
               component={Signup}
@@ -125,13 +126,21 @@ const Root = () => {
               }
             />
             <Stack.Screen
-              name="Home"
-              component={Home}
+              name="Main"
+              component={Main}
               options={
                 {
                   // headerShown: false,
                 }
               }
+            />
+
+            <Stack.Screen
+              name="DetailScreen"
+              component={DetailScreen}
+              options={{
+                headerShown: false,
+              }}
             />
           </Stack.Navigator>
         </NavigationContainer>

@@ -10,7 +10,7 @@
  * @format
  */
 
-import React from 'react';
+import React, {useState} from 'react';
 import {StatusBar, StyleSheet} from 'react-native';
 import {
   ApplicationProvider,
@@ -25,24 +25,35 @@ import * as eva from '@eva-design/eva';
 import {default as theme} from './src/theme/custom-theme.json'; // <-- Import app theme
 import Root from './src/Root';
 import {ACCENT, PRIMARY} from './src/theme/colors';
+import {ThemeContext} from './src/context/themeContext';
 
 /**
  * Use any valid `name` property from eva icons (e.g `github`, or `heart-outline`)
  * https://akveo.github.io/eva-icons
- */
+ **/
 const HeartIcon = (props) => <Icon {...props} name="heart" />;
 console.disableYellowBox = true;
 
-export default () => (
-  <>
-    <StatusBar backgroundColor={ACCENT} />
+export default () => {
+  const [themeee, setThemeee] = useState('light');
+  const toggleTheme = () => {
+    const nextTheme = themeee === 'light' ? 'dark' : 'light';
+    setThemeee(nextTheme);
+  };
 
-    <IconRegistry icons={EvaIconsPack} />
-    <ApplicationProvider {...eva} theme={{...eva.light, ...theme}}>
-      <Root />
-    </ApplicationProvider>
-  </>
-);
+  return (
+    <>
+      <StatusBar backgroundColor={ACCENT} />
+
+      <IconRegistry icons={EvaIconsPack} />
+      <ThemeContext.Provider value={{themeee, toggleTheme}}>
+        <ApplicationProvider {...eva} theme={{...eva[themeee], ...theme}}>
+          <Root />
+        </ApplicationProvider>
+      </ThemeContext.Provider>
+    </>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {

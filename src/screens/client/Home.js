@@ -1,11 +1,23 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StatusBar, StyleSheet, View} from 'react-native';
+import {Button, Icon, Input, Layout, Text} from '@ui-kitten/components';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import {ACCENT} from '../../theme/colors';
 
 const Home = () => {
   return (
-    <View>
-      <Text>Client Home</Text>
-    </View>
+    <>
+      <StatusBar backgroundColor={ACCENT} />
+      <KeyboardAwareScrollView
+        resetScrollToCoords={{x: 0, y: 0}}
+        contentContainerStyle={{
+          flexGrow: 1,
+        }}>
+        <Layout style={styles.container}>
+          <Text>Client Home</Text>
+        </Layout>
+      </KeyboardAwareScrollView>
+    </>
   );
 };
 

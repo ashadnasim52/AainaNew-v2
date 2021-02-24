@@ -1,0 +1,124 @@
+import React from 'react';
+import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
+import {Card, Icon, Text} from '@ui-kitten/components';
+import {PRIMARY} from '../theme/colors';
+import {useNavigation} from '@react-navigation/native';
+
+const CustomCards = () => {
+  const nav = useNavigation();
+  return (
+    <TouchableOpacity onPress={() => nav.navigate('DetailScreen')}>
+      <View style={styles.cards}>
+        <View style={styles.cardRight}>
+          <Image
+            style={styles.image}
+            source={require('../assests/temp.jpeg')}
+          />
+        </View>
+        <View style={[styles.cardLeft]}>
+          <View
+            style={{
+              flexDirection: 'row',
+            }}>
+            <View
+              style={{
+                flex: 1,
+              }}>
+              <Text
+                category="h6"
+                style={{
+                  color: PRIMARY,
+                  fontFamily: 'Merriweather-Bold',
+                }}>
+                Plane Name
+              </Text>
+              <Text
+                category="label"
+                style={{
+                  fontFamily: 'Merriweather-Light',
+                }}>
+                Duration 5 days
+              </Text>
+            </View>
+            <View
+              style={{
+                // justifyContent: 'flex-end',
+                justifyContent: 'center',
+              }}>
+              <Icon style={styles.icon} fill="#8F9BB3" name="gift-outline" />
+            </View>
+          </View>
+          <View
+            style={{
+              flex: 1,
+              justifyContent: 'flex-end',
+            }}>
+            <Text
+              appearance="hint"
+              category="label"
+              style={{
+                fontFamily: 'Merriweather-Light',
+              }}>
+              No of trials left:- 5
+            </Text>
+          </View>
+        </View>
+      </View>
+    </TouchableOpacity>
+  );
+};
+
+export default CustomCards;
+
+const styles = StyleSheet.create({
+  cards: {
+    marginTop: 7,
+    marginBottom: 7,
+    marginHorizontal: 10,
+    display: 'flex',
+    flexDirection: 'row',
+    // backgroundColor: 'red',
+  },
+  image: {
+    height: 150,
+    width: '100%',
+    resizeMode: 'contain',
+  },
+  icon: {
+    width: 22,
+    height: 22,
+  },
+  cardLeft: {
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+    elevation: 2,
+    borderTopRightRadius: 15,
+    borderBottomRightRadius: 15,
+    padding: 10,
+    backgroundColor: '#ffffff',
+    flex: 1,
+    // height: '80%',
+    marginVertical: 20,
+  },
+  cardRight: {
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+    elevation: 1,
+    borderRadius: 15,
+    // padding: 10,
+    backgroundColor: '#E7E7E7',
+    flex: 1,
+    // height: '80%',
+    // marginVertical: 20,
+  },
+});
