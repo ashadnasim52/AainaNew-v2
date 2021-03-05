@@ -26,14 +26,6 @@ import SignUpOrganization from './screens/SignUpOrganization';
 import Main from './Main';
 import CustomHeader from './layouts/CustomHeader';
 import DetailScreen from './screens/DetailScreen';
-import About from './screens/About';
-import Sizing from './screens/Sizing';
-import Ettire from './screens/Ettire';
-import Sneaky from './screens/Sneaky';
-import Instore from './screens/Instore';
-import Inapp from './screens/Inapp';
-import List from './screens/List';
-import Inweb from './screens/Inweb';
 
 AsyncStorage.removeItem('@aaina_login');
 
@@ -150,15 +142,6 @@ const Root = () => {
                 headerShown: false,
               }}
             />
-
-            <Stack.Screen name="About" component={About} />
-            <Stack.Screen name="Size" component={Sizing} />
-            <Stack.Screen name="Ettir" component={Ettire} />
-            <Stack.Screen name="Sneak" component={Sneaky} />
-            <Stack.Screen name="store" component={Instore} />
-            <Stack.Screen name="inapp" component={Inapp} />
-            <Stack.Screen name="web" component={Inweb} />
-            <Stack.Screen name="List" component={List} />
           </Stack.Navigator>
         </NavigationContainer>
       </AuthContext.Provider>
