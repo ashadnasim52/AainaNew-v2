@@ -1,4 +1,3 @@
-import {Row} from 'native-base';
 import React from 'react';
 import {
   StyleSheet,
@@ -10,16 +9,14 @@ import {
   ScrollView,
   BackHandler,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 
-const Sizing = () => {
+export const Sizing = () => {
   return (
     <SafeAreaView>
       <ScrollView>
         <View>
           <Image
-            source={require('./img/sizing.jpg')}
+            source={require('../assests/img/sizing.jpg')}
             style={{width: 360, height: 400}}
           />
           <View

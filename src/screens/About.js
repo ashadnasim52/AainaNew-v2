@@ -1,16 +1,4 @@
 import React from 'react';
-import {
-  Container,
-  Header,
-  CardItem,
-  Card,
-  Left,
-  Right,
-  Item,
-  Input,
-  Button,
-  Drawer,
-} from 'native-base';
 
 import {
   SafeAreaView,
@@ -25,20 +13,6 @@ import {
   TextInput,
 } from 'react-native';
 
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import AntDesign from 'react-native-vector-icons/AntDesign';
-import Entypo from 'react-native-vector-icons/Entypo';
-import Feather from 'react-native-vector-icons/Feather';
-import Sizing from './Sizing';
-import Ettire from './Ettire';
-import Sneaky from './Sneaky';
-import Instore from './Instore';
-import Inapp from './Inapp';
-import Inweb from './Inweb';
-import {SearchBar, withTheme} from 'react-native-elements';
-
 const About = ({navigation}) => {
   const [searchQuery, setSearchQuery] = React.useState('');
 
@@ -52,7 +26,7 @@ const About = ({navigation}) => {
             style={{backgroundColor: '#fff', height: 100, borderRadius: 30}}>
             <TouchableOpacity
               onPress={() => alert('Drawer Will Open from here')}>
-              <Feather
+              <Icon
                 name="align-center"
                 style={{fontSize: 30, marginTop: 35, marginLeft: 40}}
               />
@@ -70,7 +44,7 @@ const About = ({navigation}) => {
             </Left>
             <Right>
               <Image
-                source={require('./img/girl.jpg')}
+                source={require('../assests/img/girl.jpg')}
                 style={{
                   width: 60,
                   height: 60,
@@ -142,7 +116,7 @@ const About = ({navigation}) => {
                 }}>
                 <Left>
                   <Image
-                    source={require('./img/sizing2.webp')}
+                    source={require('../assests/img/sizing2.webp')}
                     style={{
                       width: 150,
                       height: 130,
@@ -185,7 +159,7 @@ const About = ({navigation}) => {
                 }}>
                 <Left>
                   <Image
-                    source={require('./img/ettire1.jpg')}
+                    source={require('../assests/img/ettire1.jpg')}
                     style={{
                       width: 150,
                       height: 130,
@@ -228,7 +202,7 @@ const About = ({navigation}) => {
                 }}>
                 <Left>
                   <Image
-                    source={require('./img/sneaky1.jpg')}
+                    source={require('../assests/img/sneaky1.jpg')}
                     style={{
                       width: 150,
                       height: 130,
@@ -293,7 +267,7 @@ const About = ({navigation}) => {
                 </Left>
                 <Right>
                   <Image
-                    source={require('./img/instore3.png')}
+                    source={require('../assests/img/instore3.png')}
                     style={{
                       width: 160,
                       height: 130,
@@ -337,7 +311,7 @@ const About = ({navigation}) => {
                 </Left>
                 <Right>
                   <Image
-                    source={require('./img/app.jpg')}
+                    source={require('../assests/img/app.jpg')}
                     style={{
                       width: 160,
                       height: 130,
@@ -381,7 +355,7 @@ const About = ({navigation}) => {
                 </Left>
                 <Right>
                   <Image
-                    source={require('./img/inweb.webp')}
+                    source={require('../assests/img/inweb.webp')}
                     style={{
                       width: 160,
                       height: 130,

@@ -3,7 +3,7 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {ThemeContext} from '../context/themeContext';
 
-const Setting = () => {
+export const Setting = () => {
   const themeContext = React.useContext(ThemeContext);
 
   return (
