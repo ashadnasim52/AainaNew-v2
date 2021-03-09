@@ -20,6 +20,10 @@ import Instore from './screens/Instore';
 import Inapp from './screens/Inapp';
 import List from './screens/List';
 import Inweb from './screens/Inweb';
+import BcPage from './screens/BcPage';
+import B2cpagemain from './screens/B2cpagemain';
+
+
 const Drawer = createDrawerNavigator();
 
 export default function Main() {
@@ -52,6 +56,8 @@ export default function Main() {
       <Drawer.Screen name="inapp" component={Inapp} />
       <Drawer.Screen name="web" component={Inweb} />
       <Drawer.Screen name="List" component={List} />
+      <Drawer.Screen name="B2C" component={BcPage} />
+      <Drawer.Screen name="B2Cmain" component={B2cpagemain} />
     </Drawer.Navigator>
   );
 }

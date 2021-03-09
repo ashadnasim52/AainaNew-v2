@@ -26,6 +26,7 @@ import SignUpOrganization from './screens/SignUpOrganization';
 import Main from './Main';
 import CustomHeader from './layouts/CustomHeader';
 import DetailScreen from './screens/DetailScreen';
+import BcPage from './screens/BcPage';
 
 AsyncStorage.removeItem('@aaina_login');
 
@@ -130,9 +131,18 @@ const Root = () => {
               component={Main}
               options={
                 {
-                  // headerShown: false,
+                  //headerShown: false,
                 }
               }
+            />
+              <Stack.Screen
+              name="BcPage"
+              component={BcPage}
+              options={
+                {
+                   headerShown:false,
+                }
+                }
             />
 
             <Stack.Screen

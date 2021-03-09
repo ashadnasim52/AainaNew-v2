@@ -45,7 +45,7 @@ const About = ({navigation}) => {
 
   return (
     <>
-      <ScrollView>
+      <ScrollView style={{backgroundColor:"#14466b"}}>
         <View
           style={{
             height: 50,
@@ -72,10 +72,10 @@ const About = ({navigation}) => {
 
         <View style={{marginTop: 10, marginBottom: 40}}>
           <View>
-            <Text style={{fontSize: 25, textAlign: 'center', color: 'black'}}>
+            <Text style={{fontSize: 30, textAlign: 'center', color: 'white',fontWeight:"bold"}}>
               Aaiena
             </Text>
-            <Text style={{color: 'black', marginLeft: 10}}>
+            <Text style={{color: 'black', marginLeft: 10,color:"white"}}>
               Our company Product is the best Porduct in the industry of IT and
               Fashion Appearel all Product of the Aaiena are currently in the
               trends and providing world best Sizing Product best ever Our
@@ -85,10 +85,11 @@ const About = ({navigation}) => {
           <View style={{inlineHeight: 40}}>
             <Text
               style={{
-                fontSize: 25,
+                fontSize: 30,
                 textAlign: 'center',
-                color: 'black',
+                color: 'white',
                 marginBottom: 40,
+                fontWeight:"bold"
               }}>
               Our Products
             </Text>
@@ -124,6 +125,7 @@ const About = ({navigation}) => {
                       color: 'green',
                       marginTop: -10,
                       marginRight: 50,
+                      color:"#14466b"
                     }}>
                     Sizing
                   </Text>
@@ -164,7 +166,7 @@ const About = ({navigation}) => {
                     style={{
                       fontSize: 16,
                       fontWeight: 'bold',
-                      color: 'green',
+                      color:"#14466b",
                       marginTop: -60,
                       marginRight: 50,
                     }}>
@@ -207,7 +209,7 @@ const About = ({navigation}) => {
                     style={{
                       fontSize: 16,
                       fontWeight: 'bold',
-                      color: 'green',
+                      color: '#14466b',
                       marginTop: -60,
                       marginRight: 50,
                     }}>
@@ -223,7 +225,7 @@ const About = ({navigation}) => {
         </View>
 
         <View>
-          <Text style={{fontSize: 25, textAlign: 'center', marginBottom: 40}}>
+          <Text style={{fontSize: 25, textAlign: 'center', marginBottom: 40,color:"white"}}>
             Our Services
           </Text>
         </View>
@@ -244,7 +246,7 @@ const About = ({navigation}) => {
                       fontSize: 18,
                       marginLeft: -20,
                       fontWeight: 'bold',
-                      color: 'green',
+                      color: '#14466b',
                       marginTop: -80,
                       marginLeft: 0,
                     }}>
@@ -288,7 +290,7 @@ const About = ({navigation}) => {
                       fontSize: 18,
                       marginLeft: -20,
                       fontWeight: 'bold',
-                      color: 'green',
+                      color: '#14466b',
                       marginTop: -80,
                       marginLeft: 0,
                     }}>
@@ -332,7 +334,7 @@ const About = ({navigation}) => {
                       fontSize: 18,
                       marginLeft: -20,
                       fontWeight: 'bold',
-                      color: 'green',
+                      color: '#14466b',
                       marginTop: -80,
                       marginLeft: 0,
                     }}>

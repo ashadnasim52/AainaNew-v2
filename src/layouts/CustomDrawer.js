@@ -112,6 +112,13 @@ const CustomDrawer = (props) => {
             <Icon style={styles.icon} fill="#8F9BB3" name="person-outline" />
           )}
         />
+            <DrawerItem
+          label="B2Cmain"
+          onPress={() => nav.navigate('B2Cmain')}
+          icon={({focused, color, size}) => (
+            <Icon style={styles.icon} fill="#8F9BB3" name="person-outline" />
+          )}
+        />
         <DrawerItem
           label="Setting"
           onPress={() => nav.navigate('Setting')}
