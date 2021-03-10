@@ -83,7 +83,7 @@ const Signin = () => {
                 </Text>
               </TouchableOpacity>
             </View>
-            <Button style={styles.button} onPress={() => nav.navigate('Home')}>
+            <Button style={styles.button} onPress={() => nav.navigate('Main')}>
               Login
             </Button>
             {!state.isB2B && (
