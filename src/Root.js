@@ -1,13 +1,10 @@
 import React, {useReducer, useEffect} from 'react';
 import {StatusBar} from 'react-native';
-
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-
 import {AuthContext} from './context/context';
 import authInitialState from './state/authState';
 import authReducer from './reducer/authReducer'; 
-
 import {PRIMARY} from './theme/colors';
 import Axios from 'axios';
 import {API} from './utils/Base';
