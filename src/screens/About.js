@@ -24,19 +24,8 @@ import {
   Linking,
   TextInput,
 } from 'react-native';
-
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import AntDesign from 'react-native-vector-icons/AntDesign';
-import Entypo from 'react-native-vector-icons/Entypo';
-import Feather from 'react-native-vector-icons/Feather';
-import Sizing from './Sizing';
-import Ettire from './Ettire';
-import Sneaky from './Sneaky';
-import Instore from './Instore';
-import Inapp from './Inapp';
-import Inweb from './Inweb';
+
 
 const About = ({navigation}) => {
   const [searchQuery, setSearchQuery] = React.useState('');
@@ -45,13 +34,16 @@ const About = ({navigation}) => {
 
   return (
     <>
+    
       <ScrollView style={{backgroundColor:"#14466b"}}>
-        <View
+      <View
           style={{
-            height: 50,
-            marginTop: 80,
+            backgroundColor: "#14466b",
+            height: 100,
             justifyContent: 'center',
             paddingHorizontal: 20,
+            marginTop:30
+            
           }}>
           <View
             style={{
@@ -70,9 +62,9 @@ const About = ({navigation}) => {
           </View>
         </View>
 
-        <View style={{marginTop: 10, marginBottom: 40}}>
+        <View style={{ marginBottom: 40}}>
           <View>
-            <Text style={{fontSize: 30, textAlign: 'center', color: 'white',fontWeight:"bold"}}>
+            <Text style={{fontSize: 30, textAlign: 'center', color: 'white'}}>
               Aaiena
             </Text>
             <Text style={{color: 'black', marginLeft: 10,color:"white"}}>
@@ -85,17 +77,18 @@ const About = ({navigation}) => {
           <View style={{inlineHeight: 40}}>
             <Text
               style={{
+marginTop:20,
                 fontSize: 30,
                 textAlign: 'center',
                 color: 'white',
                 marginBottom: 40,
-                fontWeight:"bold"
+             
               }}>
               Our Products
             </Text>
           </View>
 
-          <TouchableOpacity onPress={() => navigation.navigate('Size')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Sizing')}>
             <Card style={{marginTop: 0}}>
               <CardItem
                 style={{
@@ -111,7 +104,7 @@ const About = ({navigation}) => {
                       width: 150,
                       height: 130,
                       marginBottom: -20,
-                      marginLeft: -34,
+                      marginLeft: -40,
                       marginTop: 0,
                       borderRadius: 25,
                     }}
@@ -139,7 +132,7 @@ const About = ({navigation}) => {
         </View>
 
         <View style={{marginBottom: 40}}>
-          <TouchableOpacity onPress={() => navigation.navigate('Ettir')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Ettire')}>
             <Card style={{marginTop: 0}}>
               <CardItem
                 style={{
@@ -155,7 +148,7 @@ const About = ({navigation}) => {
                       width: 150,
                       height: 130,
                       marginBottom: -12,
-                      marginLeft: -34,
+                      marginLeft: -40,
                       marginTop: -35,
                       borderRadius: 25,
                     }}
@@ -182,7 +175,7 @@ const About = ({navigation}) => {
         </View>
 
         <View style={{marginBottom: 40}}>
-          <TouchableOpacity onPress={() => navigation.navigate('Sneak')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Sneaky')}>
             <Card style={{marginTop: 0}}>
               <CardItem
                 style={{
@@ -198,7 +191,7 @@ const About = ({navigation}) => {
                       width: 150,
                       height: 130,
                       marginBottom: -12,
-                      marginLeft: -34,
+                      marginLeft: -40,
                       marginTop: -35,
                       borderRadius: 25,
                     }}
@@ -225,13 +218,13 @@ const About = ({navigation}) => {
         </View>
 
         <View>
-          <Text style={{fontSize: 25, textAlign: 'center', marginBottom: 40,color:"white"}}>
+          <Text style={{fontSize: 30, textAlign: 'center', marginBottom: 40,color:"white"}}>
             Our Services
           </Text>
         </View>
 
         <View style={{marginBottom: 40}}>
-          <TouchableOpacity onPress={() => navigation.navigate('store')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Instore')}>
             <Card style={{marginTop: 0}}>
               <CardItem
                 style={{
@@ -263,7 +256,7 @@ const About = ({navigation}) => {
                       width: 160,
                       height: 130,
                       marginBottom: -12,
-                      marginRight: -14,
+                      marginRight: -18,
                       marginTop: -35,
                       borderRadius: 25,
                     }}
@@ -275,7 +268,7 @@ const About = ({navigation}) => {
         </View>
 
         <View style={{marginBottom: 40}}>
-          <TouchableOpacity onPress={() => navigation.navigate('inapp')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Inapp')}>
             <Card style={{marginTop: 0}}>
               <CardItem
                 style={{
@@ -307,7 +300,7 @@ const About = ({navigation}) => {
                       width: 160,
                       height: 130,
                       marginBottom: -12,
-                      marginRight: -14,
+                      marginRight: -18,
                       marginTop: -35,
                       borderRadius: 25,
                     }}
@@ -319,7 +312,7 @@ const About = ({navigation}) => {
         </View>
 
         <View style={{marginBottom: 40}}>
-          <TouchableOpacity onPress={() => navigation.navigate('web')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Inweb')}>
             <Card style={{marginTop: 0}}>
               <CardItem
                 style={{
@@ -351,7 +344,7 @@ const About = ({navigation}) => {
                       width: 160,
                       height: 130,
                       marginBottom: -12,
-                      marginRight: -14,
+                      marginRight: -18,
                       marginTop: -35,
                       borderRadius: 25,
                     }}

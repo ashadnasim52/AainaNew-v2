@@ -5,13 +5,12 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 
 
-
-const BcPage = () => {
+const Benzor = () => {
 
 
   return (
     <>
-    <View style={{backgroundColor:"#2B547E",height:90}}>
+     <View style={{backgroundColor:"#2B547E",height:90}}>
     <View
           style={{
             height: 50,
@@ -29,17 +28,16 @@ const BcPage = () => {
           <TextInput placeholder="Search Any Products  here....." />
         </View>
        </View>
-
       <ScrollView style={{ backgroundColor: "#2B547E" }}>
      
 
 
         <View style={{marginTop:10}}>
       <Image
-                source={require('../assests/img/Deepak_Garments.jpg')}
+                source={require('../assests/img/Benzor.jpg')}
                 style={{
                   width: 360,
-                  height: 250,
+                  height: 230,
                   justifyContent: 'center',
                 }}
               />
@@ -307,4 +305,4 @@ const BcPage = () => {
     </>
   );
 };
-export default BcPage;
+export default Benzor;

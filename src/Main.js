@@ -22,6 +22,7 @@ import List from './screens/List';
 import Inweb from './screens/Inweb';
 import BcPage from './screens/BcPage';
 import B2cpagemain from './screens/B2cpagemain';
+import Chaudhary_Garments from './screens/Chaudhary_Garments';
 
 
 const Drawer = createDrawerNavigator();
@@ -47,17 +48,11 @@ export default function Main() {
       <Drawer.Screen name="MyPlans" component={MyPlans} />
       <Drawer.Screen name="Profile" component={Profile} />
       <Drawer.Screen name="Setting" component={Setting} />
-
       <Drawer.Screen name="About" component={About} />
-      <Drawer.Screen name="Size" component={Sizing} />
-      <Drawer.Screen name="Ettir" component={Ettire} />
-      <Drawer.Screen name="Sneak" component={Sneaky} />
-      <Drawer.Screen name="store" component={Instore} />
-      <Drawer.Screen name="inapp" component={Inapp} />
-      <Drawer.Screen name="web" component={Inweb} />
-      <Drawer.Screen name="List" component={List} />
-      <Drawer.Screen name="B2C" component={BcPage} />
-      <Drawer.Screen name="B2Cmain" component={B2cpagemain} />
+      
+   
+  
+     
     </Drawer.Navigator>
   );
 }

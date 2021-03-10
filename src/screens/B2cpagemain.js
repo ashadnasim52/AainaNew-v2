@@ -41,6 +41,7 @@ import Inweb from './Inweb';
 
 
 
+
 const B2cpagemain = ({ navigation }) => {
     const [searchQuery, setSearchQuery] = React.useState('');
 
@@ -48,11 +49,10 @@ const B2cpagemain = ({ navigation }) => {
 
     return (
         <>
-            <ScrollView style={{backgroundColor:"#14466b"}}>
-                <View
+        <View
                     style={{
-                        height: 50,
-                        marginTop: 80,
+                        backgroundColor: "#14466b",
+                        height: 100,
                         justifyContent: 'center',
                         paddingHorizontal: 20,
                     }}>
@@ -72,8 +72,10 @@ const B2cpagemain = ({ navigation }) => {
                         <TextInput placeholder="Search Any Products  here....." />
                     </View>
                 </View>
+            <ScrollView style={{backgroundColor:"#14466b"}}>
+                
 
-                <View style={{ marginTop: 10, marginBottom: 60 }}>
+                <View style={{  marginBottom: 60 }}>
                     <View>
              
                     </View>
@@ -117,7 +119,7 @@ const B2cpagemain = ({ navigation }) => {
                                     <Right>
                                         <Text
                                             style={{
-                                                fontSize: 16,
+                                                fontSize: 18,
                                                 fontWeight: 'bold',
                                                 color: "#14466b",
                                                 marginLeft: 20,
@@ -132,7 +134,7 @@ const B2cpagemain = ({ navigation }) => {
 
 
                 <View style={{ marginBottom: 60 }}>
-                    <TouchableOpacity onPress={() => navigation.navigate('B2C')}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Chaudhary_Garments')}>
                         <Card style={{ marginTop: 0 }}>
                             <CardItem
                                 style={{
@@ -174,7 +176,7 @@ const B2cpagemain = ({ navigation }) => {
                 </View>
 
                 <View style={{ marginBottom: 60 }}>
-                    <TouchableOpacity onPress={() => navigation.navigate('B2C')}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Benzor')}>
 
                         <Card style={{ marginTop: 0 }}>
                             <CardItem
@@ -200,7 +202,7 @@ const B2cpagemain = ({ navigation }) => {
                                 <Right>
                                     <Text
                                         style={{
-                                            fontSize: 16,
+                                            fontSize: 18,
                                             fontWeight: 'bold',
                                             color: '#14466b',
                                             marginRight: 30,
@@ -215,7 +217,7 @@ const B2cpagemain = ({ navigation }) => {
 
 
                 <View style={{ marginBottom: 60 }}>
-                    <TouchableOpacity onPress={() => navigation.navigate('B2C')}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Leather')}>
                         <Card style={{ marginTop: 0 }}>
                             <CardItem
                                 style={{
@@ -257,7 +259,7 @@ const B2cpagemain = ({ navigation }) => {
                 </View>
 
                 <View style={{ marginBottom: 60 }}>
-                    <TouchableOpacity onPress={() => navigation.navigate('B2C')}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Look')}>
 
                         <Card style={{ marginTop: 0 }}>
                             <CardItem
@@ -283,7 +285,7 @@ const B2cpagemain = ({ navigation }) => {
                                 <Right>
                                     <Text
                                         style={{
-                                            fontSize: 16,
+                                            fontSize: 18,
                                             fontWeight: 'bold',
                                             color: '#14466b',
                                             marginLeft: 0,
@@ -299,7 +301,7 @@ const B2cpagemain = ({ navigation }) => {
 
 
                 <View style={{ marginBottom: 60 }}>
-                    <TouchableOpacity onPress={() => navigation.navigate('B2C')}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Glitz')}>
                         <Card style={{ marginTop: 0 }}>
                             <CardItem
                                 style={{

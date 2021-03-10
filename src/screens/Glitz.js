@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 
 
-const BcPage = () => {
+const Glitz = () => {
 
 
   return (
@@ -36,7 +36,7 @@ const BcPage = () => {
 
         <View style={{marginTop:10}}>
       <Image
-                source={require('../assests/img/Deepak_Garments.jpg')}
+                source={require('../assests/img/g_g.jpg')}
                 style={{
                   width: 360,
                   height: 250,
@@ -307,4 +307,4 @@ const BcPage = () => {
     </>
   );
 };
-export default BcPage;
+export default Glitz;
