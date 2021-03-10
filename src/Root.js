@@ -6,7 +6,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import {AuthContext} from './context/context';
 import authInitialState from './state/authState';
-import authReducer from './reducer/authReducer';
+import authReducer from './reducer/authReducer'; 
 
 import {PRIMARY} from './theme/colors';
 import Axios from 'axios';
@@ -26,6 +26,21 @@ import SignUpOrganization from './screens/SignUpOrganization';
 import Main from './Main';
 import CustomHeader from './layouts/CustomHeader';
 import DetailScreen from './screens/DetailScreen';
+import BcPage from './screens/BcPage';
+import Chaudhary_Garments from './screens/Chaudhary_Garments';
+import Benzor from './screens/Benzor';
+import Leather from './screens/Leather';
+import Look from './screens/Look';
+import Glitz from './screens/Glitz';
+import B2cpagemain from './screens/B2cpagemain';
+import About from './screens/About';
+import Sizing from './screens/Sizing';
+import Ettire from './screens/Ettire';
+import Sneaky from './screens/Sneaky';
+import Instore from './screens/Instore';
+import Inapp from './screens/Inapp';
+import Inweb from './screens/Inweb';
+
 
 AsyncStorage.removeItem('@aaina_login');
 
@@ -130,9 +145,19 @@ const Root = () => {
               component={Main}
               options={
                 {
-                  // headerShown: false,
+                  //headerShown: false,
                 }
               }
+            />
+            
+              <Stack.Screen
+              name="B2C"
+              component={BcPage}
+              options={
+                {
+                   headerShown:false,
+                }
+                }
             />
 
             <Stack.Screen
@@ -142,6 +167,93 @@ const Root = () => {
                 headerShown: false,
               }}
             />
+             <Stack.Screen
+              name="Chaudhary_Garments"
+              component={Chaudhary_Garments}
+              options={{
+                headerShown: false,
+              }}
+            />
+                <Stack.Screen
+              name="Benzor"
+              component={Benzor}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="Leather"
+              component={Leather}
+              options={{
+                headerShown: false,
+              }}
+            />
+             <Stack.Screen
+              name="Look"
+              component={Look}
+              options={{
+                headerShown: false,
+              }}
+            />
+              <Stack.Screen
+              name="Glitz"
+              component={Glitz}
+              options={{
+                headerShown: false,
+              }}
+            />
+               <Stack.Screen
+              name="B2Cmain"
+              component={B2cpagemain}
+              options={{
+                headerShown: false,
+              }}
+            />
+          
+             <Stack.Screen
+              name="Sizing"
+              component={Sizing}
+              options={{
+                headerShown:false,
+              }}
+            />
+            <Stack.Screen
+              name="Ettire"
+              component={Ettire}
+              options={{
+                headerShown:false,
+              }}
+            />
+             <Stack.Screen
+              name="Sneaky"
+              component={Sneaky}
+              options={{
+                headerShown:false,
+              }}
+            />
+
+           <Stack.Screen
+              name="Instore"
+              component={Instore}
+              options={{
+                headerShown:false,
+              }}
+            />
+            <Stack.Screen
+              name="Inapp"
+              component={Inapp}
+              options={{
+                headerShown:false,
+              }}
+            />
+           <Stack.Screen
+              name="Inweb"
+              component={Inweb}
+              options={{
+                headerShown:false,
+              }}
+            />
+
           </Stack.Navigator>
         </NavigationContainer>
       </AuthContext.Provider>

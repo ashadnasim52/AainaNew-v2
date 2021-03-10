@@ -14,7 +14,7 @@ import {
 export const Instore = () => {
   return (
     <SafeAreaView>
-      <ScrollView>
+      <ScrollView style={{backgroundColor:"#14466b"}}>
         <View>
           <Image
             source={require('../assests/img/ins.gif')}
@@ -22,7 +22,7 @@ export const Instore = () => {
           />
           <View
             style={{
-              backgroundColor: '#fff',
+              backgroundColor: '#b0e0e6',
               margin: 25,
               borderRadius: 25,
               height: 120,
@@ -31,7 +31,7 @@ export const Instore = () => {
             <Text
               style={{
                 fontSize: 22,
-                color: 'black',
+                color: '#14466b',
                 fontWeight: 'bold',
                 fontFamily: 'georgia',
                 margin: 10,
@@ -43,7 +43,7 @@ export const Instore = () => {
             <Text
               style={{
                 fontSize: 12,
-                color: 'grey',
+                color: '#14466b',
                 marginLeft: 25,
                 fontFamily: 'georgia',
                 marginBottom: 10,
@@ -53,7 +53,7 @@ export const Instore = () => {
             <Text
               style={{
                 fontSize: 12,
-                color: 'grey',
+                color: '#14466b',
                 fontFamily: 'georgia',
                 marginLeft: 25,
               }}>
@@ -62,10 +62,10 @@ export const Instore = () => {
           </View>
 
           <View style={{marginLeft: 10}}>
-            <Text style={{fontFamily: 'lucida grande', fontWeight: 'bold'}}>
+            <Text style={{fontFamily: 'lucida grande', fontWeight: 'bold',color:"white"}}>
               KingFisher 21/Feb/2020
             </Text>
-            <Text style={{marginTop: 12, fontFamily: 'lucida grande'}}>
+            <Text style={{marginTop: 12, fontFamily: 'lucida grande',color:"white"}}>
               National Birds
             </Text>
           </View>
@@ -75,7 +75,7 @@ export const Instore = () => {
               margin: 10,
               flex: 1,
               fontFamily: 'lucida grande',
-              color: 'grey',
+              color: 'white',
             }}>
             Our company Product is the best Porduct in the industry of IT and
             Fashion Appearel all Product of the Aaiena are currently in the
