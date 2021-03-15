@@ -40,6 +40,8 @@ import Sneaky from './screens/Sneaky';
 import Instore from './screens/Instore';
 import Inapp from './screens/Inapp';
 import Inweb from './screens/Inweb';
+import Dresss from "./screens/Dress";
+import Dress from './screens/Dress';
 
 
 AsyncStorage.removeItem('@aaina_login');
@@ -73,7 +75,7 @@ const Root = () => {
             screenOptions={{
               header: (props) => <CustomHeader {...props} />,
             }}
-            initialRouteName="Main">
+            initialRouteName="Onboarding">
             <Stack.Screen
               name="SignUp"
               component={Signup}
@@ -145,14 +147,23 @@ const Root = () => {
               component={Main}
               options={
                 {
-                  //headerShown: false,
+                  headerShown:false ,
                 }
               }
             />
             
               <Stack.Screen
-              name="B2C"
+              name="BcPage"
               component={BcPage}
+              options={
+                {
+                   headerShown:false,
+                }
+                }
+            />
+              <Stack.Screen
+              name="Dress"
+              component={Dress}
               options={
                 {
                    headerShown:false,
@@ -203,7 +214,7 @@ const Root = () => {
               }}
             />
                <Stack.Screen
-              name="B2Cmain"
+              name="B2cpagemain"
               component={B2cpagemain}
               options={{
                 headerShown: false,

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, Linking, StyleSheet, View} from 'react-native';
+import {Image, Linking, SafeAreaView, StyleSheet, View} from 'react-native';
 import {
   DrawerContentScrollView,
   DrawerItem,
@@ -7,29 +7,41 @@ import {
 } from '@react-navigation/drawer';
 import {Avatar, Button, Icon, Layout, Text} from '@ui-kitten/components';
 import {useNavigation} from '@react-navigation/native';
-import {PRIMARY} from '../theme/colors';
+
+
 
 const CustomDrawer = (props) => {
   const nav = useNavigation();
   return (
+  
     <DrawerContentScrollView
       {...props}
       contentContainerStyle={{
         flexGrow: 1,
         justifyContent: 'center',
         flex: 1,
-        backgroundColor: PRIMARY,
+        backgroundColor:"#14466b",
+        
+      
+     
       }}>
       <Layout
         style={{
           flexDirection: 'row',
           justifyContent: 'space-around',
+          backgroundColor:"#14466b",
+          labelStyle:{
+            color:"red",
+          }
+          
         }}>
         <View
           style={{
             flexDirection: 'row',
             width: '90%',
-            paddingTop: 20,
+            paddingTop: 50,
+            
+            
           }}>
           <Avatar
             source={{
@@ -45,13 +57,18 @@ const CustomDrawer = (props) => {
             <Text
               style={
                 {
-                  // color: '#fff',
+                   color: '#fff',
                 }
               }>
               Sakshi
             </Text>
-            <Text category="label" appearance="hint">
-              Your Last Name
+            <Text style={
+                {
+                   color: '#fff',
+                   fontSize:12
+                }
+              }>
+              Last Name
             </Text>
           </View>
         </View>
@@ -61,84 +78,97 @@ const CustomDrawer = (props) => {
         style={{
           flexGrow: 1,
           justifyContent: 'center',
+          backgroundColor:"#14466b",
+          marginBottom:90
+  
         }}>
-        <DrawerItem
+        <DrawerItem 
+      style={{color:"#fff",}}
+  
           label="Home"
+          labelStyle={{color:"#fff"}}
           onPress={() => nav.navigate('Home')}
           icon={({focused, color, size}) => (
-            <Icon style={styles.icon} fill="#8F9BB3" name="home-outline" />
+            <Icon style={styles.icon} fill="#fff" name="home-outline" />
           )}
         />
         <DrawerItem
+          label="About Aaiena"
+          labelStyle={{color:"#fff"}}
+          onPress={() => nav.navigate('About')}
+          icon={({focused, color, size}) => (
+            <Icon
+              style={styles.icon}
+              fill="#fff"
+              name="alert-circle-outline"
+            />
+          )}
+        />
+         <DrawerItem
+          label="Clients"
+          labelStyle={{color:"#fff"}}
+          onPress={() => nav.navigate('B2Cmain')}
+          icon={({focused, color, size}) => (
+            <Icon style={styles.icon} fill="#fff" name="person-outline" />
+          )}
+        />
+          <DrawerItem
+          label="Profile"
+          labelStyle={{color:"#fff"}}
+          onPress={() => nav.navigate('Profile')}
+          icon={({focused, color, size}) => (
+            <Icon style={styles.icon} fill="#fff" name="person-outline" />
+          )}
+        />
+        <DrawerItem 
+        
           label="Demo"
+          labelStyle={{color:"#fff"}}
           onPress={() => nav.navigate('Demo')}
           icon={({focused, color, size}) => (
-            <Icon style={styles.icon} fill="#8F9BB3" name="monitor-outline" />
+            <Icon style={styles.icon} fill="#fff" name="monitor-outline" />
           )}
         />
         <DrawerItem
           label="Buy plan"
+          labelStyle={{color:"#fff"}}
           onPress={() => nav.navigate('BuyPlans')}
           icon={({focused, color, size}) => (
             <Icon
               style={styles.icon}
-              fill="#8F9BB3"
+              fill="#fff"
               name="shopping-bag-outline"
             />
           )}
         />
         <DrawerItem
           label="My plans"
+          labelStyle={{color:"#fff"}}
           onPress={() => nav.navigate('MyPlans')}
           icon={({focused, color, size}) => (
-            <Icon style={styles.icon} fill="#8F9BB3" name="award-outline" />
+            <Icon style={styles.icon} fill="#fff" name="award-outline" />
           )}
         />
-        <DrawerItem
-          label="About Aaiena"
-          onPress={() => nav.navigate('About')}
-          icon={({focused, color, size}) => (
-            <Icon
-              style={styles.icon}
-              fill="#8F9BB3"
-              name="alert-circle-outline"
-            />
-          )}
-        />
-        <DrawerItem
-          label="Profile"
-          onPress={() => nav.navigate('Profile')}
-          icon={({focused, color, size}) => (
-            <Icon style={styles.icon} fill="#8F9BB3" name="person-outline" />
-          )}
-        />
-            <DrawerItem
-          label="B2Cmain"
-          onPress={() => nav.navigate('B2Cmain')}
-          icon={({focused, color, size}) => (
-            <Icon style={styles.icon} fill="#8F9BB3" name="person-outline" />
-          )}
-        />
+        
+      
+         
         <DrawerItem
           label="Setting"
+          labelStyle={{color:"#fff"}}
           onPress={() => nav.navigate('Setting')}
           icon={({focused, color, size}) => (
             <Icon
               style={styles.icon}
-              fill="#8F9BB3"
+              fill="#fff"
               name="settings-2-outline"
             />
           )}
         />
       </Layout>
       <Layout>
-        <Button
-          style={{}}
-          onPress={() => nav.replace('SignIn')}
-          appearance="ghost"
-          status="danger">
-          Log Out
-        </Button>
+       <Text style={{marginTop:-60,marginLeft:70,fontSize:16,fontWeight:"bold",color:"#fff"}}>
+         Log Out
+       </Text>
       </Layout>
     </DrawerContentScrollView>
   );
@@ -150,6 +180,7 @@ const styles = StyleSheet.create({
   icon: {
     width: 22,
     height: 22,
+    
   },
 });
 

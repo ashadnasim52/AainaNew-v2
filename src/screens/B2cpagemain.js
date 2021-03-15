@@ -93,7 +93,7 @@ const B2cpagemain = ({ navigation }) => {
             </Text>
                     </View>
                     <View>
-                        <TouchableOpacity onPress={() => navigation.navigate('B2C')}>
+                        <TouchableOpacity onPress={() => navigation.navigate('BcPage')}>
 
                             <Card style={{ marginTop: 0 }}>
                                 <CardItem

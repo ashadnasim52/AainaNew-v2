@@ -28,35 +28,35 @@ const slides = [
     text: 'Input accurate weight & height for proper analysis.',
     image: StepOne,
     id: '1',
-    backgroundColor: '#758283',
+    backgroundColor: '#F7941E',
   },
   {
     title: 'Head-to-toe picture',
     text: 'Upload front & side view pictures covering the entire body frame.',
     image: StepTwo,
     id: '2',
-    backgroundColor: '#242B2E',
+    backgroundColor: '#C64EB1',
   },
   {
     title: 'Automatic virtual avatar',
     text: 'Bravo! Your virtual figure will be on display.',
     image: StepThree,
     id: '3',
-    backgroundColor: '#03203C',
+    backgroundColor: '#00AD94',
   },
   {
     title: 'Proper Size Recommendations',
     text: 'Now know your tailored shoulder, chest, waist & hips size.',
     image: StepFour,
     id: '4',
-    backgroundColor: '#333',
+    backgroundColor: '#A289BB',
   },
   {
     title: 'You are good to go!',
     text: 'Get ready to witness a completely different trial outlook.',
     image: StepFive,
     id: '5',
-    backgroundColor: '#383CC1',
+    backgroundColor:'#14466b',
   },
 ];
 const Onboarding = () => {
@@ -147,6 +147,7 @@ const Onboarding = () => {
                     marginVertical: 10,
                     borderRadius: 25,
                     width: '90%',
+                    backgroundColor:"#14466b"
                   }}>
                   Get Started Now
                 </Button>

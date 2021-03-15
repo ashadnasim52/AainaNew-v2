@@ -23,6 +23,10 @@ import Inweb from './screens/Inweb';
 import BcPage from './screens/BcPage';
 import B2cpagemain from './screens/B2cpagemain';
 import Chaudhary_Garments from './screens/Chaudhary_Garments';
+import Benzor from './screens/Benzor';
+import Leather from './screens/Leather';
+import Look from './screens/Look';
+import Glitz from './screens/Glitz';
 
 
 const Drawer = createDrawerNavigator();
@@ -30,7 +34,7 @@ const Drawer = createDrawerNavigator();
 export default function Main() {
   return (
     <Drawer.Navigator
-      initialRouteName="About"
+      initialRouteName="Onboarding"
       // drawerType="slide"
       drawerStyle={
         {
@@ -49,6 +53,21 @@ export default function Main() {
       <Drawer.Screen name="Profile" component={Profile} />
       <Drawer.Screen name="Setting" component={Setting} />
       <Drawer.Screen name="About" component={About} />
+      <Drawer.Screen name="Sizing" component={Sizing} />
+      <Drawer.Screen name="Ettire" component={Ettire} />
+      <Drawer.Screen name="Sneaky" component={Sneaky} />
+      <Drawer.Screen name="Instore" component={Instore} />
+      <Drawer.Screen name="Inapp" component={Inapp} />
+      <Drawer.Screen name="Inweb" component={Inweb} />
+      <Drawer.Screen name="B2Cmain" component={B2cpagemain} />
+      <Drawer.Screen name="Chaudhary_Garments" component={Chaudhary_Garments} />
+      <Drawer.Screen name="BcPage" component={BcPage} />
+      <Drawer.Screen name="Benzor" component={Benzor} />
+      <Drawer.Screen name="Leather" component={Leather} />
+      <Drawer.Screen name="Look" component={Look} />
+      <Drawer.Screen name="Glitz" component={Glitz} />
+      
+      
       
    
   

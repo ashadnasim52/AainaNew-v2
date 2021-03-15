@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import { Image, View, Text, ScrollView, Button, TextInput } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Dress from './Dress';
 
 
 
 
-const BcPage = () => {
+const BcPage = ({ navigation }) => {
 
 
   return (
@@ -58,7 +59,7 @@ const BcPage = () => {
                 }}
               />
               <View style={{ flexDirection: "row" }}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Dress')}>
                   <Text style={{ margin: 8, marginRight: 5, backgroundColor: "#2B547E", color: "white", width: 70, height: 35, paddingLeft: 12, paddingTop: 5, borderRadius: 5, fontWeight: "bold" }}>
                     Sizing
               </Text>
@@ -81,7 +82,7 @@ const BcPage = () => {
                 }}
               />
               <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Dress')}>
                   <Text style={{ margin: 8, marginRight: 5, backgroundColor: "#2B547E", color: "white", width: 70, height: 35, paddingLeft: 12, paddingTop: 5, borderRadius: 5, fontWeight: "bold" }}>
                     Sizing
               </Text>
@@ -109,7 +110,7 @@ const BcPage = () => {
                 }}
               />
               <View style={{ flexDirection: "row" }}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Dress')}>
                   <Text style={{ margin: 8, marginRight: 5, backgroundColor: "#2B547E", color: "white", width: 70, height: 35, paddingLeft: 12, paddingTop: 5, borderRadius: 5, fontWeight: "bold" }}>
                     Sizing
               </Text>
@@ -132,7 +133,7 @@ const BcPage = () => {
                 }}
               />
               <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Dress')}>
                   <Text style={{ margin: 8, marginRight: 5, backgroundColor: "#2B547E", color: "white", width: 70, height: 35, paddingLeft: 12, paddingTop: 5, borderRadius: 5, fontWeight: "bold" }}>
                     Sizing
               </Text>
@@ -160,7 +161,7 @@ const BcPage = () => {
                 }}
               />
               <View style={{ flexDirection: "row" }}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Dress')}>
                   <Text style={{ margin: 8, marginRight: 5, backgroundColor: "#2B547E", color: "white", width: 70, height: 35, paddingLeft: 12, paddingTop: 5, borderRadius: 5, fontWeight: "bold" }}>
                     Sizing
               </Text>
@@ -183,7 +184,7 @@ const BcPage = () => {
                 }}
               />
               <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Dress')}>
                   <Text style={{ margin: 8, marginRight: 5, backgroundColor: "#2B547E", color: "white", width: 70, height: 35, paddingLeft: 12, paddingTop: 5, borderRadius: 5, fontWeight: "bold" }}>
                     Sizing
               </Text>
@@ -211,7 +212,7 @@ const BcPage = () => {
                 }}
               />
               <View style={{ flexDirection: "row" }}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Dress')}>
                   <Text style={{ margin: 8, marginRight: 5, backgroundColor: "#2B547E", color: "white", width: 70, height: 35, paddingLeft: 12, paddingTop: 5, borderRadius: 5, fontWeight: "bold" }}>
                     Sizing
               </Text>
@@ -234,7 +235,7 @@ const BcPage = () => {
                 }}
               />
               <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Dress')}>
                   <Text style={{ margin: 8, marginRight: 5, backgroundColor: "#2B547E", color: "white", width: 70, height: 35, paddingLeft: 12, paddingTop: 5, borderRadius: 5, fontWeight: "bold" }}>
                     Sizing
               </Text>
@@ -262,7 +263,7 @@ const BcPage = () => {
                 }}
               />
               <View style={{ flexDirection: "row" }}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Dress')}>
                   <Text style={{ margin: 8, marginRight: 5, backgroundColor: "#2B547E", color: "white", width: 70, height: 35, paddingLeft: 12, paddingTop: 5, borderRadius: 5, fontWeight: "bold" }}>
                     Sizing
               </Text>
@@ -285,7 +286,7 @@ const BcPage = () => {
                 }}
               />
               <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Dress')}>
                   <Text style={{ margin: 8, marginRight: 5, backgroundColor: "#2B547E", color: "white", width: 70, height: 35, paddingLeft: 12, paddingTop: 5, borderRadius: 5, fontWeight: "bold" }}>
                     Sizing
               </Text>
