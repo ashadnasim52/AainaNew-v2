@@ -6,7 +6,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import {AuthContext} from './context/context';
 import authInitialState from './state/authState';
-import authReducer from './reducer/authReducer'; 
+import authReducer from './reducer/authReducer';
 
 import {PRIMARY} from './theme/colors';
 import Axios from 'axios';
@@ -40,7 +40,7 @@ import Sneaky from './screens/Sneaky';
 import Instore from './screens/Instore';
 import Inapp from './screens/Inapp';
 import Inweb from './screens/Inweb';
-
+import Profile from './screens/Profile';
 
 AsyncStorage.removeItem('@aaina_login');
 
@@ -73,7 +73,7 @@ const Root = () => {
             screenOptions={{
               header: (props) => <CustomHeader {...props} />,
             }}
-            initialRouteName="Main">
+            initialRouteName="Profile">
             <Stack.Screen
               name="SignUp"
               component={Signup}
@@ -141,6 +141,15 @@ const Root = () => {
               }
             />
             <Stack.Screen
+              name="Profile"
+              component={Profile}
+              options={
+                {
+                  // headerShown: false,
+                }
+              }
+            />
+            <Stack.Screen
               name="Main"
               component={Main}
               options={
@@ -149,15 +158,13 @@ const Root = () => {
                 }
               }
             />
-            
-              <Stack.Screen
+
+            <Stack.Screen
               name="B2C"
               component={BcPage}
-              options={
-                {
-                   headerShown:false,
-                }
-                }
+              options={{
+                headerShown: false,
+              }}
             />
 
             <Stack.Screen
@@ -167,14 +174,14 @@ const Root = () => {
                 headerShown: false,
               }}
             />
-             <Stack.Screen
+            <Stack.Screen
               name="Chaudhary_Garments"
               component={Chaudhary_Garments}
               options={{
                 headerShown: false,
               }}
             />
-                <Stack.Screen
+            <Stack.Screen
               name="Benzor"
               component={Benzor}
               options={{
@@ -188,72 +195,71 @@ const Root = () => {
                 headerShown: false,
               }}
             />
-             <Stack.Screen
+            <Stack.Screen
               name="Look"
               component={Look}
               options={{
                 headerShown: false,
               }}
             />
-              <Stack.Screen
+            <Stack.Screen
               name="Glitz"
               component={Glitz}
               options={{
                 headerShown: false,
               }}
             />
-               <Stack.Screen
+            <Stack.Screen
               name="B2Cmain"
               component={B2cpagemain}
               options={{
                 headerShown: false,
               }}
             />
-          
-             <Stack.Screen
+
+            <Stack.Screen
               name="Sizing"
               component={Sizing}
               options={{
-                headerShown:false,
+                headerShown: false,
               }}
             />
             <Stack.Screen
               name="Ettire"
               component={Ettire}
               options={{
-                headerShown:false,
+                headerShown: false,
               }}
             />
-             <Stack.Screen
+            <Stack.Screen
               name="Sneaky"
               component={Sneaky}
               options={{
-                headerShown:false,
+                headerShown: false,
               }}
             />
 
-           <Stack.Screen
+            <Stack.Screen
               name="Instore"
               component={Instore}
               options={{
-                headerShown:false,
+                headerShown: false,
               }}
             />
             <Stack.Screen
               name="Inapp"
               component={Inapp}
               options={{
-                headerShown:false,
+                headerShown: false,
               }}
             />
-           <Stack.Screen
+            <Stack.Screen
               name="Inweb"
               component={Inweb}
               options={{
-                headerShown:false,
+                headerShown: false,
               }}
             />
-
           </Stack.Navigator>
         </NavigationContainer>
       </AuthContext.Provider>
