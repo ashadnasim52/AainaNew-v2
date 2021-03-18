@@ -1,228 +1,210 @@
-import React, {useContext} from 'react';
-import {
-  StyleSheet,
-  ScrollView,
-  View,
-  Image,
-  ImageBackground,
-} from 'react-native';
 import {
   Container,
-  Content,
-  Icon,
-  Input,
-  Item,
-  Col,
-  Button,
   Text,
-  CheckBox,
-  Body,
+  Content,
+  H3,
   Row,
+  Col,
+  H1,
+  H2,
   Card,
   CardItem,
-  Left,
-  Right,
-  H3,
-  H2,
 } from 'native-base';
+import React from 'react';
+import {Image, StyleSheet, ScrollView} from 'react-native';
+import {PRIMARY} from '../theme/colors';
 
-import {PRIMARY, WHITE} from '../theme/colors';
-import {useNavigation} from '@react-navigation/native';
-import {AuthContext} from '../context/context';
+const data = [
+  {
+    no: '1',
+    parameter: 'Full Name',
+    value: 'Ravin',
+  },
+  {
+    no: '2',
+    parameter: 'Gender',
+    value: 'Male',
+  },
+  {
+    no: '3',
+    parameter: 'Height',
+    value: '5 ft 10 in / 177 cm',
+  },
+  {
+    no: '4',
+    parameter: 'Weight',
+    value: '71 kg',
+  },
+  {
+    no: '5',
+    parameter: 'Body Mass Index (BMI)',
+    value: '22.33',
+  },
+  {
+    no: '6',
+    parameter: 'Neck',
+    value: '15.19 inch/ 5.98. cm',
+  },
+  {
+    no: '7',
+    parameter: 'Waist',
+    value: '38.63 inch/ 15.21.cm',
+  },
+  {
+    no: '8',
+    parameter: 'Hips',
+    value: '38.63 inch/ 15.21.cm',
+  },
+];
+
 const Profile = () => {
-  const nav = useNavigation();
-
-  // const {state, dispatch} = useContext(AuthContext);
-  // console.log(state.profile);
-
-  // const {
-  //   userId,
-  //   height,
-  //   weight,
-  //   gender,
-  //   frontPhotoLink,
-  //   selfieLink,
-  // } = state.profile;
-
-  const handleSkip = async () => {
-    nav.navigate('MyTabs');
-  };
-  // if (!state.isAuthenticated) {
-  //   nav.navigate('SignIn');
-  //   return null;
-  // }
   return (
-    <Container>
-      <Content
+    <ScrollView
+      contentContainerStyle={{
+        flex: 1,
+      }}>
+      <Container
         style={{
-          paddingHorizontal: 25,
+          flex: 1,
         }}>
-        <View
-          style={{
-            flexDirection: 'column',
-            marginTop: 10,
-          }}>
-          <Card
+        <Content padder>
+          <H3
             style={{
-              borderColor: PRIMARY,
-              borderWidth: 1,
+              fontWeight: '800',
             }}>
-            <CardItem
+            Body Profile
+          </H3>
+
+          <Text style={{marginTop: 5}}>
+            Following are the body profile parameters such as height, weight,
+            bmi, neck, shoulder, chest, waist, hips, body front photo and body
+            side photo These body profile paramets have been calculated by
+            Aaiena's state-of-the-art Artificial Intelligence system
+          </Text>
+
+          <Row
+            style={{
+              marginVertical: 20,
+            }}>
+            <Col
               style={{
-                marginVertical: 20,
                 justifyContent: 'center',
                 alignItems: 'center',
               }}>
+              <Card
+                style={{
+                  borderRadius: 15,
+                  overflow: 'hidden',
+                }}>
+                <CardItem cardBody>
+                  <Image
+                    source={{
+                      uri: 'https://picsum.photos/id/1005/5760/3840',
+                      height: 190,
+                      width: '100%',
+                    }}
+                  />
+                </CardItem>
+              </Card>
               <Text
                 style={{
-                  textAlign: 'center',
+                  marginVertical: 10,
                   color: PRIMARY,
-                  fontSize: 22,
                 }}>
-                Hello, Ashad
+                Front Body Photo
               </Text>
-            </CardItem>
-
-            <CardItem
+            </Col>
+            <Col
               style={{
-                justifyContent: 'space-around',
+                justifyContent: 'center',
+                alignItems: 'center',
               }}>
-              <View
+              <Card
                 style={{
-                  justifyContent: 'center',
+                  borderRadius: 15,
+                  overflow: 'hidden',
+                }}>
+                <CardItem cardBody>
+                  <Image
+                    source={{
+                      uri: 'https://picsum.photos/id/1005/5760/3840',
+                      height: 190,
+                      width: '100%',
+                    }}
+                  />
+                </CardItem>
+              </Card>
+              <Text
+                style={{
+                  marginVertical: 10,
+                  color: PRIMARY,
+                }}>
+                Side Body Photo
+              </Text>
+            </Col>
+          </Row>
+
+          <Row>
+            <Col size={1}>
+              <H2> # </H2>
+            </Col>
+            <Col
+              size={6}
+              style={{
+                alignItems: 'center',
+              }}>
+              <H2> Parameter</H2>
+            </Col>
+            <Col
+              size={6}
+              style={{
+                alignItems: 'center',
+              }}>
+              <H2> Value</H2>
+            </Col>
+          </Row>
+          {data.map((singleData) => (
+            <Row
+              style={{
+                marginVertical: 10,
+              }}>
+              <Col size={1}>
+                <Text
+                  style={{
+                    fontSize: 18,
+                  }}>
+                  {singleData.no}
+                </Text>
+              </Col>
+              <Col
+                size={6}
+                style={{
                   alignItems: 'center',
                 }}>
-                <Image
-                  source={{
-                    uri: 'https://picsum.photos/id/1005/367/267',
-                    height: 100,
-                    width: 80,
-                  }}
-                  style={{
-                    height: 100,
-                    width: 80,
-                    flex: 1,
-                    resizeMode: 'cover',
-                  }}
-                />
                 <Text
                   style={{
-                    marginVertical: 5,
+                    fontSize: 18,
                   }}>
-                  Your Full pic
+                  {singleData.parameter}
                 </Text>
-                <H3
-                  style={{
-                    textTransform: 'capitalize',
-                    color: PRIMARY,
-                    marginTop: 20,
-                  }}>
-                  Height
-                </H3>
-                <H3
-                  style={{
-                    textTransform: 'uppercase',
-                    color: PRIMARY,
-                    marginBottom: 20,
-                  }}>
-                  150 cm
-                </H3>
-              </View>
-              <View
+              </Col>
+              <Col
+                size={6}
                 style={{
-                  borderRightWidth: 1,
-                  borderRightColor: PRIMARY,
-                  opacity: 0.4,
-                  width: 1,
-                  height: '100%',
-                }}></View>
-              <View
-                style={{
-                  justifyContent: 'center',
                   alignItems: 'center',
                 }}>
-                <Image
-                  source={{
-                    uri: 'https://picsum.photos/id/1005/367/267',
-                    height: 100,
-                    width: 80,
-                  }}
-                  style={{
-                    height: 100,
-                    width: 80,
-                    flex: 1,
-                    resizeMode: 'cover',
-                  }}
-                />
                 <Text
                   style={{
-                    marginVertical: 5,
+                    fontSize: 18,
                   }}>
-                  Your Selfie pic
+                  {singleData.value}
                 </Text>
-                <H3
-                  style={{
-                    textTransform: 'capitalize',
-                    color: PRIMARY,
-                    marginTop: 20,
-                  }}>
-                  Weight
-                </H3>
-                <H3
-                  style={{
-                    textTransform: 'uppercase',
-                    color: PRIMARY,
-                    marginBottom: 20,
-                  }}>
-                  71 kg
-                </H3>
-              </View>
-            </CardItem>
-            <View style={{padding: 20}}>
-              <Button
-                block
-                style={{
-                  backgroundColor: '#387988',
-                  marginTop: 20,
-                }}>
-                <Text
-                  style={{
-                    textTransform: 'capitalize',
-                    fontSize: 14,
-                  }}>
-                  Do you Want to update your profile
-                </Text>
-              </Button>
-              <View>
-                <Text
-                  style={{
-                    textAlign: 'center',
-                    marginTop: 5,
-                  }}>
-                  or
-                </Text>
-              </View>
-              <Button
-                block
-                style={{
-                  backgroundColor: '#387988',
-                  textTransform: 'none',
-                  marginTop: 5,
-                }}
-                onPress={handleSkip}>
-                <Text
-                  style={{
-                    textTransform: 'capitalize',
-                    fontSize: 13,
-                  }}>
-                  Skip, to proceed to see personalized product
-                </Text>
-              </Button>
-            </View>
-          </Card>
-        </View>
-      </Content>
-    </Container>
+              </Col>
+            </Row>
+          ))}
+        </Content>
+      </Container>
+    </ScrollView>
   );
 };
 

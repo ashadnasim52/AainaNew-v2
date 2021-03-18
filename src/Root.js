@@ -143,11 +143,9 @@ const Root = () => {
             <Stack.Screen
               name="Profile"
               component={Profile}
-              options={
-                {
-                  // headerShown: false,
-                }
-              }
+              options={{
+                headerShown: false,
+              }}
             />
             <Stack.Screen
               name="Main"
