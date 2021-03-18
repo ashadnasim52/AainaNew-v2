@@ -73,7 +73,7 @@ const Root = () => {
             screenOptions={{
               header: (props) => <CustomHeader {...props} />,
             }}
-            initialRouteName="Profile">
+            initialRouteName="CreateProfile">
             <Stack.Screen
               name="SignUp"
               component={Signup}
@@ -134,11 +134,9 @@ const Root = () => {
             <Stack.Screen
               name="CreateProfile"
               component={CreateProfile}
-              options={
-                {
-                  // headerShown: false,
-                }
-              }
+              options={{
+                headerShown: false,
+              }}
             />
             <Stack.Screen
               name="Profile"

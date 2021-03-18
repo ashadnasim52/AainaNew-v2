@@ -1,23 +1,38 @@
 import {
+  Body,
+  Button,
   Container,
+  Header,
+  Icon,
+  Left,
   Text,
+  Right,
+  Title,
   Content,
   H1,
-  H3,
+  Row,
+  Col,
+  CardItem,
   Form,
   Item,
   Label,
   Input,
-  Picker,
-  Icon,
-  Button,
+  H3,
 } from 'native-base';
 import React, {useState} from 'react';
-import {Image, PermissionsAndroid, StyleSheet, View} from 'react-native';
-import {ACCENT, PRIMARY} from '../theme/colors';
+import {
+  StyleSheet,
+  PermissionsAndroid,
+  View,
+  Image,
+  ImageBackground,
+} from 'react-native';
+import RNPickerSelect from 'react-native-picker-select';
 import Slider from '@react-native-community/slider';
-import {options} from '../utils/option';
+import {PRIMARY} from '../theme/colors';
 import {launchImageLibrary} from 'react-native-image-picker';
+import {options} from '../utils/option';
+
 const CreateProfile = () => {
   const [isPermission, setIsPermission] = useState(false);
   const [frontPhoto, setfrontPhoto] = useState(null);
@@ -90,211 +105,363 @@ const CreateProfile = () => {
       requestStoragePermission();
     }
   };
+
   return (
     <Container>
+      <Header style={{backgroundColor: '#fff', color: '#000'}}>
+        <Left>
+          <Button transparent>
+            <Icon
+              name="arrow-back"
+              style={{
+                color: '#000',
+              }}
+            />
+          </Button>
+        </Left>
+        <Body>
+          <Title
+            style={{
+              color: '#000',
+            }}>
+            Your Body Pofile
+          </Title>
+        </Body>
+        <Right></Right>
+      </Header>
+
       <Content padder>
-        <H3
+        <ImageBackground
+          source={{uri: 'https://picsum.photos/id/1019/4312/2868'}}
+          style={[
+            {
+              marginHorizontal: -10,
+              marginTop: -10,
+              paddingHorizontal: 10,
+              paddingTop: 10,
+              paddingBottom: 10,
+            },
+            styles.image,
+          ]}>
+          <Row>
+            <Col size={4}>
+              <Text
+                note
+                style={{
+                  color: '#fff',
+                }}>
+                Please fill the below form and provide your height, weight,
+                gender, your front selfie photo and your side photo and submit
+                Edit Profile Your body Profile details will be used to create
+                your 3D Virtual Avatar to try garments in Aaiena's Virtual Trial
+                Room.
+              </Text>
+            </Col>
+            <Col
+              size={2}
+              style={{
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
+              <Image
+                source={{
+                  uri: 'https://picsum.photos/id/1013/4256/2832',
+                  width: 100,
+                  height: 120,
+                }}
+                style={{
+                  resizeMode: 'center',
+                }}
+              />
+            </Col>
+          </Row>
+        </ImageBackground>
+        <View
           style={{
-            textAlign: 'center',
-            color: PRIMARY,
-          }}>
-          CREATE BODY PROFILE
-        </H3>
-        <Text
-          note
-          style={{
-            textAlign: 'center',
-            marginTop: 10,
-          }}>
-          Please fill the below form and provide your height, weight, gender,
-          your front selfie photo and your side photo and submit Your body
-          profile details will be used to create your 3D Virtual Avatar to try
-          garments in Aaiena's Virtual Trial Room
-        </Text>
+            shadowColor: '#000',
+            shadowOffset: {
+              width: 0,
+              height: 1,
+            },
+            shadowOpacity: 0.2,
+            shadowRadius: 1.41,
 
-        <Image
-          source={require('../assests/profile.png')}
-          style={{
-            resizeMode: 'center',
-            height: 150,
-            width: '100%',
+            elevation: 2,
+
+            borderRadius: 15,
+            overflow: 'hidden',
+            padding: 10,
             marginTop: 20,
-            marginBottom: 10,
-          }}
-        />
-
-        <Form>
-          <Item
-            rounded
+          }}>
+          <Form
             style={{
-              marginBottom: 5,
+              borderWidth: 0,
             }}>
-            <Input placeholder="Enter Full Name" />
-          </Item>
-          <Item
-            rounded
-            style={{
-              marginBottom: 5,
-            }}>
-            <Picker
-              mode="dialog"
-              iosIcon={<Icon name="arrow-down" />}
-              style={{width: undefined}}
-              placeholderStyle={{color: '#bfc6ea'}}
-              selectedValue={2}
-              onValueChange={(value) => {
-                console.log({value});
-                if (value == 1) {
-                  setGender('male');
-                } else if (value == 2) {
-                  setGender('female');
-                }
-              }}
-              placeholderIconColor="#007aff">
-              <Picker.Item label="Select Gender" value="0" />
-              <Picker.Item label="Male" value="1" />
-              <Picker.Item label="Female" value="2" />
-            </Picker>
-          </Item>
-          {gender === 'male' && (
             <Item
               rounded
               style={{
-                marginBottom: 5,
+                marginVertical: 5,
+                paddingHorizontal: 10,
               }}>
-              <Picker
-                mode="dropdown"
-                iosIcon={<Icon name="arrow-down" />}
-                style={{width: undefined}}
-                placeholderStyle={{color: '#bfc6ea'}}
-                placeholderIconColor="#007aff">
-                <Picker.Item label="Select Body Size" value="key0" />
-                <Picker.Item label="Extra Small" value="key1" />
-                <Picker.Item label="Small" value="key2" />
-                <Picker.Item label="Medium" value="key3" />
-                <Picker.Item label="Large" value="key4" />
-                <Picker.Item label="Extra Large" value="key5" />
-              </Picker>
+              <Input placeholder="Enter Full Name" />
             </Item>
-          )}
-
-          {gender == 'female' && (
             <Item
               rounded
               style={{
-                marginBottom: 5,
+                marginVertical: 5,
+                paddingHorizontal: 10,
               }}>
-              <Picker
-                mode="dropdown"
-                iosIcon={<Icon name="arrow-down" />}
-                style={{width: undefined}}
-                placeholderStyle={{color: '#bfc6ea'}}
-                placeholderIconColor="#007aff">
-                <Picker.Item label="Select Body Size" value="key0" />
-                <Picker.Item label="Triangle" value="key1" />
-                <Picker.Item label="Diamond" value="key2" />
-                <Picker.Item label="Inverted" value="key3" />
-                <Picker.Item label="Rectangle" value="key4" />
-                <Picker.Item label="Hourglass" value="key5" />
-              </Picker>
+              <RNPickerSelect
+                onValueChange={(value) => console.log(value)}
+                placeholder={{label: 'Select Gender', value: 'someValue'}}
+                items={[
+                  {label: 'Football', value: 'football'},
+                  {label: 'Baseball', value: 'baseball'},
+                  {label: 'Hockey', value: 'hockey'},
+                ]}
+                style={{
+                  viewContainer: {
+                    width: '100%',
+                  },
+                }}
+              />
             </Item>
-          )}
+            <Item
+              rounded
+              style={{
+                marginVertical: 5,
+                paddingHorizontal: 10,
+              }}>
+              <RNPickerSelect
+                onValueChange={(value) => console.log(value)}
+                placeholder={{label: 'Select Body Size', value: 'someValue'}}
+                items={[
+                  {label: 'Football', value: 'football'},
+                  {label: 'Baseball', value: 'baseball'},
+                  {label: 'Hockey', value: 'hockey'},
+                ]}
+                style={{
+                  viewContainer: {
+                    width: '100%',
+                  },
+                }}
+              />
+            </Item>
 
-          <Item
-            rounded
-            style={{
-              marginBottom: 5,
-              paddingHorizontal: 5,
-            }}>
-            <Label
+            <View
               style={{
-                flex: 0.4,
+                marginVertical: 5,
+                paddingHorizontal: 10,
+                flexDirection: 'row',
+                marginTop: 20,
+                justifyContent: 'center',
+                alignItems: 'center',
               }}>
-              Select Height
-            </Label>
-            <Slider
-              style={{flex: 0.5, height: 40}}
-              minimumValue={0}
-              maximumValue={500}
-              minimumTrackTintColor={PRIMARY}
-              maximumTrackTintColor={PRIMARY}
-              value={hieght}
-              thumbTintColor={PRIMARY}
-              step={1}
-              onValueChange={(text) => {
-                console.log(text);
-                setHieght(text);
-              }}
-            />
-            <Text
-              style={{
-                flex: 0.2,
-              }}>
-              {hieght} cm
-            </Text>
-          </Item>
-          <Item
-            rounded
-            style={{
-              marginBottom: 5,
-              paddingHorizontal: 5,
-            }}>
-            <Label
-              style={{
-                flex: 0.4,
-              }}>
-              Select Weight
-            </Label>
-            <Slider
-              style={{flex: 0.5, height: 40}}
-              minimumValue={0}
-              maximumValue={500}
-              minimumTrackTintColor={PRIMARY}
-              maximumTrackTintColor={PRIMARY}
-              value={weight}
-              thumbTintColor={PRIMARY}
-              step={1}
-              onValueChange={(text) => {
-                console.log(text);
-                setWeight(text);
-              }}
-            />
-            <Text
-              style={{
-                flex: 0.2,
-              }}>
-              {weight} kg
-            </Text>
-          </Item>
+              <View
+                style={{
+                  flex: 5,
+                }}>
+                <Text note>Select Height</Text>
+                <Slider
+                  style={{width: '100%', height: 40}}
+                  minimumValue={0}
+                  maximumValue={300}
+                  minimumTrackTintColor={PRIMARY}
+                  maximumTrackTintColor={PRIMARY}
+                  value={hieght}
+                  thumbTintColor={PRIMARY}
+                  step={1}
+                  onValueChange={(text) => {
+                    console.log(text);
+                    setHieght(text);
+                  }}
+                />
+                <Text
+                  style={{
+                    fontSize: 15,
+                  }}>
+                  Height: cm / 5ft 11 in
+                </Text>
+              </View>
+              <View
+                style={{
+                  flex: 1.5,
+                }}>
+                <Item regular>
+                  <Input placeholder="5ft" />
+                </Item>
+              </View>
+            </View>
 
-          <Button
-            block
-            rounded
-            style={{
-              marginBottom: 5,
-            }}
-            onPress={uploadFrontPhoto}>
-            <Text>Upload Front Body Photo</Text>
-          </Button>
-          <Button
-            block
-            rounded
-            style={{
-              marginBottom: 5,
-            }}
-            onPress={uploadSelfie}>
-            <Text>Upload Side Body Photo</Text>
-          </Button>
-          <Button
-            block
-            success
-            style={{
-              marginBottom: 5,
-              marginTop: 10,
-            }}>
-            <Text>Create Profile</Text>
-          </Button>
-        </Form>
+            <View
+              style={{
+                marginVertical: 5,
+                paddingHorizontal: 10,
+                flexDirection: 'row',
+                marginTop: 20,
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
+              <View
+                style={{
+                  flex: 5,
+                }}>
+                <Text note>Select Weight</Text>
+                <Slider
+                  style={{width: '100%', height: 40}}
+                  minimumValue={0}
+                  maximumValue={100}
+                  minimumTrackTintColor={PRIMARY}
+                  maximumTrackTintColor={PRIMARY}
+                  value={weight}
+                  thumbTintColor={PRIMARY}
+                  step={1}
+                  onValueChange={(text) => {
+                    console.log(text);
+                    setWeight(text);
+                  }}
+                />
+                <Text
+                  style={{
+                    fontSize: 15,
+                  }}>
+                  Weight : {weight} kg
+                </Text>
+              </View>
+              <View
+                style={{
+                  flex: 1.5,
+                }}>
+                <Item regular>
+                  <Input placeholder="50 kg" />
+                </Item>
+              </View>
+            </View>
+            <View
+              style={{
+                marginVertical: 10,
+                paddingHorizontal: 10,
+              }}>
+              <H3
+                style={{
+                  color: PRIMARY,
+                }}>
+                Front Body Photo
+              </H3>
+
+              <View
+                style={{
+                  marginVertical: 5,
+                  flexDirection: 'row',
+                  width: '100%',
+                  alignItems: 'center',
+                  alignSelf: 'center',
+                  justifyContent: 'space-between',
+                }}>
+                <Image
+                  source={{
+                    uri: 'https://picsum.photos/id/1005/100/100',
+                    width: 50,
+                    height: 80,
+                  }}
+                  style={{
+                    resizeMode: 'cover',
+                  }}
+                />
+
+                <View>
+                  <Button
+                    bordered
+                    info
+                    onPress={uploadSelfie}
+                    style={{
+                      borderRadius: 15,
+                    }}>
+                    <Text>Upload Photo</Text>
+                  </Button>
+                </View>
+                <View>
+                  <Button
+                    danger
+                    bordered
+                    style={{
+                      borderRadius: 15,
+                    }}>
+                    <Text>Remove</Text>
+                  </Button>
+                </View>
+              </View>
+            </View>
+
+            <View
+              style={{
+                marginVertical: 10,
+                paddingHorizontal: 10,
+              }}>
+              <H3
+                style={{
+                  color: PRIMARY,
+                }}>
+                Side Body Photo
+              </H3>
+
+              <View
+                style={{
+                  marginVertical: 5,
+                  flexDirection: 'row',
+                  width: '100%',
+                  alignItems: 'center',
+                  alignSelf: 'center',
+                  justifyContent: 'space-between',
+                }}>
+                <Image
+                  source={{
+                    uri: 'https://picsum.photos/id/1005/100/100',
+                    width: 50,
+                    height: 80,
+                  }}
+                  style={{
+                    resizeMode: 'cover',
+                  }}
+                />
+
+                <View>
+                  <Button
+                    bordered
+                    onPress={uploadFrontPhoto}
+                    info
+                    style={{
+                      borderRadius: 15,
+                    }}>
+                    <Text>Upload Photo</Text>
+                  </Button>
+                </View>
+                <View>
+                  <Button
+                    danger
+                    bordered
+                    style={{
+                      borderRadius: 15,
+                    }}>
+                    <Text>Remove</Text>
+                  </Button>
+                </View>
+              </View>
+            </View>
+            <View
+              style={{
+                alignSelf: 'center',
+                marginVertical: 20,
+              }}>
+              <Button
+                style={{
+                  borderRadius: 15,
+                }}>
+                <Text>Submit Body Profile</Text>
+              </Button>
+            </View>
+          </Form>
+        </View>
       </Content>
     </Container>
   );
@@ -302,4 +469,10 @@ const CreateProfile = () => {
 
 export default CreateProfile;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  image: {
+    flex: 1,
+    resizeMode: 'cover',
+    justifyContent: 'center',
+  },
+});
