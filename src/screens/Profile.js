@@ -171,7 +171,7 @@ const Profile = () => {
               <Col size={1}>
                 <Text
                   style={{
-                    fontSize: 18,
+                    fontSize: 14,
                   }}>
                   {singleData.no}
                 </Text>
@@ -183,7 +183,7 @@ const Profile = () => {
                 }}>
                 <Text
                   style={{
-                    fontSize: 18,
+                    fontSize: 14,
                   }}>
                   {singleData.parameter}
                 </Text>
@@ -195,7 +195,7 @@ const Profile = () => {
                 }}>
                 <Text
                   style={{
-                    fontSize: 18,
+                    fontSize: 14,
                   }}>
                   {singleData.value}
                 </Text>
