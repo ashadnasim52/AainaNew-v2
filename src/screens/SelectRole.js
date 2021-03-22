@@ -91,7 +91,7 @@ const SelectRole = () => {
               <View
                 style={[
                   {
-                    backgroundColor: 'green',
+                    backgroundColor: '#14466b',
                   },
                   styles.card,
                 ]}>
@@ -120,6 +120,7 @@ const SelectRole = () => {
                   }}
                   style={{
                     borderRadius: 25,
+                    backgroundColor:"white"
                   }}
                   appearance="outline">
                   Next

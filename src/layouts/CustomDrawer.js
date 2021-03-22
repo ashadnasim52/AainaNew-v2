@@ -13,7 +13,8 @@ import {useNavigation} from '@react-navigation/native';
 const CustomDrawer = (props) => {
   const nav = useNavigation();
   return (
-  
+    <>
+    
     <DrawerContentScrollView
       {...props}
       contentContainerStyle={{
@@ -25,6 +26,7 @@ const CustomDrawer = (props) => {
       
      
       }}>
+      
       <Layout
         style={{
           flexDirection: 'row',
@@ -170,7 +172,10 @@ const CustomDrawer = (props) => {
          Log Out
        </Text>
       </Layout>
+
     </DrawerContentScrollView>
+    
+    </>
   );
 };
 

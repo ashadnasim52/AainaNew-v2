@@ -21,7 +21,7 @@ const Inapp = () => {
           />
           <View
             style={{
-              backgroundColor: '#b0e0e6',
+              backgroundColor: 'white',
               margin: 25,
               borderRadius: 25,
               height: 120,

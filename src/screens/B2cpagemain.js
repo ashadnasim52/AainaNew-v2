@@ -55,6 +55,7 @@ const B2cpagemain = ({ navigation }) => {
                         height: 100,
                         justifyContent: 'center',
                         paddingHorizontal: 20,
+                        marginTop:40
                     }}>
                     <View
                         style={{

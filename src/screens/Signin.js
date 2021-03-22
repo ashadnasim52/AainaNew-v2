@@ -1,21 +1,27 @@
-import React, {useState, useContext, useRef} from 'react';
+import React, { useState, useContext, useRef } from 'react';
 import {
   Image,
   StatusBar,
   StyleSheet,
   TouchableWithoutFeedback,
   View,
+  Text,
+  Input,
+  TextInput,
+  Button
 } from 'react-native';
-import {Button, Icon, Input, Layout, Text} from '@ui-kitten/components';
+import {  Layout,} from '@ui-kitten/components';
 import RBSheet from 'react-native-raw-bottom-sheet';
 import Logo from '../assests/image1.png';
-import {ACCENT, PRIMARY} from '../theme/colors';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import {useNavigation} from '@react-navigation/native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
-import {AuthContext} from '../context/context';
+import { ACCENT, PRIMARY } from '../theme/colors';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { useNavigation } from '@react-navigation/native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { AuthContext } from '../context/context';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import { color } from 'react-native-reanimated';
 
-const Signin = () => {
+const Signin = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [secureTextEntry, setSecureTextEntry] = useState(true);
@@ -34,206 +40,137 @@ const Signin = () => {
   const nav = useNavigation();
   const refRBSheet = useRef();
 
+
   return (
     <>
-      <StatusBar backgroundColor={ACCENT} />
-      <KeyboardAwareScrollView
-        resetScrollToCoords={{x: 0, y: 0}}
-        contentContainerStyle={{
-          flexGrow: 1,
-        }}>
-        <Layout style={styles.container}>
-          <Layout style={styles.topContainer}>
-            <Text style={styles.text} category="h3">
-              Welcome to Aaina
-            </Text>
-          </Layout>
-          <Layout style={styles.imageContainer}>
-            <Image source={Logo} style={styles.image} />
-          </Layout>
-          <Layout style={styles.mainContainer}>
-            <Input
-              placeholder="Place your Text"
-              value={email}
-              style={styles.input}
-              accessoryLeft={(props) => (
-                <Icon name="email-outline" {...props} />
-              )}
-              onChangeText={(nextValue) => setEmail(nextValue)}
-            />
-            <Input
-              value={password}
-              placeholder="Place your Text"
-              style={styles.input}
-              caption="Should contain at least 8 symbols"
-              accessoryLeft={(props) => <Icon name="lock-outline" {...props} />}
-              accessoryRight={renderIcon}
-              secureTextEntry={secureTextEntry}
-              onChangeText={(nextValue) => setPassword(nextValue)}
-            />
-            <View
-              style={{
-                alignItems: 'flex-end',
-                width: '100%',
-                marginVertical: 10,
-              }}>
-              <TouchableOpacity onPress={() => refRBSheet.current.open()}>
-                <Text appearance="hint" status="primary">
-                  Foget Password?
-                </Text>
-              </TouchableOpacity>
-            </View>
-            <Button style={styles.button} onPress={() => nav.navigate('Main')}>
-              Login
-            </Button>
-            {!state.isB2B && (
-              <>
-                <Text appearance="hint" status="primary">
-                  OR
-                </Text>
-                <Layout
-                  style={{
-                    flexDirection: 'row',
-                  }}>
-                  <Button
-                    style={{
-                      marginRight: 15,
-                      borderRadius: 25,
-                    }}
-                    status="danger"
-                    accessoryLeft={(props) => <Icon {...props} name="google" />}
-                  />
-                  <Button
-                    style={{
-                      marginLeft: 15,
-                      borderRadius: 25,
-                    }}
-                    status="primary"
-                    accessoryLeft={(props) => (
-                      <Icon {...props} name="facebook" />
-                    )}
-                  />
-                </Layout>
-              </>
-            )}
-            <TouchableOpacity
-              onPress={() => {
-                nav.navigate('SignUp');
-              }}>
-              <Text
-                style={{
-                  marginVertical: 25,
-                }}
-                appearance="hint">
-                Do not have an account? SignUp here
-              </Text>
-            </TouchableOpacity>
-          </Layout>
-        </Layout>
-      </KeyboardAwareScrollView>
-
-      <RBSheet
-        ref={refRBSheet}
-        closeOnDragDown={true}
-        closeOnPressMask={false}
-        customStyles={{
-          wrapper: {
-            backgroundColor: 'transparent',
-          },
-          draggableIcon: {
-            backgroundColor: PRIMARY,
-          },
-          container: {
-            backgroundColor: '#CAD5E2',
-            borderTopLeftRadius: 25,
-            borderTopRightRadius: 25,
-          },
-        }}>
-        <Layout
-          style={{
-            paddingHorizontal: 30,
-
-            flex: 1,
-            justifyContent: 'center',
-          }}>
-          <Text
+      <View>
+        <View style={{ marginTop: 10 }}>
+          <Image
+            source={require('../assests/img/logo1.png')}
             style={{
-              textAlign: 'left',
-              fontWeight: 'bold',
-              fontSize: 20,
-              color: PRIMARY,
+              width: 140,
+              height: 60,
+              alignSelf: "center"
             }}
-            category="h6">
-            Enter Email
-          </Text>
-          <Text category="p1">
-            An email with the password reset link will sent to your registered
-            email address
-          </Text>
-          <Input
-            placeholder="Email"
-            value={email}
-            style={[
-              {
-                marginVertical: 20,
-              },
-            ]}
-            accessoryLeft={(props) => <Icon name="email-outline" {...props} />}
-            onChangeText={(nextValue) => setEmail(nextValue)}
           />
-          <Button
-            style={{}}
-            onPress={() => {
-              nav.navigate('Main');
-            }}>
-            Login
-          </Button>
-        </Layout>
-      </RBSheet>
-    </>
-  );
-};
+        </View>
+        <View style={{ marginTop: 20 }}>
+          <Text style={{ fontSize: 25, marginLeft: 20 }}>Welcome,</Text>
+          <Text style={{ fontSize: 20, marginLeft: 20, color: "grey" }}>Sign in to continue!</Text>
+        </View>
+       <View style={{marginTop:20}}>
+       <Text style={{marginLeft:20,color:"grey"}}>Email</Text>
+       <TextInput 
+       placeholder="Enter your email id"  
+       value={email} 
+       onChangeText={(nextValue) => setEmail(nextValue)}
+         style={{marginHorizontal:20,borderWidth:1,borderRadius:10,borderColor:"darkgrey",paddingLeft:20}}
+       />
+        <Text style={{marginLeft:20,marginTop:20,color:"grey"}}>Password</Text>
+       <TextInput 
+       placeholder="Enter password" 
+       secureTextEntry={secureTextEntry} 
+       value={password}
+       caption="Should contain at least 8 symbols"
+       onChangeText={(nextValue) => setPassword(nextValue)}
+         style={{marginHorizontal:20,borderWidth:1,borderRadius:10,borderColor:"darkgrey",paddingLeft:20}}
+       />
+       </View>
+       <View style={{alignItems:"flex-end",marginVertical:10,marginEnd:20}}>
+       <TouchableOpacity onPress={() => refRBSheet.current.open()}>
+         <Text style={{color:"#24466b"}} >Forget Password ?</Text>
+         </TouchableOpacity>
+       </View>
 
-export default Signin;
+       <View style={{marginTop:30}}>
+       <TouchableOpacity onPress={() => navigation.navigate('Main')}>
+         <Text style={{backgroundColor:"#14466b",color:"white",textAlign:"center",padding:15,marginHorizontal:20,borderRadius:10,fontSize:16}}>LOGIN</Text>
+         </TouchableOpacity>
+       </View>
+       {!state.isB2B && (
+         <>
+       <Text style={{alignSelf:"center",marginTop:10,color:"grey"}}>Or</Text>
 
-const styles = StyleSheet.create({
+       <View style={{alignSelf:"center",marginTop:20}}>
+       <Text style={{backgroundColor:"#ebeef4",padding:13,borderRadius:10,width:320,textAlign:"center",color:"#14466b",borderWidth:1,borderColor:"white"}}> <AntDesign name="facebook-square" style={{fontSize:20,}} /> Continue with facebook</Text>
+       <Text style={{marginTop:20,backgroundColor:"#ebeef4",padding:13,borderRadius:10,width:320,textAlign:"center",color:"#ea4335",borderWidth:1,borderColor:"white"}}><AntDesign name="google" style={{fontSize:20,color:"green"}}  /> Continue with Google</Text>
+       </View>
+       </>
+       )}
+
+<View style={{marginTop:30,flexDirection:"row",alignSelf:"center"}}>
+  <Text style={{}}>Don't have Account ? </Text>
+  <TouchableOpacity onPress={() => {
+                navigation.navigate('SignUp');
+              }}>
+  <Text style={{color:'#14466b',fontWeight:"bold"}}>SignUp</Text>
+  </TouchableOpacity>
+</View>
+      </View>
+
+
+<RBSheet
+ref={refRBSheet}
+closeOnDragDown={true}
+closeOnPressMask={false}
+customStyles={{
+  wrapper: {
+    backgroundColor: 'transparent',
+  },
+  draggableIcon: {
+    backgroundColor: PRIMARY,
+  },
   container: {
-    flexGrow: 1,
+    backgroundColor: '#CAD5E2',
+    borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
   },
-  topContainer: {
+}}>
+<Layout
+  style={{
+    paddingHorizontal: 30,
+
+    flex: 1,
     justifyContent: 'center',
-    marginTop: 30,
-  },
-  imageContainer: {
-    flex: 0.4,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  mainContainer: {
-    flex: 0.6,
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    paddingHorizontal: 20,
-  },
-  text: {
-    textAlign: 'center',
-    fontWeight: 'bold',
-  },
-  image: {
-    width: '100%',
-    height: 180,
-    resizeMode: 'contain',
-  },
-  button: {
-    width: '100%',
-    borderRadius: 25,
-    marginVertical: 10,
-  },
-  icon: {
-    width: 32,
-    height: 32,
-  },
-  input: {
-    marginTop: 8,
-  },
-});
+  }}>
+  <Text
+    style={{
+      textAlign: 'left',
+      fontWeight: 'bold',
+      fontSize: 20,
+      color:"green",
+    }}
+    >
+    Enter Email
+  </Text>
+  <Text category="p1">
+    An email with the password reset link will sent to your registered
+    email address
+  </Text>
+  <TextInput
+    placeholder=" Enter your Registered Email"
+    value={email}
+    style={[
+      {
+        marginVertical: 20,
+        borderWidth:1,
+        borderColor:"grey",
+        borderRadius:5
+      },
+    ]}
+    accessoryLeft={(props) => <Icon name="email-outline" {...props} />}
+    onChangeText={(nextValue) => setEmail(nextValue)}
+  />
+  <Button
+    style={{}}
+    onPress={() => {
+      nav.navigate('Main');
+    }}
+   title="Login" />
+  
+</Layout>
+</RBSheet>
+    </>
+  )
+}
+export default Signin;

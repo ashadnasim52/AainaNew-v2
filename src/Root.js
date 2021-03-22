@@ -147,7 +147,7 @@ const Root = () => {
               component={Main}
               options={
                 {
-                  headerShown:false ,
+                  headerShown:true,
                 }
               }
             />
@@ -217,7 +217,7 @@ const Root = () => {
               name="B2cpagemain"
               component={B2cpagemain}
               options={{
-                headerShown: false,
+                headerShown:false,
               }}
             />
           
