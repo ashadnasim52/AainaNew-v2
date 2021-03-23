@@ -6,11 +6,10 @@ import {
   DrawerItemList,
 } from '@react-navigation/drawer';
 import {Avatar, Button, Icon, Layout, Text} from '@ui-kitten/components';
-import {useNavigation} from '@react-navigation/native';
 import {PRIMARY} from '../theme/colors';
+import * as RootNavigation from '../RootNavigation';
 
 const CustomDrawer = (props) => {
-  const nav = useNavigation();
   return (
     <DrawerContentScrollView
       {...props}
@@ -64,21 +63,21 @@ const CustomDrawer = (props) => {
         }}>
         <DrawerItem
           label="Home"
-          onPress={() => nav.navigate('Home')}
+          onPress={() => RootNavigation.navigate('Home')}
           icon={({focused, color, size}) => (
             <Icon style={styles.icon} fill="#8F9BB3" name="home-outline" />
           )}
         />
         <DrawerItem
           label="Demo"
-          onPress={() => nav.navigate('Demo')}
+          onPress={() => RootNavigation.navigate('Demo')}
           icon={({focused, color, size}) => (
             <Icon style={styles.icon} fill="#8F9BB3" name="monitor-outline" />
           )}
         />
         <DrawerItem
           label="Buy plan"
-          onPress={() => nav.navigate('BuyPlans')}
+          onPress={() => RootNavigation.navigate('BuyPlans')}
           icon={({focused, color, size}) => (
             <Icon
               style={styles.icon}
@@ -89,14 +88,14 @@ const CustomDrawer = (props) => {
         />
         <DrawerItem
           label="My plans"
-          onPress={() => nav.navigate('MyPlans')}
+          onPress={() => RootNavigation.navigate('MyPlans')}
           icon={({focused, color, size}) => (
             <Icon style={styles.icon} fill="#8F9BB3" name="award-outline" />
           )}
         />
         <DrawerItem
           label="About Aaiena"
-          onPress={() => nav.navigate('About')}
+          onPress={() => RootNavigation.navigate('About')}
           icon={({focused, color, size}) => (
             <Icon
               style={styles.icon}
@@ -107,21 +106,21 @@ const CustomDrawer = (props) => {
         />
         <DrawerItem
           label="Profile"
-          onPress={() => nav.navigate('Profile')}
+          onPress={() => RootNavigation.navigate('Profile')}
           icon={({focused, color, size}) => (
             <Icon style={styles.icon} fill="#8F9BB3" name="person-outline" />
           )}
         />
-            <DrawerItem
+        <DrawerItem
           label="B2Cmain"
-          onPress={() => nav.navigate('B2Cmain')}
+          onPress={() => RootNavigation.navigate('B2Cmain')}
           icon={({focused, color, size}) => (
             <Icon style={styles.icon} fill="#8F9BB3" name="person-outline" />
           )}
         />
         <DrawerItem
           label="Setting"
-          onPress={() => nav.navigate('Setting')}
+          onPress={() => RootNavigation.navigate('Setting')}
           icon={({focused, color, size}) => (
             <Icon
               style={styles.icon}
@@ -134,7 +133,7 @@ const CustomDrawer = (props) => {
       <Layout>
         <Button
           style={{}}
-          onPress={() => nav.replace('SignIn')}
+          onPress={() => RootNavigation.replace('SignIn')}
           appearance="ghost"
           status="danger">
           Log Out

@@ -1,7 +1,11 @@
 import * as React from 'react';
-import {Button, Settings, View} from 'react-native';
+import {StatusBar, Settings, View} from 'react-native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+
+import {AuthContext} from './context/context';
+import authInitialState from './state/authState';
+import authReducer from './reducer/authReducer';
 import Home from './screens/Home';
 import Notification from './screens/Notification';
 import CustomDrawer from './layouts/CustomDrawer';
@@ -23,36 +27,50 @@ import Inweb from './screens/Inweb';
 import BcPage from './screens/BcPage';
 import B2cpagemain from './screens/B2cpagemain';
 import Chaudhary_Garments from './screens/Chaudhary_Garments';
-
-
+import Root from './Root';
+import axios from 'axios';
+import {API} from './utils/Base';
+import {NavigationContainer} from '@react-navigation/native';
+import {navigationRef} from './RootNavigation';
 const Drawer = createDrawerNavigator();
 
 export default function Main() {
+  const [authState, dispatchAuth] = React.useReducer(
+    authReducer,
+    authInitialState,
+  );
+
+  const {
+    isAuthenticated,
+    authChecking,
+    skipAuth,
+    user,
+    profile,
+    role,
+  } = authState;
+
+  React.useEffect(() => {
+    axios.defaults.baseURL = API;
+  }, []);
   return (
-    <Drawer.Navigator
-      initialRouteName="About"
-      // drawerType="slide"
-      drawerStyle={
-        {
-          // backgroundColor: PRIMARY,
-          // width: '100%',
-        }
-      }
-      statusBarAnimation="fade"
-      hideStatusBar={true}
-      drawerContent={(props) => <CustomDrawer {...props} />}>
-      <Drawer.Screen name="Home" component={Home} />
-      <Drawer.Screen name="Notifications" component={Notification} />
-      <Drawer.Screen name="Demo" component={Demo} />
-      <Drawer.Screen name="BuyPlans" component={BuyPlans} />
-      <Drawer.Screen name="MyPlans" component={MyPlans} />
-      <Drawer.Screen name="Profile" component={Profile} />
-      <Drawer.Screen name="Setting" component={Setting} />
-      <Drawer.Screen name="About" component={About} />
-      
-   
-  
-     
-    </Drawer.Navigator>
+    <>
+      <StatusBar barStyle="light-content" backgroundColor={PRIMARY} />
+      <AuthContext.Provider value={{state: authState, dispatch: dispatchAuth}}>
+        <NavigationContainer ref={navigationRef}>
+          <Drawer.Navigator
+            initialRouteName="Root"
+            // drawerType="slide"
+            drawerStyle={
+              {
+                // backgroundColor: PRIMARY,
+                // width: '100%',
+              }
+            }
+            drawerContent={(props) => <CustomDrawer {...props} />}>
+            <Drawer.Screen name="Root" component={Root} />
+          </Drawer.Navigator>
+        </NavigationContainer>
+      </AuthContext.Provider>
+    </>
   );
 }

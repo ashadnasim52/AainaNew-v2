@@ -26,6 +26,7 @@ import {default as theme} from './src/theme/custom-theme.json'; // <-- Import ap
 import Root from './src/Root';
 import {ACCENT, PRIMARY} from './src/theme/colors';
 import {ThemeContext} from './src/context/themeContext';
+import Main from './src/Main';
 
 /**
  * Use any valid `name` property from eva icons (e.g `github`, or `heart-outline`)
@@ -48,7 +49,7 @@ export default () => {
       <IconRegistry icons={EvaIconsPack} />
       <ThemeContext.Provider value={{themeee, toggleTheme}}>
         <ApplicationProvider {...eva} theme={{...eva[themeee], ...theme}}>
-          <Root />
+          <Main />
         </ApplicationProvider>
       </ThemeContext.Provider>
     </>

@@ -70,7 +70,7 @@ const Onboarding = () => {
 
   return (
     <>
-      <StatusBar hidden />
+      {/* <StatusBar hidden /> */}
       <Layout style={styles.container}>
         {/* <Button transparent light>
                 <Text>Skip</Text>
