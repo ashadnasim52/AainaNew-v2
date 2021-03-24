@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, View, Text, ScrollView, Button, TextInput } from 'react-native';
+import { Image, View, Text, ScrollView, Button, TextInput, SafeAreaView } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -11,6 +11,7 @@ const BcPage = () => {
 
   return (
     <>
+    <SafeAreaView>
     <View style={{backgroundColor:"#2B547E",height:90}}>
     <View
           style={{
@@ -304,6 +305,7 @@ const BcPage = () => {
 
 
       </ScrollView>
+      </SafeAreaView>
     </>
   );
 };
