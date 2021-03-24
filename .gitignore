@@ -1,3 +1,4 @@
+
 # OSX
 #
 .DS_Store
@@ -61,3 +62,7 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
+
+
+
+src/utils/Base.js

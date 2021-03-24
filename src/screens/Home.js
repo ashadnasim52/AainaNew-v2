@@ -1,8 +1,9 @@
 import {Divider, Layout} from '@ui-kitten/components';
 import React, {useContext} from 'react';
-import {StyleSheet, Text, View, FlatList} from 'react-native';
+import {StyleSheet, Text, View, FlatList,TextInput,Image, ScrollView} from 'react-native';
 import CustomCards from '../components/CustomCards';
 import {AuthContext} from '../context/context';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import ClientHome from './client/Home';
 import CompanyHome from './company/Home';
@@ -27,14 +28,273 @@ const Home = () => {
   // }
 
   return (
+    <>
+    
+
+    <ScrollView >
+    <View style={{height:110,}}>
+    <View
+          style={{
+            height: 50,
+            backgroundColor: '#fff',
+            flexDirection: 'row',
+            padding: 5,
+            alignItems: 'center',
+            borderRadius: 10,
+            marginTop: 80,
+            marginHorizontal:20
+          }}>
+          <Icon
+            name="search"
+            style={{ paddingRight: 10, paddingLeft: 8, fontSize: 17 }}
+          />
+          <TextInput placeholder="Search Any Products...." />
+        </View>
+       </View>
+    <ScrollView horizontal={true} showsVerticalScrollIndicator={false}>
+<View style={{height:120,marginTop:40,}}>
+  <View style={{flexDirection:"row",justifyContent:"space-around",marginTop:20}}>
+  
+  <View style={{marginLeft:10}}>
+      <View>
+           <Image
+                source={require('../assests/temp.jpeg')}
+                style={{
+                  width: 70,
+                  height:70,
+                  borderRadius:10,  
+                }}
+              />
+              </View>
+              <View>
+              <Text style={{marginLeft:10,marginTop:5,color:"#3d3d3d"}}>Hello</Text>
+              </View>
+              </View>
+
+              <View style={{marginLeft:20}}>
+      <View>
+           <Image
+                source={require('../assests/temp.jpeg')}
+                style={{
+                  width: 70,
+                  height:70,
+                  borderRadius:10,  
+                }}
+              />
+              </View>
+              <View>
+              <Text style={{marginLeft:10,marginTop:5,color:"#3d3d3d"}}>Hello</Text>
+              </View>
+              </View>
+
+              <View style={{marginLeft:20}}>
+      <View>
+           <Image
+                source={require('../assests/temp.jpeg')}
+                style={{
+                  width: 70,
+                  height:70,
+                  borderRadius:10,  
+                }}
+              />
+              </View>
+              <View>
+              <Text style={{marginLeft:10,marginTop:5,color:"#3d3d3d"}}>Hello</Text>
+              </View>
+              </View>
+
+              <View style={{marginLeft:20}}>
+      <View>
+           <Image
+                source={require('../assests/temp.jpeg')}
+                style={{
+                  width: 70,
+                  height:70,
+                  borderRadius:10,  
+                }}
+              />
+              </View>
+              <View>
+              <Text style={{marginLeft:10,marginTop:5,color:"#3d3d3d"}}>Hello</Text>
+              </View>
+              </View>
+
+              <View style={{marginLeft:20}}>
+      <View>
+           <Image
+                source={require('../assests/temp.jpeg')}
+                style={{
+                  width: 70,
+                  height:70,
+                  borderRadius:10,  
+                }}
+              />
+              </View>
+              <View>
+              <Text style={{marginLeft:10,marginTop:5,color:"#3d3d3d"}}>Hello</Text>
+              </View>
+              </View>
+
+              <View style={{marginLeft:20}}>
+      <View>
+           <Image
+                source={require('../assests/temp.jpeg')}
+                style={{
+                  width: 70,
+                  height:70,
+                  borderRadius:10,  
+                }}
+              />
+              </View>
+              <View>
+              <Text style={{marginLeft:10,marginTop:5,color:"#3d3d3d"}}>Hello</Text>
+              </View>
+              </View>
+
+              <View style={{marginLeft:20}}>
+      <View>
+           <Image
+                source={require('../assests/temp.jpeg')}
+                style={{
+                  width: 70,
+                  height:70,
+                  borderRadius:10,  
+                }}
+              />
+              </View>
+              <View>
+              <Text style={{marginLeft:10,marginTop:5,color:"#3d3d3d"}}>Hello</Text>
+              </View>
+              </View>
+
+              <View style={{marginLeft:20}}>
+      <View>
+           <Image
+                source={require('../assests/temp.jpeg')}
+                style={{
+                  width: 70,
+                  height:70,
+                  borderRadius:10,  
+                }}
+              />
+              </View>
+              <View>
+              <Text style={{marginLeft:10,marginTop:5,color:"#3d3d3d"}}>Hello</Text>
+              </View>
+              </View>
+
+              <View style={{marginLeft:20}}>
+      <View>
+           <Image
+                source={require('../assests/temp.jpeg')}
+                style={{
+                  width: 70,
+                  height:70,
+                  borderRadius:10,  
+                }}
+              />
+              </View>
+              <View>
+              <Text style={{marginLeft:10,marginTop:5,color:"#3d3d3d"}}>Hello</Text>
+              </View>
+              </View>
+
+              <View style={{marginLeft:20}}>
+      <View>
+           <Image
+                source={require('../assests/temp.jpeg')}
+                style={{
+                  width: 70,
+                  height:70,
+                  borderRadius:10,  
+                }}
+              />
+              </View>
+              <View>
+              <Text style={{marginLeft:10,marginTop:5,color:"#3d3d3d"}}>Hello</Text>
+              </View>
+              </View>
+
+              <View style={{marginLeft:20}}>
+      <View>
+           <Image
+                source={require('../assests/temp.jpeg')}
+                style={{
+                  width: 70,
+                  height:70,
+                  borderRadius:10,  
+                }}
+              />
+              </View>
+              <View>
+              <Text style={{marginLeft:10,marginTop:5,color:"#3d3d3d"}}>Hello</Text>
+              </View>
+              </View>
+
+              <View style={{marginLeft:20}}>
+      <View>
+           <Image
+                source={require('../assests/temp.jpeg')}
+                style={{
+                  width: 70,
+                  height:70,
+                  borderRadius:10,  
+                }}
+              />
+              </View>
+              <View>
+              <Text style={{marginLeft:10,marginTop:5,color:"#3d3d3d"}}>Hello</Text>
+              </View>
+              </View>
+
+              <View style={{marginLeft:20}}>
+      <View>
+           <Image
+                source={require('../assests/temp.jpeg')}
+                style={{
+                  width: 70,
+                  height:70,
+                  borderRadius:10,  
+                }}
+              />
+              </View>
+              <View>
+              <Text style={{marginLeft:10,marginTop:5,color:"#3d3d3d"}}>Hello</Text>
+              </View>
+              </View>
+
+              <View style={{marginLeft:20}}>
+      <View>
+           <Image
+                source={require('../assests/temp.jpeg')}
+                style={{
+                  width: 70,
+                  height:70,
+                  borderRadius:10,  
+                }}
+              />
+              </View>
+              <View>
+              <Text style={{marginLeft:10,marginTop:5,color:"#3d3d3d"}}>Hello</Text>
+              </View>
+              </View>
+              
+              
+            
+           
+  </View>
+</View>
+</ScrollView>
+  
     <Layout
       style={{
         flex: 1,
+        
       }}>
       <Layout
         style={{borderTopRightRadius: 15, borderTopLeftRadius: 15}}
         level="2">
-        <FlatList
+        <FlatList style={{backgroundColor:"#f6f6f6"}}
           // ItemSeparatorComponent={({highlighted}) => <Divider />}
           contentContainerStyle={
             {
@@ -50,6 +310,8 @@ const Home = () => {
         />
       </Layout>
     </Layout>
+    </ScrollView> 
+    </>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
+import {Image, StyleSheet, TouchableOpacity, View,TextInput} from 'react-native';
 import {Card, Icon, Text} from '@ui-kitten/components';
 import {PRIMARY} from '../theme/colors';
 import {useNavigation} from '@react-navigation/native';
@@ -7,7 +7,9 @@ import {useNavigation} from '@react-navigation/native';
 const CustomCards = () => {
   const nav = useNavigation();
   return (
-    <TouchableOpacity onPress={() => nav.navigate('DetailScreen')}>
+    <>
+    <TouchableOpacity  onPress={() => nav.navigate('DetailScreen')}>
+   
       <View style={styles.cards}>
         <View style={styles.cardRight}>
           <Image
@@ -27,15 +29,17 @@ const CustomCards = () => {
               <Text
                 category="h6"
                 style={{
-                  color: PRIMARY,
-                  fontFamily: 'Merriweather-Bold',
+                  color:"#3d3d3d",
+                  fontWeight:"bold",
+                  fontFamily: 'roboto-Bold',
                 }}>
                 Plane Name
               </Text>
               <Text
                 category="label"
                 style={{
-                  fontFamily: 'Merriweather-Light',
+                  fontFamily: 'roboto-Light',
+                  color:"#a9a9a9"
                 }}>
                 Duration 5 days
               </Text>
@@ -57,7 +61,7 @@ const CustomCards = () => {
               appearance="hint"
               category="label"
               style={{
-                fontFamily: 'Merriweather-Light',
+                fontFamily: 'roboto-Regular',
               }}>
               No of trials left:- 5
             </Text>
@@ -65,6 +69,7 @@ const CustomCards = () => {
         </View>
       </View>
     </TouchableOpacity>
+    </>
   );
 };
 
@@ -72,12 +77,12 @@ export default CustomCards;
 
 const styles = StyleSheet.create({
   cards: {
-    marginTop: 7,
+    marginTop: 20,
     marginBottom: 7,
     marginHorizontal: 10,
     display: 'flex',
     flexDirection: 'row',
-    // backgroundColor: 'red',
+     backgroundColor: '#f6f6f6',
   },
   image: {
     height: 150,

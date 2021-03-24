@@ -68,7 +68,7 @@ const CustomHeader = ({navigation}) => {
   const nav = useNavigation();
   return (
     <View style={{backgroundColor: '#fff', height: 60}}>
-      <View style={{backgroundColor: '#fff', height: 100, borderRadius: 30}}>
+      <View style={{backgroundColor: '#fff', height: 100, borderRadius: 20}}>
         <TouchableOpacity
           onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}>
           <Feather

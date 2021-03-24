@@ -47,6 +47,7 @@ const Choose = () => {
             </Animatable.View>
             <View
               style={{
+                marginBottom:40,
                 flexDirection: 'row',
                 justifyContent: 'space-between',
                 width: '100%',
@@ -68,30 +69,6 @@ const Choose = () => {
                 Sign Up
               </Button>
             </View>
-            <Text appearance="hint" status="primary">
-              Or via Social Media
-            </Text>
-            <Layout
-              style={{
-                flexDirection: 'row',
-              }}>
-              <Button
-                style={{
-                  marginRight: 15,
-                  borderRadius: 25,
-                }}
-                status="danger"
-                accessoryLeft={(props) => <Icon {...props} name="google" />}
-              />
-              <Button
-                style={{
-                  marginLeft: 15,
-                  borderRadius: 25,
-                }}
-                status="primary"
-                accessoryLeft={(props) => <Icon {...props} name="facebook" />}
-              />
-            </Layout>
           </Layout>
         </Layout>
       </KeyboardAwareScrollView>

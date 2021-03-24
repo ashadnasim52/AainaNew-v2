@@ -48,7 +48,7 @@ const SelectRole = () => {
               <View
                 style={[
                   {
-                    backgroundColor: '#7D756B',
+                    backgroundColor: 'orange',
                   },
                   styles.card,
                 ]}>
@@ -91,7 +91,7 @@ const SelectRole = () => {
               <View
                 style={[
                   {
-                    backgroundColor: '#FF6666',
+                    backgroundColor: 'green',
                   },
                   styles.card,
                 ]}>

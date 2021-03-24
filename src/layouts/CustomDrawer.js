@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, Linking, StyleSheet, View} from 'react-native';
+import {Image, Linking, SafeAreaView, StyleSheet, View} from 'react-native';
 import {
   DrawerContentScrollView,
   DrawerItem,
@@ -16,19 +16,23 @@ const CustomDrawer = (props) => {
       contentContainerStyle={{
         flexGrow: 1,
         justifyContent: 'center',
-        flex: 1,
-        backgroundColor: PRIMARY,
+        backgroundColor: '#14466b',
       }}>
       <Layout
         style={{
           flexDirection: 'row',
           justifyContent: 'space-around',
+          backgroundColor: '#14466b',
+          labelStyle: {
+            color: 'red',
+          },
         }}>
         <View
           style={{
             flexDirection: 'row',
             width: '90%',
-            paddingTop: 20,
+            paddingTop: 30,
+            marginBottom: 20,
           }}>
           <Avatar
             source={{
@@ -42,15 +46,17 @@ const CustomDrawer = (props) => {
               marginLeft: 20,
             }}>
             <Text
-              style={
-                {
-                  // color: '#fff',
-                }
-              }>
+              style={{
+                color: '#fff',
+              }}>
               Sakshi
             </Text>
-            <Text category="label" appearance="hint">
-              Your Last Name
+            <Text
+              style={{
+                color: '#fff',
+                fontSize: 12,
+              }}>
+              Last Name
             </Text>
           </View>
         </View>
@@ -60,34 +66,61 @@ const CustomDrawer = (props) => {
         style={{
           flexGrow: 1,
           justifyContent: 'center',
+          backgroundColor: '#14466b',
+          marginBottom: 20,
         }}>
         <DrawerItem
+          style={{color: '#fff'}}
           label="Home"
           onPress={() => RootNavigation.navigate('Home')}
+          labelStyle={{color: '#fff'}}
           icon={({focused, color, size}) => (
-            <Icon style={styles.icon} fill="#8F9BB3" name="home-outline" />
+            <Icon style={styles.icon} fill="#fff" name="home-outline" />
+          )}
+        />
+        <DrawerItem
+          label="About Aaiena"
+          labelStyle={{color: '#fff'}}
+          onPress={() => RootNavigation.navigate('About')}
+          icon={({focused, color, size}) => (
+            <Icon style={styles.icon} fill="#fff" name="alert-circle-outline" />
+          )}
+        />
+        <DrawerItem
+          label="Clients"
+          labelStyle={{color: '#fff'}}
+          onPress={() => RootNavigation.navigate('B2Cmain')}
+          icon={({focused, color, size}) => (
+            <Icon style={styles.icon} fill="#fff" name="person-outline" />
+          )}
+        />
+        <DrawerItem
+          label="Profile"
+          labelStyle={{color: '#fff'}}
+          onPress={() => RootNavigation.navigate('Profile')}
+          icon={({focused, color, size}) => (
+            <Icon style={styles.icon} fill="#fff" name="person-outline" />
           )}
         />
         <DrawerItem
           label="Demo"
           onPress={() => RootNavigation.navigate('Demo')}
+          labelStyle={{color: '#fff'}}
           icon={({focused, color, size}) => (
-            <Icon style={styles.icon} fill="#8F9BB3" name="monitor-outline" />
+            <Icon style={styles.icon} fill="#fff" name="monitor-outline" />
           )}
         />
         <DrawerItem
           label="Buy plan"
           onPress={() => RootNavigation.navigate('BuyPlans')}
+          labelStyle={{color: '#fff'}}
           icon={({focused, color, size}) => (
-            <Icon
-              style={styles.icon}
-              fill="#8F9BB3"
-              name="shopping-bag-outline"
-            />
+            <Icon style={styles.icon} fill="#fff" name="shopping-bag-outline" />
           )}
         />
         <DrawerItem
           label="My plans"
+          labelStyle={{color: '#fff'}}
           onPress={() => RootNavigation.navigate('MyPlans')}
           icon={({focused, color, size}) => (
             <Icon style={styles.icon} fill="#8F9BB3" name="award-outline" />
@@ -95,6 +128,7 @@ const CustomDrawer = (props) => {
         />
         <DrawerItem
           label="About Aaiena"
+          labelStyle={{color: '#fff'}}
           onPress={() => RootNavigation.navigate('About')}
           icon={({focused, color, size}) => (
             <Icon
@@ -106,6 +140,7 @@ const CustomDrawer = (props) => {
         />
         <DrawerItem
           label="Profile"
+          labelStyle={{color: '#fff'}}
           onPress={() => RootNavigation.navigate('Profile')}
           icon={({focused, color, size}) => (
             <Icon style={styles.icon} fill="#8F9BB3" name="person-outline" />
@@ -114,23 +149,20 @@ const CustomDrawer = (props) => {
         <DrawerItem
           label="B2Cmain"
           onPress={() => RootNavigation.navigate('B2Cmain')}
+          labelStyle={{color: '#fff'}}
           icon={({focused, color, size}) => (
-            <Icon style={styles.icon} fill="#8F9BB3" name="person-outline" />
+            <Icon style={styles.icon} fill="#fff" name="award-outline" />
           )}
         />
+
         <DrawerItem
           label="Setting"
           onPress={() => RootNavigation.navigate('Setting')}
+          labelStyle={{color: '#fff'}}
           icon={({focused, color, size}) => (
-            <Icon
-              style={styles.icon}
-              fill="#8F9BB3"
-              name="settings-2-outline"
-            />
+            <Icon style={styles.icon} fill="#fff" name="settings-2-outline" />
           )}
         />
-      </Layout>
-      <Layout>
         <Button
           style={{}}
           onPress={() => RootNavigation.replace('SignIn')}

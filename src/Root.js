@@ -128,7 +128,7 @@ const Root = () => {
               component={Main}
               options={
                 {
-                  //headerShown: false,
+                  headerShown:false ,
                 }
               }
             /> */}
