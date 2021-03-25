@@ -1,38 +1,39 @@
-import React, {useState} from 'react';
+import React, { useState, useContext, useRef } from 'react';
 import {
   Image,
-  ScrollView,
   StatusBar,
   StyleSheet,
   TouchableWithoutFeedback,
   View,
-} from 'react-native';
-import {
-  Button,
-  Icon,
-  Input,
-  Layout,
   Text,
-  IndexPath,
-  Select,
-  SelectItem,
-  CheckBox,
-  Divider,
-} from '@ui-kitten/components';
+  Input,
+  TextInput,
+  Button,
+} from 'react-native';
 
+import RNPickerSelect from 'react-native-picker-select';
+import {  Layout,CheckBox,Select,SelectItem,IndexPath,Divider,Icon,} from '@ui-kitten/components';
+import RBSheet from 'react-native-raw-bottom-sheet';
 import Logo from '../assests/image1.png';
-import {ACCENT, PRIMARY} from '../theme/colors';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import {useNavigation} from '@react-navigation/native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import { ACCENT, PRIMARY } from '../theme/colors';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { useNavigation } from '@react-navigation/native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { AuthContext } from '../context/context';
+import Entypo from 'react-native-vector-icons/Entypo';
+import { color } from 'react-native-reanimated';
 
-const SignUpOrganization = () => {
+const Signup = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [name, setName] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [secureTextEntry, setSecureTextEntry] = useState(true);
-  const [gender, setGender] = useState('Male');
+  const [name, setName] = useState('');
   const [checked, setChecked] = React.useState(false);
+  const [gender, setGender] = useState('Male');
+
+  const {state, dispatch} = useContext(AuthContext);
+  console.log(state.isB2B);
   const toggleSecureEntry = () => {
     setSecureTextEntry(!secureTextEntry);
   };
@@ -42,256 +43,211 @@ const SignUpOrganization = () => {
       <Icon {...props} name={secureTextEntry ? 'eye-off' : 'eye'} />
     </TouchableWithoutFeedback>
   );
-
   const nav = useNavigation();
+  const refRBSheet = useRef();
+
+  const placeholder = {
+    label: 'Select Gender...',
+    value: null,
+    color: '#9EA0A4',
+  };
+
 
   return (
     <>
-      <StatusBar backgroundColor={ACCENT} />
-      <KeyboardAwareScrollView
-        resetScrollToCoords={{x: 0, y: 0}}
-        contentContainerStyle={{
-          flexGrow: 1,
-        }}>
-        <Layout style={styles.container}>
-          {/* <Layout >
-            <Image source={Logo} style={styles.image} />
-          
-          </Layout> */}
+      <View>
+        <View style={{ marginTop: 10 }}>
+          <Image
+            source={require('../assests/img/logo1.png')}
+            style={{
+              width: 140,
+              height: 60,
+              alignSelf: "center"
+            }}
+          />
+        </View>
+        <View style={{ marginTop: 20 }}>
+          <Text style={{ fontSize: 25, marginLeft: 20 }}>Welcome,</Text>
+          <Text style={{ fontSize: 20, marginLeft: 20, color: "grey" }}>Sign Up as Organization</Text>
+        </View>
+       <View style={{marginTop:20}}>
+     
+       <RNPickerSelect
+            onValueChange={(value) => console.log(value)}
+            useNativeAndroidPickerStyle={false}
+            placeholder={placeholder}
+            style={pickerSelectStyles}
+            items={[
+                { label: 'Male', value: 'Male' },
+                { label: 'Female', value: 'Female' },
+                { label: 'Others', value: 'Others' },
+            ]}
+        />
 
-          {/* <Layout style={styles.imageContainer}></Layout> */}
-          <Layout style={styles.imageContainer}>
-            <Image source={Logo} style={styles.image} />
-          </Layout>
-          <Layout style={styles.mainContainer}>
-            <Text
-              category="h6"
-              style={{
-                fontFamily: 'Merriweather-BlackItalic',
-                marginBottom: 20,
-                color: PRIMARY,
-              }}>
-              SignUp as Organization
-            </Text>
-            {/* <Button
-              style={{
-                width: '100%',
-                marginBottom: 10,
-              }}
-              appearance="outline"
-              status="primary"
-              size="small"
-              accessoryRight={(props) => (
-                <Icon {...props} name="arrow-ios-forward-outline" />
-              )}>
-              <Text category="p1" style={{}}>
-                Signup as Organization
-              </Text>
-            </Button> */}
-            <Select
-              style={{
-                width: '100%',
-              }}
-              accessoryLeft={(props) => (
+
+       <TextInput 
+       placeholder="Name"  
+       value={name} 
+       onChangeText={(nextValue) => setName(nextValue)}
+         style={{marginHorizontal:20,borderWidth:1,borderRadius:10,borderColor:"darkgrey",paddingLeft:20,marginTop:10}}
+       />
+       <TextInput 
+       placeholder="Email"  
+       value={email} 
+       accessoryLeft={(props) => (
                 <Icon name="person-outline" {...props} />
               )}
-              value={gender}
-              onSelect={(item) =>
-                item.row == 0 ? setGender('Male') : setGender('Female')
-              }>
-              <SelectItem
-                title="Male"
-                accessoryLeft={(props) => (
-                  <Icon name="person-outline" {...props} />
-                )}
-              />
-              <SelectItem
-                title="Female"
-                accessoryLeft={(props) => (
-                  <Icon name="person-outline" {...props} />
-                )}
-              />
-            </Select>
-            <Input
-              placeholder="Name"
-              value={name}
-              style={styles.input}
-              accessoryLeft={(props) => (
-                <Icon name="person-outline" {...props} />
-              )}
-              onChangeText={(nextValue) => setName(nextValue)}
-            />
+       onChangeText={(nextValue) => setEmail(nextValue)}
+         style={{marginHorizontal:20,borderWidth:1,borderRadius:10,borderColor:"darkgrey",paddingLeft:20,marginTop:10}}
+       />
+       <TextInput 
+       placeholder="Password" 
+       secureTextEntry={secureTextEntry} 
+       value={password}
+       caption="Should contain at least 8 symbols"
+       onChangeText={(nextValue) => setPassword(nextValue)}
+         style={{marginHorizontal:20,borderWidth:1,borderRadius:10,borderColor:"darkgrey",paddingLeft:20,marginTop:10}}
+       />
+        <TextInput 
+       placeholder="Confirm Password" 
+       secureTextEntry={secureTextEntry} 
+       value={confirmPassword}
+       caption="Should contain at least 8 symbols"
+       onChangeText={(nextValue) => setConfirmPassword(nextValue)}
+         style={{marginHorizontal:20,borderWidth:1,borderRadius:10,borderColor:"darkgrey",paddingLeft:20,marginTop:10}}
+       />
+       </View>
+   
 
-            <Input
-              placeholder="Email"
-              value={email}
-              style={styles.input}
-              accessoryLeft={(props) => (
-                <Icon name="email-outline" {...props} />
-              )}
-              onChangeText={(nextValue) => setEmail(nextValue)}
-            />
-            <Input
-              value={password}
-              placeholder="Password"
-              style={styles.input}
-              accessoryLeft={(props) => <Icon name="lock-outline" {...props} />}
-              accessoryRight={renderIcon}
-              secureTextEntry={secureTextEntry}
-              onChangeText={(nextValue) => setPassword(nextValue)}
-            />
-            <Input
-              value={password}
-              placeholder="Confirm Password"
-              style={styles.input}
-              accessoryLeft={(props) => <Icon name="lock-outline" {...props} />}
-              accessoryRight={renderIcon}
-              secureTextEntry={secureTextEntry}
-              onChangeText={(nextValue) => setPassword(nextValue)}
-            />
-            <View
+       <View
               style={{
                 // justifyContent: 'flex-start',
                 // alignItems: 'flex-start',
                 width: '100%',
-                paddingVertical: 6,
+                marginLeft:20,
+                marginTop:20,
               }}>
               <CheckBox
                 checked={checked}
                 onChange={(nextChecked) => setChecked(nextChecked)}>
-                <Text appearance="hint">Accept our Terms and Condition</Text>
+                <Text >Accept our Terms and Condition</Text>
               </CheckBox>
             </View>
-            {/* <View
-              style={{
-                alignItems: 'flex-end',
-                width: '100%',
-                marginVertical: 5,
-              }}>
-              <Text appearance="hint" status="primary">
-                Foget Password?
-              </Text>
-            </View> */}
-            <Button
-              style={styles.button}
-              onPress={() => nav.navigate('CompanyCreateProfile')}>
-              Get Started
-            </Button>
-            {/* <Text appearance="hint" status="primary">
-              OR
-            </Text>
-            <Layout
-              style={{
-                flexDirection: 'row',
-              }}>
-              <Button
-                style={{
-                  marginRight: 15,
-                  borderRadius: 25,
-                  paddingHorizontal: 30,
-                }}
-                status="danger"
-                accessoryLeft={(props) => <Icon {...props} name="google" />}
-              />
-              <Button
-                style={{
-                  marginLeft: 15,
-                  borderRadius: 25,
-                  paddingHorizontal: 30,
-                }}
-                status="primary"
-                accessoryLeft={(props) => <Icon {...props} name="facebook" />}
-              />
-            </Layout> */}
-            {/* <Layout
-              style={{
-                flexDirection: 'column',
-              }}> */}
-            {/* <Button
-              style={[
-                {
-                  backgroundColor: '#3C62F9',
-                  borderColor: '#3C62F9',
-                },
-                styles.button,
-              ]}
-              status="danger"
-              accessoryLeft={(props) => <Icon {...props} name="google" />}>
-              Sign in with Google
-            </Button>
 
-            <Button
-              style={[
-                {
-                  backgroundColor: '#3703E9',
-                  borderColor: '#3703E9',
-                },
-                styles.button,
-              ]}
-              status="primary"
-              accessoryLeft={(props) => <Icon {...props} name="facebook" />}>
-              Sign in with Facebook
-            </Button> */}
-            {/* </Layout> */}
-            <TouchableOpacity
-              onPress={() => {
-                nav.navigate('SelectRole');
+       <View style={{marginTop:10}}>
+       <TouchableOpacity onPress={() => navigation.navigate('Main')}>
+         <Text style={{backgroundColor:"#14466b",color:"white",textAlign:"center",padding:15,marginHorizontal:20,borderRadius:10,fontSize:16,fontWeight:"bold"}}>Sign Up</Text>
+         </TouchableOpacity>
+       </View>
+       {!state.isB2B && (
+         <>
+       <Text style={{alignSelf:"center",marginTop:5,color:"grey"}}>OR</Text>
+
+       <View style={{alignSelf:"center",marginTop:10}}>
+       <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
+       <Text style={{backgroundColor:"#ebeef4",padding:13,borderRadius:10,width:320,textAlign:"center",color:"#14466b",borderWidth:1,borderColor:"white",fontWeight:"bold",}}><Entypo name="arrow-bold-left"  style={{fontSize:15}} />  SIGN UP AS INDIVIDUAL</Text>
+       </TouchableOpacity>
+       </View>
+       </>
+       )}
+
+<View style={{marginTop:20,flexDirection:"row",alignSelf:"center"}}>
+  <Text style={{}}>Have an Account ? </Text>
+  <TouchableOpacity onPress={() => {
+                navigation.navigate('SelectRole');
               }}>
-              <Text
-                style={{
-                  marginVertical: 10,
-                }}
-                appearance="hint">
-                Have an account? SignIn here
-              </Text>
-            </TouchableOpacity>
-          </Layout>
-        </Layout>
-      </KeyboardAwareScrollView>
-    </>
-  );
-};
+  <Text style={{color:'#14466b',fontWeight:"bold"}}>Sign In Here</Text>
+  </TouchableOpacity>
+</View>
+      </View>
 
-export default SignUpOrganization;
 
-const styles = StyleSheet.create({
+<RBSheet
+ref={refRBSheet}
+closeOnDragDown={true}
+closeOnPressMask={false}
+customStyles={{
+  wrapper: {
+    backgroundColor: 'transparent',
+  },
+  draggableIcon: {
+    backgroundColor: PRIMARY,
+  },
   container: {
-    flexGrow: 1,
+    backgroundColor: '#CAD5E2',
+    borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
   },
-  topContainer: {
+}}>
+<Layout
+  style={{
+    paddingHorizontal: 30,
+
+    flex: 1,
     justifyContent: 'center',
-    marginTop: 10,
+  }}>
+  <Text
+    style={{
+      textAlign: 'left',
+      fontWeight: 'bold',
+      fontSize: 20,
+      color:"green",
+    }}
+    >
+    Enter Email
+  </Text>
+  <Text category="p1">
+    An email with the password reset link will sent to your registered
+    email address
+  </Text>
+  <TextInput
+    placeholder=" Enter your Registered Email"
+    value={email}
+    style={[
+      {
+        marginVertical: 20,
+        borderWidth:1,
+        borderColor:"grey",
+        borderRadius:5
+      },
+    ]}
+    accessoryLeft={(props) => <Icon name="email-outline" {...props} />}
+    onChangeText={(nextValue) => setEmail(nextValue)}
+  />
+  <Button
+    style={{}}
+    onPress={() => {
+      nav.navigate('Main');
+    }}
+   title="Login" />
+  
+</Layout>
+</RBSheet>
+    </>
+  )
+}
+export default Signup;
+
+const pickerSelectStyles = StyleSheet.create({
+  inputIOS: {
+    fontSize: 16,
+    paddingVertical: 12,
+    paddingHorizontal: 10,
+    borderWidth: 1,
+    borderColor: 'gray',
+    borderRadius: 4,
+    color: 'black',
+    paddingRight: 30, // to ensure the text is never behind the icon
   },
-  imageContainer: {
-    flex: 0.2,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  mainContainer: {
-    flex: 0.8,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingHorizontal: 20,
-  },
-  text: {
-    textAlign: 'center',
-    // fontWeight: 'bold',
-  },
-  image: {
-    height: 160,
-    width: '100%',
-    resizeMode: 'contain',
-  },
-  button: {
-    width: '100%',
-    borderRadius: 25,
-    marginVertical: 2,
-  },
-  icon: {
-    width: 32,
-    height: 32,
-  },
-  input: {
-    marginTop: 8,
+  inputAndroid: {
+    fontSize: 16,
+    paddingHorizontal: 10,
+    paddingVertical: 12,
+    borderWidth: 0.5,
+    borderColor: 'grey',
+    borderRadius: 10,
+    color: 'black',
+    paddingRight: 30, // to ensure the text is never behind the icon
+    marginHorizontal:20
   },
 });

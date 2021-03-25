@@ -30,8 +30,8 @@ const Home = () => {
   return (
     <>
     
-
-    <ScrollView >
+    <ScrollView style={{backgroundColor:"#14466b"}}>
+    
     <View style={{height:110,}}>
     <View
           style={{
@@ -52,10 +52,10 @@ const Home = () => {
         </View>
        </View>
     <ScrollView horizontal={true} showsVerticalScrollIndicator={false}>
-<View style={{height:120,marginTop:40,}}>
+<View style={{height:120,marginTop:40}}>
   <View style={{flexDirection:"row",justifyContent:"space-around",marginTop:20}}>
   
-  <View style={{marginLeft:10}}>
+  <View style={{marginLeft:10,}}>
       <View>
            <Image
                 source={require('../assests/temp.jpeg')}
@@ -67,7 +67,7 @@ const Home = () => {
               />
               </View>
               <View>
-              <Text style={{marginLeft:10,marginTop:5,color:"#3d3d3d"}}>Hello</Text>
+              <Text style={{marginLeft:10,marginTop:5,color:"#fff"}}>Hello</Text>
               </View>
               </View>
 
@@ -83,7 +83,7 @@ const Home = () => {
               />
               </View>
               <View>
-              <Text style={{marginLeft:10,marginTop:5,color:"#3d3d3d"}}>Hello</Text>
+              <Text style={{marginLeft:10,marginTop:5,color:"#fff"}}>Hello</Text>
               </View>
               </View>
 
@@ -99,7 +99,7 @@ const Home = () => {
               />
               </View>
               <View>
-              <Text style={{marginLeft:10,marginTop:5,color:"#3d3d3d"}}>Hello</Text>
+              <Text style={{marginLeft:10,marginTop:5,color:"#fff"}}>Hello</Text>
               </View>
               </View>
 
@@ -115,7 +115,7 @@ const Home = () => {
               />
               </View>
               <View>
-              <Text style={{marginLeft:10,marginTop:5,color:"#3d3d3d"}}>Hello</Text>
+              <Text style={{marginLeft:10,marginTop:5,color:"#fff"}}>Hello</Text>
               </View>
               </View>
 
@@ -131,7 +131,7 @@ const Home = () => {
               />
               </View>
               <View>
-              <Text style={{marginLeft:10,marginTop:5,color:"#3d3d3d"}}>Hello</Text>
+              <Text style={{marginLeft:10,marginTop:5,color:"#fff"}}>Hello</Text>
               </View>
               </View>
 
@@ -147,7 +147,7 @@ const Home = () => {
               />
               </View>
               <View>
-              <Text style={{marginLeft:10,marginTop:5,color:"#3d3d3d"}}>Hello</Text>
+              <Text style={{marginLeft:10,marginTop:5,color:"#fff"}}>Hello</Text>
               </View>
               </View>
 
@@ -163,7 +163,7 @@ const Home = () => {
               />
               </View>
               <View>
-              <Text style={{marginLeft:10,marginTop:5,color:"#3d3d3d"}}>Hello</Text>
+              <Text style={{marginLeft:10,marginTop:5,color:"#fff"}}>Hello</Text>
               </View>
               </View>
 
@@ -179,7 +179,7 @@ const Home = () => {
               />
               </View>
               <View>
-              <Text style={{marginLeft:10,marginTop:5,color:"#3d3d3d"}}>Hello</Text>
+              <Text style={{marginLeft:10,marginTop:5,color:"#fff"}}>Hello</Text>
               </View>
               </View>
 
@@ -195,7 +195,7 @@ const Home = () => {
               />
               </View>
               <View>
-              <Text style={{marginLeft:10,marginTop:5,color:"#3d3d3d"}}>Hello</Text>
+              <Text style={{marginLeft:10,marginTop:5,color:"#fff"}}>Hello</Text>
               </View>
               </View>
 
@@ -211,7 +211,7 @@ const Home = () => {
               />
               </View>
               <View>
-              <Text style={{marginLeft:10,marginTop:5,color:"#3d3d3d"}}>Hello</Text>
+              <Text style={{marginLeft:10,marginTop:5,color:"#fff"}}>Hello</Text>
               </View>
               </View>
 
@@ -227,7 +227,7 @@ const Home = () => {
               />
               </View>
               <View>
-              <Text style={{marginLeft:10,marginTop:5,color:"#3d3d3d"}}>Hello</Text>
+              <Text style={{marginLeft:10,marginTop:5,color:"#fff"}}>Hello</Text>
               </View>
               </View>
 
@@ -243,7 +243,7 @@ const Home = () => {
               />
               </View>
               <View>
-              <Text style={{marginLeft:10,marginTop:5,color:"#3d3d3d"}}>Hello</Text>
+              <Text style={{marginLeft:10,marginTop:5,color:"#fff"}}>Hello</Text>
               </View>
               </View>
 
@@ -259,7 +259,7 @@ const Home = () => {
               />
               </View>
               <View>
-              <Text style={{marginLeft:10,marginTop:5,color:"#3d3d3d"}}>Hello</Text>
+              <Text style={{marginLeft:10,marginTop:5,color:"#fff"}}>Hello</Text>
               </View>
               </View>
 
@@ -275,7 +275,7 @@ const Home = () => {
               />
               </View>
               <View>
-              <Text style={{marginLeft:10,marginTop:5,color:"#3d3d3d"}}>Hello</Text>
+              <Text style={{marginLeft:10,marginTop:5,color:"#fff"}}>Hello</Text>
               </View>
               </View>
               
@@ -284,6 +284,7 @@ const Home = () => {
            
   </View>
 </View>
+
 </ScrollView>
   
     <Layout
@@ -294,7 +295,7 @@ const Home = () => {
       <Layout
         style={{borderTopRightRadius: 15, borderTopLeftRadius: 15}}
         level="2">
-        <FlatList style={{backgroundColor:"#f6f6f6"}}
+        <FlatList style={{backgroundColor:"#14466b"}}
           // ItemSeparatorComponent={({highlighted}) => <Divider />}
           contentContainerStyle={
             {
@@ -310,7 +311,9 @@ const Home = () => {
         />
       </Layout>
     </Layout>
+    
     </ScrollView> 
+    
     </>
   );
 };

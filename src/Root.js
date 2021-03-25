@@ -42,7 +42,7 @@ import Inapp from './screens/Inapp';
 import Inweb from './screens/Inweb';
 import Dresss from "./screens/Dress";
 import Dress from './screens/Dress';
-
+import Virtual from './screens/Virtual';
 
 AsyncStorage.removeItem('@aaina_login');
 
@@ -148,6 +148,16 @@ const Root = () => {
               options={
                 {
                   headerShown:true,
+                }
+              }
+            />
+
+            <Stack.Screen
+              name="Virtual"
+              component={Virtual}
+              options={
+                {
+                  headerShown:false,
                 }
               }
             />
