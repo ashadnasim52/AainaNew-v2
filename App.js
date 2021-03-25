@@ -36,7 +36,7 @@ const HeartIcon = (props) => <Icon {...props} name="heart" />;
 console.disableYellowBox = true;
 
 export default () => {
-  const [themeee, setThemeee] = useState('light');
+  const [themeee, setThemeee] = useState('dark');
   const toggleTheme = () => {
     const nextTheme = themeee === 'light' ? 'dark' : 'light';
     setThemeee(nextTheme);

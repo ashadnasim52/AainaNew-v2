@@ -59,7 +59,7 @@ export default function Main() {
         <NavigationContainer ref={navigationRef}>
           <Drawer.Navigator
             initialRouteName="Root"
-            // drawerType="slide"
+            drawerType="front"
             drawerStyle={
               {
                 // backgroundColor: PRIMARY,

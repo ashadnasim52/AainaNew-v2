@@ -37,6 +37,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Entypo from 'react-native-vector-icons/Entypo';
 import Feather from 'react-native-vector-icons/Feather';
+import {Layout} from '@ui-kitten/components';
 // const CustomHeader = ({navigation}) => {
 //   const nav = useNavigation();
 //   return (
@@ -67,16 +68,23 @@ import Feather from 'react-native-vector-icons/Feather';
 const CustomHeader = ({navigation}) => {
   const nav = useNavigation();
   return (
-    <View style={{backgroundColor: '#fff', height: 60}}>
-      <View style={{backgroundColor: '#fff', height: 100, borderRadius: 20}}>
+    <Layout style={{backgroundColor: '#14466b'}}>
+      <View
+        style={{
+          backgroundColor: '#fff',
+          height: 60,
+          borderBottomLeftRadius: 20,
+          borderBottomRightRadius: 20,
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          padding: 10,
+        }}>
         <TouchableOpacity
           onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}>
-          <Feather
-            name="align-center"
-            style={{fontSize: 30, marginTop: 35, marginLeft: 40}}
-          />
+          <Feather name="align-center" style={{fontSize: 30}} />
         </TouchableOpacity>
-        <Left style={{marginTop: -40}}>
+        <View>
           <Text style={{alignSelf: 'center', color: 'grey'}}>Location</Text>
           <View style={{flexDirection: 'row'}}>
             <Entypo
@@ -86,21 +94,18 @@ const CustomHeader = ({navigation}) => {
             <Text style={{fontWeight: 'bold'}}>Priya, </Text>
             <Text style={{color: 'grey'}}>India</Text>
           </View>
-        </Left>
-        <Right>
-          <Image
-            source={require('../assests/img/girl.jpg')}
-            style={{
-              width: 60,
-              height: 60,
-              marginRight: -170,
-              marginTop: -40,
-              borderRadius: 50,
-            }}
-          />
-        </Right>
+        </View>
+        <Image
+          source={require('../assests/img/girl.jpg')}
+          style={{
+            width: 50,
+            height: 50,
+
+            borderRadius: 50,
+          }}
+        />
       </View>
-    </View>
+    </Layout>
   );
 };
 
