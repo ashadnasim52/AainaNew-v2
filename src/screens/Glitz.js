@@ -6,12 +6,13 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 
 
+
 const Glitz = () => {
 
 
   return (
     <>
-    <View style={{backgroundColor:"#2B547E",height:90}}>
+    <View style={{backgroundColor:"#2B547E",height:90,marginTop:40}}>
     <View
           style={{
             height: 50,

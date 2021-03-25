@@ -43,6 +43,9 @@ import Demo from './screens/Demo';
 import BuyPlans from './screens/BuyPlans';
 import MyPlans from './screens/MyPlans';
 import Setting from './screens/Setting';
+import Dresss from './screens/Dress';
+import Dress from './screens/Dress';
+import Virtual from './screens/Virtual';
 
 AsyncStorage.removeItem('@aaina_login');
 
@@ -128,7 +131,17 @@ const Root = () => {
               component={Main}
               options={
                 {
-                  headerShown:false ,
+                  headerShown:true,
+                }
+              }
+            />
+
+            <Stack.Screen
+              name="Virtual"
+              component={Virtual}
+              options={
+                {
+                  headerShown:false,
                 }
               }
             /> */}
@@ -187,6 +200,77 @@ const Root = () => {
         />
         <Stack.Screen
           name="B2Cmain"
+          component={B2cpagemain}
+          options={{
+            headerShown: false,
+          }}
+        />
+
+        <Stack.Screen
+          name="Sizing"
+          component={Sizing}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Ettire"
+          component={Ettire}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Sneaky"
+          component={Sneaky}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="DetailScreen"
+          component={DetailScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Chaudhary_Garments"
+          component={Chaudhary_Garments}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Benzor"
+          component={Benzor}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Leather"
+          component={Leather}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Look"
+          component={Look}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Glitz"
+          component={Glitz}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="B2cpagemain"
           component={B2cpagemain}
           options={{
             headerShown: false,

@@ -11,6 +11,8 @@ import * as RootNavigation from '../RootNavigation';
 
 const CustomDrawer = (props) => {
   return (
+    <>
+    
     <DrawerContentScrollView
       {...props}
       contentContainerStyle={{
@@ -18,6 +20,7 @@ const CustomDrawer = (props) => {
         justifyContent: 'center',
         backgroundColor: '#14466b',
       }}>
+      
       <Layout
         style={{
           flexDirection: 'row',
@@ -171,7 +174,10 @@ const CustomDrawer = (props) => {
           Log Out
         </Button>
       </Layout>
+
     </DrawerContentScrollView>
+    
+    </>
   );
 };
 

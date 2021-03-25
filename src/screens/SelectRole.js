@@ -32,16 +32,11 @@ const SelectRole = () => {
           flexGrow: 1,
         }}>
         <Layout style={styles.container}>
-          <Text
-            style={{
-              textAlign: 'center',
-            }}
-            category="h3">
-            Lorem ipsum dolor
-          </Text>
-          <Text style={styles.subText} category="p1">
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet.
-          </Text>
+      
+      <Image 
+      style={{width:170,height:70,alignSelf:"center",marginBottom:30}}
+        source={require("../assests/img/logo1.png")}
+      />    
 
           <View style={styles.row}>
             <View>
@@ -51,6 +46,7 @@ const SelectRole = () => {
                     backgroundColor: 'orange',
                   },
                   styles.card,
+                  
                 ]}>
                 <Image
                   source={LOGO}
@@ -91,7 +87,7 @@ const SelectRole = () => {
               <View
                 style={[
                   {
-                    backgroundColor: 'green',
+                    backgroundColor: '#14466b',
                   },
                   styles.card,
                 ]}>
@@ -120,6 +116,7 @@ const SelectRole = () => {
                   }}
                   style={{
                     borderRadius: 25,
+                    backgroundColor:"white"
                   }}
                   appearance="outline">
                   Next

@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     display: 'flex',
     flexDirection: 'row',
-     backgroundColor: '#f6f6f6',
+     backgroundColor: '#14466b',
   },
   image: {
     height: 150,
