@@ -21,7 +21,7 @@ import {AuthContext} from '../context/context';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {color} from 'react-native-reanimated';
 
-const EditPage = ({navigation}) => {
+const CreatePage = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [comapnayName, setComapnayName] = useState('');
   const [name, setName] = useState('');
@@ -50,15 +50,15 @@ const EditPage = ({navigation}) => {
         <View style={{marginTop: 20}}>
           <Text style={{fontSize: 25, marginLeft: 20}}>Welcome,</Text>
           <Text style={{fontSize: 20, marginLeft: 20, color: 'grey'}}>
-            Please fill all details
+            Update your details
           </Text>
         </View>
         <View style={{marginTop: 20}}>
           <Text style={{marginLeft: 20, color: 'grey'}}>Company Name</Text>
           <TextInput
             placeholder="Company Name"
-            value={email}
-            onChangeText={(nextValue) => setEmail(nextValue)}
+            value={comapnayName}
+            onChangeText={(nextValue) => setComapnayName(nextValue)}
             style={{
               marginHorizontal: 20,
               borderWidth: 1,
@@ -173,7 +173,7 @@ const EditPage = ({navigation}) => {
                 borderRadius: 10,
                 fontSize: 16,
               }}>
-              Edit Profile
+              Create Profile
             </Text>
           </TouchableOpacity>
         </View>
@@ -181,4 +181,4 @@ const EditPage = ({navigation}) => {
     </KeyboardAwareScrollView>
   );
 };
-export default EditPage;
+export default CreatePage;

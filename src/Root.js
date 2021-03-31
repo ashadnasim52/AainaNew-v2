@@ -47,6 +47,7 @@ import Dresss from './screens/Dress';
 import Dress from './screens/Dress';
 import Virtual from './screens/Virtual';
 import EditPage from './screens/EditPage';
+import CreatePage from './screens/CreatePage';
 
 AsyncStorage.removeItem('@aaina_login');
 
@@ -61,10 +62,17 @@ const Root = () => {
         screenOptions={{
           header: (props) => <CustomHeader {...props} />,
         }}
-        initialRouteName="EditPage">
+        initialRouteName="CreatePage">
         <Stack.Screen
           name="EditPage"
           component={EditPage}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="CreatePage"
+          component={CreatePage}
           options={{
             headerShown: false,
           }}
