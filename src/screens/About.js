@@ -39,10 +39,10 @@ const About = ({navigation}) => {
       <View
           style={{
             backgroundColor: "#14466b",
-            height: 100,
+            height: 90,
             justifyContent: 'center',
             paddingHorizontal: 20,
-            marginTop:30
+            marginTop:0
             
           }}>
           <View
@@ -251,7 +251,7 @@ marginTop:20,
                 </Left>
                 <Right>
                   <Image
-                    source={require('../assests/img/instore3.png')}
+                    source={require('../assests/img/inweb.webp')}
                     style={{
                       width: 160,
                       height: 130,

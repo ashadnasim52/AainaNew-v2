@@ -144,10 +144,11 @@ const Onboarding = () => {
                 <Button
                   onPress={() => nav.navigate('Choose')}
                   style={{
-                    marginVertical: 10,
+                    marginVertical: 20,
                     borderRadius: 25,
                     width: '90%',
-                    backgroundColor:"#14466b"
+                    backgroundColor:"#14466b",
+                    borderColor:"#14466b"
                   }}>
                   Get Started Now
                 </Button>
@@ -188,6 +189,8 @@ export default Onboarding;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginTop:-30,
+    backgroundColor:"white"
   },
   logoContainer: {
     flex: 0.2,

@@ -49,13 +49,16 @@ const B2cpagemain = ({ navigation }) => {
 
     return (
         <>
-        <View
+      
+            <ScrollView style={{backgroundColor:"#14466b"}}>
+
+            <View
                     style={{
                         backgroundColor: "#14466b",
                         height: 100,
                         justifyContent: 'center',
                         paddingHorizontal: 20,
-                        marginTop:40
+                        marginTop:0
                     }}>
                     <View
                         style={{
@@ -73,7 +76,6 @@ const B2cpagemain = ({ navigation }) => {
                         <TextInput placeholder="Search Any Products  here....." />
                     </View>
                 </View>
-            <ScrollView style={{backgroundColor:"#14466b"}}>
                 
 
                 <View style={{  marginBottom: 60 }}>
@@ -88,13 +90,14 @@ const B2cpagemain = ({ navigation }) => {
                                 color: 'black',
                                 marginBottom: 40,
                                 color:"white",
-                                fontWeight:"bold"
+                                fontWeight:"bold",
+                                marginTop:-10
                             }}>
                             Our Clients
             </Text>
                     </View>
                     <View>
-                        <TouchableOpacity onPress={() => navigation.navigate('BcPage')}>
+                        <TouchableOpacity onPress={() => navigation.navigate('B2C')}>
 
                             <Card style={{ marginTop: 0 }}>
                                 <CardItem

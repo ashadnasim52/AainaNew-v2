@@ -30,7 +30,7 @@ const Choose = ({navigation}) => {
         >
         <Image 
           source={require('../assests/img/logo1.png')} 
-          style={{marginTop:250,width:160,height:70}}
+          style={{marginTop:80,width:160,height:70}}
 
         />
           <Text style={{fontSize:50,color:"#14466b",marginBottom:50,marginTop:-10,}}>Welcome</Text>
