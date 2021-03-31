@@ -45,6 +45,7 @@ import MyPlans from './screens/MyPlans';
 import Setting from './screens/Setting';
 import Dress from './screens/Dress';
 import Virtual from './screens/Virtual';
+import EditPage from './screens/EditPage';
 
 
 
@@ -62,7 +63,18 @@ const Root = () => {
         screenOptions={{
           header: (props) => <CustomHeader {...props} />,
         }}
+<<<<<<< HEAD
         initialRouteName="Onboarding">
+=======
+        initialRouteName="EditPage">
+        <Stack.Screen
+          name="EditPage"
+          component={EditPage}
+          options={{
+            headerShown: false,
+          }}
+        />
+>>>>>>> 4ced915c2f150068831af2018930ec518c17a41f
         <Stack.Screen
           name="SignUp"
           component={Signup}
@@ -158,6 +170,7 @@ const Root = () => {
         />
 
         <Stack.Screen
+<<<<<<< HEAD
           name="DetailScreen"
           component={DetailScreen}
           options={{
@@ -176,6 +189,8 @@ const Root = () => {
      
 
         <Stack.Screen
+=======
+>>>>>>> 4ced915c2f150068831af2018930ec518c17a41f
           name="Look"
           component={Look}
           options={
@@ -194,19 +209,30 @@ const Root = () => {
     
 
         <Stack.Screen
+<<<<<<< HEAD
           name="Sizing"
           component={Sizing}
+=======
+          name="DetailScreen"
+          component={DetailScreen}
+>>>>>>> 4ced915c2f150068831af2018930ec518c17a41f
           options={{
             headerShown: false,
           }}
         />
         <Stack.Screen
+<<<<<<< HEAD
           name="Ettire"
           component={Ettire}
+=======
+          name="Chaudhary_Garments"
+          component={Chaudhary_Garments}
+>>>>>>> 4ced915c2f150068831af2018930ec518c17a41f
           options={{
             headerShown: false,
           }}
         />
+<<<<<<< HEAD
         <Stack.Screen
           name="Sneaky"
           component={Sneaky}
@@ -216,6 +242,8 @@ const Root = () => {
         />
       
 
+=======
+>>>>>>> 4ced915c2f150068831af2018930ec518c17a41f
         <Stack.Screen
           name="Benzor"
           component={Benzor}
@@ -230,6 +258,7 @@ const Root = () => {
             headerShown: false,
           }}
         />
+<<<<<<< HEAD
      
      
       
@@ -240,6 +269,8 @@ const Root = () => {
             headerShown:true,
           }}
         />
+=======
+>>>>>>> 4ced915c2f150068831af2018930ec518c17a41f
 
       
        
