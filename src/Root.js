@@ -63,10 +63,7 @@ const Root = () => {
         screenOptions={{
           header: (props) => <CustomHeader {...props} />,
         }}
-<<<<<<< HEAD
-        initialRouteName="Onboarding">
-=======
-        initialRouteName="EditPage">
+        initialRouteName="BuyPlans">
         <Stack.Screen
           name="EditPage"
           component={EditPage}
@@ -74,7 +71,6 @@ const Root = () => {
             headerShown: false,
           }}
         />
->>>>>>> 4ced915c2f150068831af2018930ec518c17a41f
         <Stack.Screen
           name="SignUp"
           component={Signup}
@@ -170,27 +166,6 @@ const Root = () => {
         />
 
         <Stack.Screen
-<<<<<<< HEAD
-          name="DetailScreen"
-          component={DetailScreen}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="Chaudhary_Garments"
-          component={Chaudhary_Garments}
-          options={{
-            headerShown: false,
-          }}
-        />
-      
-      
-     
-
-        <Stack.Screen
-=======
->>>>>>> 4ced915c2f150068831af2018930ec518c17a41f
           name="Look"
           component={Look}
           options={
@@ -209,41 +184,19 @@ const Root = () => {
     
 
         <Stack.Screen
-<<<<<<< HEAD
-          name="Sizing"
-          component={Sizing}
-=======
           name="DetailScreen"
           component={DetailScreen}
->>>>>>> 4ced915c2f150068831af2018930ec518c17a41f
           options={{
             headerShown: false,
           }}
         />
         <Stack.Screen
-<<<<<<< HEAD
-          name="Ettire"
-          component={Ettire}
-=======
           name="Chaudhary_Garments"
           component={Chaudhary_Garments}
->>>>>>> 4ced915c2f150068831af2018930ec518c17a41f
           options={{
             headerShown: false,
           }}
         />
-<<<<<<< HEAD
-        <Stack.Screen
-          name="Sneaky"
-          component={Sneaky}
-          options={{
-            headerShown: false,
-          }}
-        />
-      
-
-=======
->>>>>>> 4ced915c2f150068831af2018930ec518c17a41f
         <Stack.Screen
           name="Benzor"
           component={Benzor}
@@ -258,19 +211,6 @@ const Root = () => {
             headerShown: false,
           }}
         />
-<<<<<<< HEAD
-     
-     
-      
-        <Stack.Screen
-          name="B2cpagemain"
-          component={B2cpagemain}
-          options={{
-            headerShown:true,
-          }}
-        />
-=======
->>>>>>> 4ced915c2f150068831af2018930ec518c17a41f
 
       
        

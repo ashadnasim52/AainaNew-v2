@@ -164,7 +164,7 @@ const BuyPlans = () => {
 <View >
         <Modal
           animationType="slide"
-          visible={modalVisibless}
+          visible={modalVisibless} 
           transparent={false}
           
         >
