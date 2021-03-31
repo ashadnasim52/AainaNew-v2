@@ -18,7 +18,7 @@ import Logo from '../assests/image1.png';
 import { ACCENT, PRIMARY } from '../theme/colors';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { useNavigation } from '@react-navigation/native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import { AuthContext } from '../context/context';
 import Entypo from 'react-native-vector-icons/Entypo';
 import { color } from 'react-native-reanimated';
@@ -55,6 +55,7 @@ const Signup = ({navigation}) => {
 
   return (
     <>
+    <ScrollView>
       <View>
         <View style={{ marginTop: 10 }}>
           <Image
@@ -130,12 +131,12 @@ const Signup = ({navigation}) => {
               <CheckBox
                 checked={checked}
                 onChange={(nextChecked) => setChecked(nextChecked)}>
-                <Text >Accept our Terms and Condition</Text>
+                <Text style={{color:"black"}}>Accept our Terms and Condition</Text>
               </CheckBox>
             </View>
 
        <View style={{marginTop:10}}>
-       <TouchableOpacity onPress={() => navigation.navigate('Main')}>
+       <TouchableOpacity onPress={() => navigation.navigate('Home')}>
          <Text style={{backgroundColor:"#14466b",color:"white",textAlign:"center",padding:15,marginHorizontal:20,borderRadius:10,fontSize:16,fontWeight:"bold"}}>Sign Up</Text>
          </TouchableOpacity>
        </View>
@@ -151,7 +152,7 @@ const Signup = ({navigation}) => {
        </>
        )}
 
-<View style={{marginTop:20,flexDirection:"row",alignSelf:"center"}}>
+<View style={{marginTop:20,flexDirection:"row",alignSelf:"center",marginBottom:10}}>
   <Text style={{}}>Have an Account ? </Text>
   <TouchableOpacity onPress={() => {
                 navigation.navigate('SelectRole');
@@ -223,6 +224,7 @@ customStyles={{
   
 </Layout>
 </RBSheet>
+</ScrollView>
     </>
   )
 }

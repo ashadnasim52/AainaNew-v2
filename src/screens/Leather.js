@@ -11,7 +11,7 @@ const Leather = () => {
 
   return (
     <>
-    <View style={{backgroundColor:"#2B547E",height:90,marginTop:40}}>
+    <View style={{backgroundColor:"#2B547E",height:80,}}>
     <View
           style={{
             height: 50,

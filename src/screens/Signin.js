@@ -16,7 +16,7 @@ import Logo from '../assests/image1.png';
 import { ACCENT, PRIMARY } from '../theme/colors';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { useNavigation } from '@react-navigation/native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import { AuthContext } from '../context/context';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { color } from 'react-native-reanimated';
@@ -43,6 +43,7 @@ const Signin = ({navigation}) => {
 
   return (
     <>
+    <ScrollView>
       <View>
         <View style={{ marginTop: 10 }}>
           <Image
@@ -83,7 +84,7 @@ const Signin = ({navigation}) => {
        </View>
 
        <View style={{marginTop:30}}>
-       <TouchableOpacity onPress={() => navigation.navigate('Main')}>
+       <TouchableOpacity onPress={() => navigation.navigate('Home')}>
          <Text style={{backgroundColor:"#14466b",color:"white",textAlign:"center",padding:15,marginHorizontal:20,borderRadius:10,fontSize:16}}>LOGIN</Text>
          </TouchableOpacity>
        </View>
@@ -92,13 +93,24 @@ const Signin = ({navigation}) => {
        <Text style={{alignSelf:"center",marginTop:10,color:"grey"}}>Or</Text>
 
        <View style={{alignSelf:"center",marginTop:20}}>
-       <Text style={{backgroundColor:"#ebeef4",padding:13,borderRadius:10,width:320,textAlign:"center",color:"#14466b",borderWidth:1,borderColor:"white"}}> <AntDesign name="facebook-square" style={{fontSize:20,}} /> Continue with facebook</Text>
-       <Text style={{marginTop:20,backgroundColor:"#ebeef4",padding:13,borderRadius:10,width:320,textAlign:"center",color:"#ea4335",borderWidth:1,borderColor:"white"}}><AntDesign name="google" style={{fontSize:20,color:"green"}}  /> Continue with Google</Text>
+       <TouchableOpacity>
+       <Text style={{backgroundColor:"#ebeef4",padding:13,borderRadius:10,width:320,textAlign:"center",color:"#14466b",borderWidth:1,borderColor:"white"}}> <AntDesign name="facebook-square" style={{fontSize:20,}} /> Continue with Facebook</Text>
+       </TouchableOpacity>
+          </View>
+          
+          <TouchableOpacity>
+          <View style={{alignSelf:"center",flexDirection:"row",marginTop:20,backgroundColor:"#ebeef4",borderWidth:1,width:320,borderRadius:10,paddingLeft:60,padding:11,borderColor:"white"}}>
+          <Image 
+            source={require('../assests/img/google1.png')}
+            style={{width:22,height:22,marginTop:5}}/>
+          <Text style={{marginTop:5,color:"#14466b"}}> Continue with Google</Text>
        </View>
+       </TouchableOpacity>
+
        </>
        )}
 
-<View style={{marginTop:30,flexDirection:"row",alignSelf:"center"}}>
+<View style={{marginTop:30,flexDirection:"row",alignSelf:"center",marginBottom:10}}>
   <Text style={{}}>Don't have Account ? </Text>
   <TouchableOpacity onPress={() => {
                 navigation.navigate('SignUp');
@@ -118,7 +130,7 @@ customStyles={{
     backgroundColor: 'transparent',
   },
   draggableIcon: {
-    backgroundColor: PRIMARY,
+    backgroundColor: "blue",
   },
   container: {
     backgroundColor: '#CAD5E2',
@@ -129,7 +141,7 @@ customStyles={{
 <Layout
   style={{
     paddingHorizontal: 30,
-
+backgroundColor:"white",
     flex: 1,
     justifyContent: 'center',
   }}>
@@ -164,12 +176,13 @@ customStyles={{
   <Button
     style={{}}
     onPress={() => {
-      nav.navigate('Main');
+      nav.navigate('Home');
     }}
    title="Login" />
   
 </Layout>
 </RBSheet>
+</ScrollView>
     </>
   )
 }

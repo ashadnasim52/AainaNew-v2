@@ -77,7 +77,7 @@ export default CustomCards;
 
 const styles = StyleSheet.create({
   cards: {
-    marginTop: 20,
+    marginTop: 10,
     marginBottom: 7,
     marginHorizontal: 10,
     display: 'flex',

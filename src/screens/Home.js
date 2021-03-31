@@ -41,7 +41,7 @@ const Home = () => {
             padding: 5,
             alignItems: 'center',
             borderRadius: 10,
-            marginTop: 80,
+            marginTop: 20,
             marginHorizontal:20
           }}>
           <Icon
@@ -52,8 +52,8 @@ const Home = () => {
         </View>
        </View>
     <ScrollView horizontal={true} showsVerticalScrollIndicator={false}>
-<View style={{height:120,marginTop:40}}>
-  <View style={{flexDirection:"row",justifyContent:"space-around",marginTop:20}}>
+<View style={{height:80,marginTop:40}}>
+  <View style={{flexDirection:"row",justifyContent:"space-around",marginTop:-40}}>
   
   <View style={{marginLeft:10,}}>
       <View>

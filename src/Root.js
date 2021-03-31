@@ -43,9 +43,11 @@ import Demo from './screens/Demo';
 import BuyPlans from './screens/BuyPlans';
 import MyPlans from './screens/MyPlans';
 import Setting from './screens/Setting';
-import Dresss from './screens/Dress';
 import Dress from './screens/Dress';
 import Virtual from './screens/Virtual';
+
+
+
 
 AsyncStorage.removeItem('@aaina_login');
 
@@ -60,7 +62,7 @@ const Root = () => {
         screenOptions={{
           header: (props) => <CustomHeader {...props} />,
         }}
-        initialRouteName="Look">
+        initialRouteName="Onboarding">
         <Stack.Screen
           name="SignUp"
           component={Signup}
@@ -82,9 +84,18 @@ const Root = () => {
             headerShown: false,
           }}
         />
+
+
         <Stack.Screen
           name="OPTVerification"
           component={OPTVerification}
+          options={{
+            headerShown: false,
+          }}
+        />
+         <Stack.Screen
+          name="Dress"
+          component={Dress}
           options={{
             headerShown: false,
           }}
@@ -126,15 +137,7 @@ const Root = () => {
           }}
         />
 
-        {/* <Stack.Screen
-              name="Main"
-              component={Main}
-              options={
-                {
-                  headerShown:true,
-                }
-              }
-            />
+  
 
             <Stack.Screen
               name="Virtual"
@@ -144,7 +147,7 @@ const Root = () => {
                   headerShown:false,
                 }
               }
-            /> */}
+            />
 
         <Stack.Screen
           name="B2C"
@@ -168,20 +171,10 @@ const Root = () => {
             headerShown: false,
           }}
         />
-        <Stack.Screen
-          name="Benzor"
-          component={Benzor}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="Leather"
-          component={Leather}
-          options={{
-            headerShown: false,
-          }}
-        />
+      
+      
+     
+
         <Stack.Screen
           name="Look"
           component={Look}
@@ -198,13 +191,7 @@ const Root = () => {
             headerShown: false,
           }}
         />
-        <Stack.Screen
-          name="B2Cmain"
-          component={B2cpagemain}
-          options={{
-            headerShown: false,
-          }}
-        />
+    
 
         <Stack.Screen
           name="Sizing"
@@ -227,20 +214,8 @@ const Root = () => {
             headerShown: false,
           }}
         />
-        <Stack.Screen
-          name="DetailScreen"
-          component={DetailScreen}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="Chaudhary_Garments"
-          component={Chaudhary_Garments}
-          options={{
-            headerShown: false,
-          }}
-        />
+      
+
         <Stack.Screen
           name="Benzor"
           component={Benzor}
@@ -255,49 +230,19 @@ const Root = () => {
             headerShown: false,
           }}
         />
-        <Stack.Screen
-          name="Look"
-          component={Look}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="Glitz"
-          component={Glitz}
-          options={{
-            headerShown: false,
-          }}
-        />
+     
+     
+      
         <Stack.Screen
           name="B2cpagemain"
           component={B2cpagemain}
           options={{
-            headerShown: false,
+            headerShown:true,
           }}
         />
 
-        <Stack.Screen
-          name="Sizing"
-          component={Sizing}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="Ettire"
-          component={Ettire}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="Sneaky"
-          component={Sneaky}
-          options={{
-            headerShown: false,
-          }}
-        />
+      
+       
 
         <Stack.Screen
           name="Instore"
@@ -331,7 +276,13 @@ const Root = () => {
             headerShown: false,
           }}
         />
-        <Stack.Screen name="BuyPlans" component={BuyPlans} />
+        <Stack.Screen 
+        name="BuyPlans" 
+        component={BuyPlans}
+        options={{
+            headerShown: false,
+          }} />
+          
         <Stack.Screen name="MyPlans" component={MyPlans} />
         <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="Setting" component={Setting} />

@@ -38,9 +38,7 @@ const CustomDrawer = (props) => {
             marginBottom: 20,
           }}>
           <Avatar
-            source={{
-              uri: 'https://picsum.photos/200/300',
-            }}
+           source={require('../assests/img/girl.jpg')}
           />
           <View
             style={{
@@ -52,7 +50,7 @@ const CustomDrawer = (props) => {
               style={{
                 color: '#fff',
               }}>
-              Sakshi
+              Priya
             </Text>
             <Text
               style={{
@@ -92,7 +90,7 @@ const CustomDrawer = (props) => {
         <DrawerItem
           label="Clients"
           labelStyle={{color: '#fff'}}
-          onPress={() => RootNavigation.navigate('B2Cmain')}
+          onPress={() => RootNavigation.navigate('B2cpagemain')}
           icon={({focused, color, size}) => (
             <Icon style={styles.icon} fill="#fff" name="person-outline" />
           )}
@@ -129,34 +127,8 @@ const CustomDrawer = (props) => {
             <Icon style={styles.icon} fill="#8F9BB3" name="award-outline" />
           )}
         />
-        <DrawerItem
-          label="About Aaiena"
-          labelStyle={{color: '#fff'}}
-          onPress={() => RootNavigation.navigate('About')}
-          icon={({focused, color, size}) => (
-            <Icon
-              style={styles.icon}
-              fill="#8F9BB3"
-              name="alert-circle-outline"
-            />
-          )}
-        />
-        <DrawerItem
-          label="Profile"
-          labelStyle={{color: '#fff'}}
-          onPress={() => RootNavigation.navigate('Profile')}
-          icon={({focused, color, size}) => (
-            <Icon style={styles.icon} fill="#8F9BB3" name="person-outline" />
-          )}
-        />
-        <DrawerItem
-          label="B2Cmain"
-          onPress={() => RootNavigation.navigate('B2Cmain')}
-          labelStyle={{color: '#fff'}}
-          icon={({focused, color, size}) => (
-            <Icon style={styles.icon} fill="#fff" name="award-outline" />
-          )}
-        />
+      
+    
 
         <DrawerItem
           label="Setting"
