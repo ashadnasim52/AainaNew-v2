@@ -9,6 +9,7 @@ import {
   Input,
   TextInput,
   Button,
+  PermissionsAndroid,
 } from 'react-native';
 import {Layout} from '@ui-kitten/components';
 import RBSheet from 'react-native-raw-bottom-sheet';
@@ -20,8 +21,12 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import {AuthContext} from '../context/context';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {color} from 'react-native-reanimated';
+import ImagePicker from 'react-native-image-picker';
+import {Avatar} from '@ui-kitten/components';
+import {options} from '../utils/option';
 
 const EditPage = ({navigation}) => {
+  const [isPermission, setIsPermission] = useState(false);
   const [email, setEmail] = useState('');
   const [comapnayName, setComapnayName] = useState('');
   const [name, setName] = useState('');
@@ -30,10 +35,56 @@ const EditPage = ({navigation}) => {
   const [address, setAddress] = useState('');
   const [mobileNo, setMobileNo] = useState('');
   const [password, setPassword] = useState('');
-
+  const [image, setImage] = useState(null);
   const nav = useNavigation();
   const refRBSheet = useRef();
+  const requestStoragePermission = async () => {
+    try {
+      const granted = await PermissionsAndroid.requestMultiple([
+        PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,
+        PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
+      ]);
 
+      console.log('isG', granted);
+      console.log('isGranted', PermissionsAndroid.RESULTS.GRANTED);
+      if ('granted' == PermissionsAndroid.RESULTS.GRANTED) {
+        setIsPermission(true);
+      } else {
+        console.log('permission denied');
+        setIsPermission(false);
+      }
+    } catch (err) {
+      console.warn(err);
+    }
+  };
+
+  const pickImage = async () => {
+    if (isPermission) {
+      ImagePicker.showImagePicker(options, (response) => {
+        console.log('Response = ', response);
+
+        if (response.didCancel) {
+          console.log('User cancelled image picker');
+        } else if (response.error) {
+          console.log('ImagePicker Error: ', response.error);
+        } else if (response.customButton) {
+          console.log('User tapped custom button: ', response.customButton);
+        } else {
+          //  calling upload function to upload the selected image
+          // sending the whole image response as parameter
+
+          // setSelfie(response);
+          setImage(response);
+        }
+      });
+    } else {
+      requestStoragePermission();
+    }
+    // launchImageLibrary(mediaOpt, (res) => {
+    //   console.log(res);
+    //   setImages([...images, res]);
+    // });
+  };
   return (
     <KeyboardAwareScrollView>
       <View>
@@ -52,6 +103,29 @@ const EditPage = ({navigation}) => {
           <Text style={{fontSize: 20, marginLeft: 20, color: 'grey'}}>
             Please fill all details
           </Text>
+        </View>
+        <View
+          style={{
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginTop: 20,
+          }}>
+          <TouchableOpacity onPress={pickImage}>
+            <Avatar
+              size="giant"
+              source={{
+                uri: image
+                  ? image.uri
+                  : 'https://picsum.photos/id/1005/367/267',
+                height: 90,
+                width: 90,
+              }}
+              style={{
+                height: 90,
+                width: 90,
+              }}
+            />
+          </TouchableOpacity>
         </View>
         <View style={{marginTop: 20}}>
           <Text style={{marginLeft: 20, color: 'grey'}}>Company Name</Text>

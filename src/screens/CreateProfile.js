@@ -30,7 +30,7 @@ import {
 import RNPickerSelect from 'react-native-picker-select';
 import Slider from '@react-native-community/slider';
 import {PRIMARY} from '../theme/colors';
-import {launchImageLibrary} from 'react-native-image-picker';
+import ImagePicker from 'react-native-image-picker';
 import {options} from '../utils/option';
 
 const CreateProfile = () => {
@@ -63,7 +63,7 @@ const CreateProfile = () => {
 
   const uploadFrontPhoto = async () => {
     if (isPermission) {
-      launchImageLibrary(options, (response) => {
+      ImagePicker.showImagePicker(options, (response) => {
         console.log('Response = ', response);
 
         if (response.didCancel) {
@@ -85,7 +85,7 @@ const CreateProfile = () => {
   };
   const uploadSelfie = async () => {
     if (isPermission) {
-      launchImageLibrary(options, (response) => {
+      ImagePicker.showImagePicker(options, (response) => {
         console.log('Response = ', response);
 
         if (response.didCancel) {
