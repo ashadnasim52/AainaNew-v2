@@ -7,16 +7,14 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import ClientHome from './client/Home';
 import CompanyHome from './company/Home';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const data = [
   {title: 'Title Text', key: 'item1'},
   {title: 'Title Text', key: 'item2'},
-  {title: 'Title Text', key: 'item13'},
-  {title: 'Title Text', key: 'item1345'},
-  {title: 'Title Text', key: 'item13'},
-  {title: 'Title Text', key: 'item17'},
+
 ];
-const Home = () => {
+const Home = ({navigation}) => {
   const {state, dispatch} = useContext(AuthContext);
 
   // if (state.isB2B) {
@@ -56,57 +54,88 @@ const Home = () => {
   <View style={{flexDirection:"row",justifyContent:"space-around",marginTop:-40}}>
   
   <View style={{marginLeft:10,}}>
+  <TouchableOpacity onPress={() => navigation.navigate('B2C')}>
       <View>
            <Image
-                source={require('../assests/temp.jpeg')}
+                source={require('../assests/img/Deepak_Garments.jpg')}
                 style={{
                   width: 70,
                   height:70,
-                  borderRadius:10,  
+                  borderRadius:100, 
+                  resizeMode:"stretch" 
                 }}
               />
               </View>
               <View>
-              <Text style={{marginLeft:10,marginTop:5,color:"#fff"}}>Hello</Text>
+              <Text style={{marginLeft:0,marginTop:5,color:"#fff",width:70}}>Deepak Garments</Text>
               </View>
+              </TouchableOpacity>
               </View>
 
               <View style={{marginLeft:20}}>
+              <TouchableOpacity onPress={() => navigation.navigate('Chaudhary_Garments')}>
       <View>
            <Image
-                source={require('../assests/temp.jpeg')}
+                source={require('../assests/img/Chauhan_Lifestyle.jpg')}
                 style={{
                   width: 70,
                   height:70,
-                  borderRadius:10,  
+                  borderRadius:100,
+                  resizeMode:"stretch"
+                     
                 }}
               />
               </View>
               <View>
-              <Text style={{marginLeft:10,marginTop:5,color:"#fff"}}>Hello</Text>
+              <Text style={{marginLeft:0,marginTop:5,color:"#fff",width:70}}>Chauhan Garments</Text>
               </View>
+              </TouchableOpacity>
+              </View>
+
+
+              <View style={{marginLeft:20}}>
+              <TouchableOpacity onPress={() => navigation.navigate('Leather')}>
+      <View>
+           <Image
+                source={require('../assests/img/Leather_Home.jpg')}
+                style={{
+                  width: 70,
+                  height:70,
+                  borderRadius:100,
+                  resizeMode:"stretch"  
+                }}
+              />
+              </View>
+              <View>
+              <Text style={{marginLeft:0,marginTop:5,color:"#fff",width:70}}>Leather Home</Text>
+              </View>
+              </TouchableOpacity>
               </View>
 
               <View style={{marginLeft:20}}>
+              <TouchableOpacity onPress={() => navigation.navigate('Glitz')}>
       <View>
            <Image
-                source={require('../assests/temp.jpeg')}
+                source={require('../assests/img/g_g.jpg')}
                 style={{
                   width: 70,
                   height:70,
-                  borderRadius:10,  
+                  borderRadius:100,
+                  resizeMode:"stretch"  
                 }}
               />
               </View>
               <View>
-              <Text style={{marginLeft:10,marginTop:5,color:"#fff"}}>Hello</Text>
+              <Text style={{marginLeft:0,marginTop:5,color:"#fff",width:70}}>Glitz & Glamour</Text>
               </View>
+              </TouchableOpacity>
               </View>
 
               <View style={{marginLeft:20}}>
+              <TouchableOpacity onPress={() => navigation.navigate('Look')}>
       <View>
            <Image
-                source={require('../assests/temp.jpeg')}
+                source={require('../assests/img/look_me.jpg')}
                 style={{
                   width: 70,
                   height:70,
@@ -115,14 +144,16 @@ const Home = () => {
               />
               </View>
               <View>
-              <Text style={{marginLeft:10,marginTop:5,color:"#fff"}}>Hello</Text>
+              <Text style={{marginLeft:0,marginTop:5,color:"#fff",width:70}}>Look Me</Text>
               </View>
+              </TouchableOpacity>
               </View>
 
               <View style={{marginLeft:20}}>
+              <TouchableOpacity onPress={() => navigation.navigate('Benzor')}>
       <View>
            <Image
-                source={require('../assests/temp.jpeg')}
+                source={require('../assests/img/Benzor.jpg')}
                 style={{
                   width: 70,
                   height:70,
@@ -131,154 +162,11 @@ const Home = () => {
               />
               </View>
               <View>
-              <Text style={{marginLeft:10,marginTop:5,color:"#fff"}}>Hello</Text>
+              <Text style={{marginLeft:0,marginTop:5,color:"#fff",width:70}}>Benzor</Text>
               </View>
+              </TouchableOpacity>
               </View>
 
-              <View style={{marginLeft:20}}>
-      <View>
-           <Image
-                source={require('../assests/temp.jpeg')}
-                style={{
-                  width: 70,
-                  height:70,
-                  borderRadius:10,  
-                }}
-              />
-              </View>
-              <View>
-              <Text style={{marginLeft:10,marginTop:5,color:"#fff"}}>Hello</Text>
-              </View>
-              </View>
-
-              <View style={{marginLeft:20}}>
-      <View>
-           <Image
-                source={require('../assests/temp.jpeg')}
-                style={{
-                  width: 70,
-                  height:70,
-                  borderRadius:10,  
-                }}
-              />
-              </View>
-              <View>
-              <Text style={{marginLeft:10,marginTop:5,color:"#fff"}}>Hello</Text>
-              </View>
-              </View>
-
-              <View style={{marginLeft:20}}>
-      <View>
-           <Image
-                source={require('../assests/temp.jpeg')}
-                style={{
-                  width: 70,
-                  height:70,
-                  borderRadius:10,  
-                }}
-              />
-              </View>
-              <View>
-              <Text style={{marginLeft:10,marginTop:5,color:"#fff"}}>Hello</Text>
-              </View>
-              </View>
-
-              <View style={{marginLeft:20}}>
-      <View>
-           <Image
-                source={require('../assests/temp.jpeg')}
-                style={{
-                  width: 70,
-                  height:70,
-                  borderRadius:10,  
-                }}
-              />
-              </View>
-              <View>
-              <Text style={{marginLeft:10,marginTop:5,color:"#fff"}}>Hello</Text>
-              </View>
-              </View>
-
-              <View style={{marginLeft:20}}>
-      <View>
-           <Image
-                source={require('../assests/temp.jpeg')}
-                style={{
-                  width: 70,
-                  height:70,
-                  borderRadius:10,  
-                }}
-              />
-              </View>
-              <View>
-              <Text style={{marginLeft:10,marginTop:5,color:"#fff"}}>Hello</Text>
-              </View>
-              </View>
-
-              <View style={{marginLeft:20}}>
-      <View>
-           <Image
-                source={require('../assests/temp.jpeg')}
-                style={{
-                  width: 70,
-                  height:70,
-                  borderRadius:10,  
-                }}
-              />
-              </View>
-              <View>
-              <Text style={{marginLeft:10,marginTop:5,color:"#fff"}}>Hello</Text>
-              </View>
-              </View>
-
-              <View style={{marginLeft:20}}>
-      <View>
-           <Image
-                source={require('../assests/temp.jpeg')}
-                style={{
-                  width: 70,
-                  height:70,
-                  borderRadius:10,  
-                }}
-              />
-              </View>
-              <View>
-              <Text style={{marginLeft:10,marginTop:5,color:"#fff"}}>Hello</Text>
-              </View>
-              </View>
-
-              <View style={{marginLeft:20}}>
-      <View>
-           <Image
-                source={require('../assests/temp.jpeg')}
-                style={{
-                  width: 70,
-                  height:70,
-                  borderRadius:10,  
-                }}
-              />
-              </View>
-              <View>
-              <Text style={{marginLeft:10,marginTop:5,color:"#fff"}}>Hello</Text>
-              </View>
-              </View>
-
-              <View style={{marginLeft:20}}>
-      <View>
-           <Image
-                source={require('../assests/temp.jpeg')}
-                style={{
-                  width: 70,
-                  height:70,
-                  borderRadius:10,  
-                }}
-              />
-              </View>
-              <View>
-              <Text style={{marginLeft:10,marginTop:5,color:"#fff"}}>Hello</Text>
-              </View>
-              </View>
-              
               
             
            
@@ -307,7 +195,12 @@ const Home = () => {
           showsVerticalScrollIndicator={false}
           showsHorizontalScrollIndicator={false}
           data={data}
-          renderItem={({item, index, separators}) => <CustomCards />}
+          renderItem={({item, index, separators}) => <CustomCards />
+
+          
+          
+          
+          }
         />
       </Layout>
     </Layout>
@@ -320,4 +213,3 @@ const Home = () => {
 
 export default Home;
 
-const styles = StyleSheet.create({});

@@ -32,8 +32,9 @@ const CustomCards = () => {
                   color:"#3d3d3d",
                   fontWeight:"bold",
                   fontFamily: 'roboto-Bold',
+                  marginLeft:15
                 }}>
-                Plane Name
+                Sizing
               </Text>
               <Text
                 category="label"
@@ -69,6 +70,7 @@ const CustomCards = () => {
         </View>
       </View>
     </TouchableOpacity>
+
     </>
   );
 };
@@ -83,6 +85,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
      backgroundColor: '#14466b',
+     marginBottom:20,
   },
   image: {
     height: 150,

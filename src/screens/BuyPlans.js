@@ -17,79 +17,79 @@ const BuyPlans = () => {
   return (
     <>
 
-      <View style={{ flex: 1,backgroundColor:"#14466b" }}>
+      <View style={{ flex: 1, backgroundColor: "#14466b" }}>
 
-      {/* =========================1st start============= */}
-<View >
-        <Modal
-          animationType="slide"
-          visible={modalVisible}
-          transparent={false}
-        
-          
-        >
-        <View style={{backgroundColor:"white",}}>
-        <Text style={{fontSize:30,alignSelf:"center",color:"black",marginTop:15}}>Basic</Text>
-          <AntDesign
-            onPress={() => setModalVisible(!modalVisible)}
-            name="close"
-            style={{ fontSize: 25, color: "red", fontWeight: "bold",textAlign:"right",marginTop:-50,}} />
+        {/* =========================1st start============= */}
+        <View >
+          <Modal
+            animationType="slide"
+            visible={modalVisible}
+            transparent={false}
+
+
+          >
+            <View style={{ backgroundColor: "white", }}>
+              <Text style={{ fontSize: 30, alignSelf: "center", color: "black", marginTop: 15 }}>Basic</Text>
+              <AntDesign
+                onPress={() => setModalVisible(!modalVisible)}
+                name="close"
+                style={{ fontSize: 25, color: "red", fontWeight: "bold", textAlign: "right", marginTop: -50, }} />
             </View>
 
-            
-            
-<ScrollView style={{backgroundColor:"#14466b",borderWidth:1,borderColor:"white",borderTopRightRadius:20,borderTopLeftRadius:20,marginTop:30}}>
-<View>
-  <View>
-  <Text style={{fontSize:35,alignSelf:"center",color:"white"}}>$50/Month</Text>
-  <Text style={{color:"white",alignSelf:"center",fontSize:17}}>with Annual Contract</Text>
-  </View>
-  <View>
-  <Text style={{marginTop:30,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> 2000 Dimensions</Text>
-  <Text style={{marginTop:10,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> Automated Size Gradation.</Text>
-  <Text style={{marginTop:10,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> Automated Size Control.</Text>
-  <Text style={{marginTop:10,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> Product Detail</Text>
-  <Text style={{marginTop:10,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> Product Show on Aaiena platform</Text>
-  <Text style={{marginTop:10,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> Backlink Integration</Text>
-  <Text style={{marginTop:10,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> Email Chat Support.</Text>
-  <Text style={{marginTop:10,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> Dedicated Account Manager.</Text>
- 
-  <View style={{flexDirection:"row"}}>
-  <AntDesign name="close" color={'red'} size={15} style={{marginTop:15,marginLeft:10}}/><Text style={{marginTop:10,marginLeft:0,fontSize:16,color:"grey",textDecorationLine:"line-through"}}> Email Notification</Text>
-  </View>
-
-  <View style={{flexDirection:"row"}}>
-  <AntDesign name="close" color={'red'} size={15} style={{marginTop:15,marginLeft:10}}/><Text style={{marginTop:10,marginLeft:0,fontSize:16,color:"grey",textDecorationLine:"line-through"}}> Analytics Integration</Text>
-  </View>
-  <View style={{flexDirection:"row"}}>
-  <AntDesign name="close" color={'red'} size={15} style={{marginTop:15,marginLeft:10}}/><Text style={{marginTop:10,marginLeft:0,fontSize:16,color:"grey",textDecorationLine:"line-through"}}>Monthly Data report</Text>
-  </View>
-  <View style={{flexDirection:"row"}}>
-  <AntDesign name="close" color={'red'} size={15} style={{marginTop:15,marginLeft:10}}/><Text style={{marginTop:10,marginLeft:0,fontSize:16,color:"grey",textDecorationLine:"line-through"}}>Knowledge based consultation</Text>
-  </View>
 
 
-  <View style={{flexDirection:"row"}}>
-  <AntDesign name="close" color={'red'} size={15} style={{marginTop:15,marginLeft:10}}/><Text style={{marginTop:10,marginLeft:0,fontSize:16,color:"grey",textDecorationLine:"line-through"}}> Dedicated slack channel</Text>
-  </View>
-  <View style={{flexDirection:"row"}}>
-  <AntDesign name="close" color={'red'} size={15} style={{marginTop:15,marginLeft:10}}/><Text style={{marginTop:10,marginLeft:0,fontSize:16,color:"grey",textDecorationLine:"line-through"}}> Widget Customisation</Text>
-  </View>
-  <View style={{flexDirection:"row"}}>
-  <AntDesign name="close" color={'red'} size={15} style={{marginTop:15,marginLeft:10}}/><Text style={{marginTop:10,marginLeft:0,fontSize:16,color:"grey",textDecorationLine:"line-through"}}> sizingline solution with unlimited volume custom dimension topology and blend shapes</Text>
-  </View>
-  
+            <ScrollView style={{ backgroundColor: "#14466b", borderWidth: 1, borderColor: "white", borderTopRightRadius: 20, borderTopLeftRadius: 20, marginTop: 30 }}>
+              <View>
+                <View>
+                  <Text style={{ fontSize: 35, alignSelf: "center", color: "white" }}>$50/Month</Text>
+                  <Text style={{ color: "white", alignSelf: "center", fontSize: 17 }}>with Annual Contract</Text>
+                </View>
+                <View>
+                  <Text style={{ marginTop: 30, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> 2000 Dimensions</Text>
+                  <Text style={{ marginTop: 10, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> Automated Size Gradation.</Text>
+                  <Text style={{ marginTop: 10, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> Automated Size Control.</Text>
+                  <Text style={{ marginTop: 10, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> Product Detail</Text>
+                  <Text style={{ marginTop: 10, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> Product Show on Aaiena platform</Text>
+                  <Text style={{ marginTop: 10, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> Backlink Integration</Text>
+                  <Text style={{ marginTop: 10, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> Email Chat Support.</Text>
+                  <Text style={{ marginTop: 10, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> Dedicated Account Manager.</Text>
 
-</View>
+                  <View style={{ flexDirection: "row" }}>
+                    <AntDesign name="close" color={'red'} size={15} style={{ marginTop: 15, marginLeft: 10 }} /><Text style={{ marginTop: 10, marginLeft: 0, fontSize: 16, color: "grey", textDecorationLine: "line-through" }}> Email Notification</Text>
+                  </View>
 
-  <View>
-    <Text style={{backgroundColor:"white",padding:6,width:"40%",alignSelf:"center",borderRadius:10,color:"green",textAlign:"center",marginTop:"10%",marginBottom:20,fontSize:20}}>Buy Now</Text>
-  </View>
+                  <View style={{ flexDirection: "row" }}>
+                    <AntDesign name="close" color={'red'} size={15} style={{ marginTop: 15, marginLeft: 10 }} /><Text style={{ marginTop: 10, marginLeft: 0, fontSize: 16, color: "grey", textDecorationLine: "line-through" }}> Analytics Integration</Text>
+                  </View>
+                  <View style={{ flexDirection: "row" }}>
+                    <AntDesign name="close" color={'red'} size={15} style={{ marginTop: 15, marginLeft: 10 }} /><Text style={{ marginTop: 10, marginLeft: 0, fontSize: 16, color: "grey", textDecorationLine: "line-through" }}>Monthly Data report</Text>
+                  </View>
+                  <View style={{ flexDirection: "row" }}>
+                    <AntDesign name="close" color={'red'} size={15} style={{ marginTop: 15, marginLeft: 10 }} /><Text style={{ marginTop: 10, marginLeft: 0, fontSize: 16, color: "grey", textDecorationLine: "line-through" }}>Knowledge based consultation</Text>
+                  </View>
 
-</View>
-</ScrollView>
 
-        </Modal>
+                  <View style={{ flexDirection: "row" }}>
+                    <AntDesign name="close" color={'red'} size={15} style={{ marginTop: 15, marginLeft: 10 }} /><Text style={{ marginTop: 10, marginLeft: 0, fontSize: 16, color: "grey", textDecorationLine: "line-through" }}> Dedicated slack channel</Text>
+                  </View>
+                  <View style={{ flexDirection: "row" }}>
+                    <AntDesign name="close" color={'red'} size={15} style={{ marginTop: 15, marginLeft: 10 }} /><Text style={{ marginTop: 10, marginLeft: 0, fontSize: 16, color: "grey", textDecorationLine: "line-through" }}> Widget Customisation</Text>
+                  </View>
+                  <View style={{ flexDirection: "row" }}>
+                    <AntDesign name="close" color={'red'} size={15} style={{ marginTop: 15, marginLeft: 10 }} /><Text style={{ marginTop: 10, marginRight: "2%", fontSize: 16, color: "grey", textDecorationLine: "line-through" }}> sizingline solution with unlimited volume custom dimension topology and blend shapes</Text>
+                  </View>
+
+
+                </View>
+
+                <View>
+                  <Text style={{ backgroundColor: "white", padding: 6, width: "40%", alignSelf: "center", borderRadius: 10, color: "green", textAlign: "center", marginTop: "10%", marginBottom: 20, fontSize: 20 }}>Buy Now</Text>
+                </View>
+
+              </View>
+            </ScrollView>
+
+          </Modal>
         </View>
 
         {/* ==================1st end=============== */}
@@ -98,124 +98,124 @@ const BuyPlans = () => {
         {/* ==================================2nd start ============== */}
 
         <View >
-        <Modal
-          animationType="slide"
-          visible={modalVisibles}
-          transparent={false}
-          
-        >
-      <View style={{backgroundColor:"white",}}>
-        <Text style={{fontSize:30,alignSelf:"center",color:"black",marginTop:15}}>Professional</Text>
-          <AntDesign
-            onPress={() => setModalVisibles(!modalVisibles)}
-            name="close"
-            style={{ fontSize: 25, color: "red", fontWeight: "bold",textAlign:"right",marginTop:-50}} />
+          <Modal
+            animationType="slide"
+            visible={modalVisibles}
+            transparent={false}
+
+          >
+            <View style={{ backgroundColor: "white", }}>
+              <Text style={{ fontSize: 30, alignSelf: "center", color: "black", marginTop: 15 }}>Professional</Text>
+              <AntDesign
+                onPress={() => setModalVisibles(!modalVisibles)}
+                name="close"
+                style={{ fontSize: 25, color: "red", fontWeight: "bold", textAlign: "right", marginTop: -50 }} />
             </View>
 
-            
-            
-<ScrollView style={{backgroundColor:"#14466b",borderWidth:1,borderColor:"white",borderTopRightRadius:20,borderTopLeftRadius:20,marginTop:30}}>
-<View>
-  <View>
-  <Text style={{fontSize:35,alignSelf:"center",color:"white"}}>$200/Month</Text>
-  <Text style={{color:"white",alignSelf:"center",fontSize:17}}>with Annual Contract</Text>
-  </View>
-  <View>
-  <Text style={{marginTop:30,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> 2000 Dimensions</Text>
-  <Text style={{marginTop:10,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> Automated Size Gradation.</Text>
-  <Text style={{marginTop:10,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> Automated Size Control.</Text>
-  <Text style={{marginTop:10,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> Product Detail</Text>
-  <Text style={{marginTop:10,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> Product Show on Aaiena platform</Text>
-  <Text style={{marginTop:10,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> Backlink Integration</Text>
-  <Text style={{marginTop:10,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> Email Chat Support.</Text>
-  <Text style={{marginTop:10,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> Dedicated Account Manager.</Text>
-  <Text style={{marginTop:10,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> Email Notification</Text>
-  <Text style={{marginTop:10,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> Analytics Integration</Text>
-  <Text style={{marginTop:10,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> Monthly Data report</Text>
-  <Text style={{marginTop:10,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> Knowledge based consultation</Text>
 
-<View style={{flexDirection:"row"}}>
-  <AntDesign name="close" color={'red'} size={15} style={{marginTop:15,marginLeft:10}}/><Text style={{marginTop:10,marginLeft:0,fontSize:16,color:"grey",textDecorationLine:"line-through"}}> Dedicated slack channel</Text>
-  </View>
-  <View style={{flexDirection:"row"}}>
-  <AntDesign name="close" color={'red'} size={15} style={{marginTop:15,marginLeft:10}}/><Text style={{marginTop:10,marginLeft:0,fontSize:16,color:"grey",textDecorationLine:"line-through"}}> Widget Customisation</Text>
-  </View>
-  <View style={{flexDirection:"row"}}>
-  <AntDesign name="close" color={'red'} size={15} style={{marginTop:15,marginLeft:10}}/><Text style={{marginTop:10,marginLeft:0,fontSize:16,color:"grey",textDecorationLine:"line-through"}}> sizingline solution with unlimited volume custom dimension topology and blend shapes</Text>
-  </View>
-  </View>
 
-  <View>
-    <Text style={{backgroundColor:"white",padding:6,width:"40%",alignSelf:"center",borderRadius:10,color:"green",textAlign:"center",marginTop:"10%",marginBottom:20,fontSize:20}}>Buy Now</Text>
-  </View>
+            <ScrollView style={{ backgroundColor: "#14466b", borderWidth: 1, borderColor: "white", borderTopRightRadius: 20, borderTopLeftRadius: 20, marginTop: 30 }}>
+              <View>
+                <View>
+                  <Text style={{ fontSize: 35, alignSelf: "center", color: "white" }}>$200/Month</Text>
+                  <Text style={{ color: "white", alignSelf: "center", fontSize: 17 }}>with Annual Contract</Text>
+                </View>
+                <View>
+                  <Text style={{ marginTop: 30, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> 2000 Dimensions</Text>
+                  <Text style={{ marginTop: 10, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> Automated Size Gradation.</Text>
+                  <Text style={{ marginTop: 10, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> Automated Size Control.</Text>
+                  <Text style={{ marginTop: 10, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> Product Detail</Text>
+                  <Text style={{ marginTop: 10, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> Product Show on Aaiena platform</Text>
+                  <Text style={{ marginTop: 10, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> Backlink Integration</Text>
+                  <Text style={{ marginTop: 10, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> Email Chat Support.</Text>
+                  <Text style={{ marginTop: 10, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> Dedicated Account Manager.</Text>
+                  <Text style={{ marginTop: 10, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> Email Notification</Text>
+                  <Text style={{ marginTop: 10, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> Analytics Integration</Text>
+                  <Text style={{ marginTop: 10, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> Monthly Data report</Text>
+                  <Text style={{ marginTop: 10, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> Knowledge based consultation</Text>
 
-</View>
-</ScrollView>
+                  <View style={{ flexDirection: "row" }}>
+                    <AntDesign name="close" color={'red'} size={15} style={{ marginTop: 15, marginLeft: 10 }} /><Text style={{ marginTop: 10, marginLeft: 0, fontSize: 16, color: "grey", textDecorationLine: "line-through" }}> Dedicated slack channel</Text>
+                  </View>
+                  <View style={{ flexDirection: "row" }}>
+                    <AntDesign name="close" color={'red'} size={15} style={{ marginTop: 15, marginLeft: 10 }} /><Text style={{ marginTop: 10, marginLeft: 0, fontSize: 16, color: "grey", textDecorationLine: "line-through" }}> Widget Customisation</Text>
+                  </View>
+                  <View style={{ flexDirection: "row" }}>
+                    <AntDesign name="close" color={'red'} size={15} style={{ marginTop: 15, marginLeft: 10 }} /><Text style={{ marginTop: 10, marginRight: "2%", fontSize: 16, color: "grey", textDecorationLine: "line-through" }}> sizingline solution with unlimited volume custom dimension topology and blend shapes</Text>
+                  </View>
+                </View>
 
-        </Modal>
+                <View>
+                  <Text style={{ backgroundColor: "white", padding: 6, width: "40%", alignSelf: "center", borderRadius: 10, color: "green", textAlign: "center", marginTop: "10%", marginBottom: 20, fontSize: 20 }}>Buy Now</Text>
+                </View>
+
+              </View>
+            </ScrollView>
+
+          </Modal>
         </View>
 
 
         {/* =====================2nd end ===================================== */}
 
 
-{/* ==========================3rd==================== */}
+        {/* ==========================3rd==================== */}
 
-<View >
-        <Modal
-          animationType="slide"
-          visible={modalVisibless} 
-          transparent={false}
-          
-        >
-          <View style={{backgroundColor:"white",}}>
-        <Text style={{fontSize:30,alignSelf:"center",color:"black",marginTop:15}}>Professional</Text>
-          <AntDesign
-            onPress={() => setModalVisibless(!modalVisibless)}
-            name="close"
-            style={{ fontSize: 25, color: "red", fontWeight: "bold",textAlign:"right",marginTop:-50}} />
+        <View >
+          <Modal
+            animationType="slide"
+            visible={modalVisibless}
+            transparent={false}
+
+          >
+            <View style={{ backgroundColor: "white", }}>
+              <Text style={{ fontSize: 30, alignSelf: "center", color: "black", marginTop: 15 }}>Enterprise</Text>
+              <AntDesign
+                onPress={() => setModalVisibless(!modalVisibless)}
+                name="close"
+                style={{ fontSize: 25, color: "red", fontWeight: "bold", textAlign: "right", marginTop: -50 }} />
             </View>
 
-            
-            
-<ScrollView style={{backgroundColor:"#14466b",borderWidth:1,borderColor:"white",borderTopRightRadius:20,borderTopLeftRadius:20,marginTop:30}}>
-<View>
-  <View>
-  <Text style={{fontSize:35,alignSelf:"center",color:"white"}}>Request for Quote</Text>
 
-  </View>
-  <View>
-  <Text style={{marginTop:30,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> 2000 Dimensions</Text>
-  <Text style={{marginTop:10,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> Automated Size Gradation.</Text>
-  <Text style={{marginTop:10,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> Automated Size Control.</Text>
-  <Text style={{marginTop:10,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> Product Detail</Text>
-  <Text style={{marginTop:10,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> Product Show on Aaiena platform</Text>
-  <Text style={{marginTop:10,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> Backlink Integration</Text>
-  <Text style={{marginTop:10,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> Email Chat Support.</Text>
-  <Text style={{marginTop:10,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> Dedicated Account Manager.</Text>
-  <Text style={{marginTop:10,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> Email Notification</Text>
-  <Text style={{marginTop:10,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> Analytics Integration</Text>
-  <Text style={{marginTop:10,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> Monthly Data report</Text>
-  <Text style={{marginTop:10,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> Knowledge based consultation</Text>
-  <Text style={{marginTop:10,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> Dedicated slack channel</Text>
-  <Text style={{marginTop:10,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> Widget Customisation</Text>
-  <Text style={{marginTop:10,marginLeft:10,fontSize:16,color:"white"}}><AntDesign name="check" color={'green'} size={15}/> sizingline solution with unlimited volume custom dimension topology and blend shapes</Text>
-  </View>
 
-  <View>
-    <Text style={{backgroundColor:"white",padding:6,width:"40%",alignSelf:"center",borderRadius:10,color:"green",textAlign:"center",marginTop:"10%",marginBottom:20,fontSize:20}}>Buy Now</Text>
-  </View>
+            <ScrollView style={{ backgroundColor: "#14466b", borderWidth: 1, borderColor: "white", borderTopRightRadius: 20, borderTopLeftRadius: 20, marginTop: 30 }}>
+              <View>
+                <View>
+                  <Text style={{ fontSize: 35, alignSelf: "center", color: "white" }}>Request for Quote</Text>
 
-</View>
-</ScrollView>
+                </View>
+                <View>
+                  <Text style={{ marginTop: 30, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> 2000 Dimensions</Text>
+                  <Text style={{ marginTop: 10, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> Automated Size Gradation.</Text>
+                  <Text style={{ marginTop: 10, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> Automated Size Control.</Text>
+                  <Text style={{ marginTop: 10, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> Product Detail</Text>
+                  <Text style={{ marginTop: 10, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> Product Show on Aaiena platform</Text>
+                  <Text style={{ marginTop: 10, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> Backlink Integration</Text>
+                  <Text style={{ marginTop: 10, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> Email Chat Support.</Text>
+                  <Text style={{ marginTop: 10, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> Dedicated Account Manager.</Text>
+                  <Text style={{ marginTop: 10, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> Email Notification</Text>
+                  <Text style={{ marginTop: 10, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> Analytics Integration</Text>
+                  <Text style={{ marginTop: 10, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> Monthly Data report</Text>
+                  <Text style={{ marginTop: 10, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> Knowledge based consultation</Text>
+                  <Text style={{ marginTop: 10, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> Dedicated slack channel</Text>
+                  <Text style={{ marginTop: 10, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> Widget Customisation</Text>
+                  <Text style={{ marginTop: 10, marginLeft: 10, fontSize: 16, color: "white" }}><AntDesign name="check" color={'green'} size={15} /> sizingline solution with unlimited volume custom dimension topology and blend shapes</Text>
+                </View>
 
-        </Modal>
+                <View>
+                  <Text style={{ backgroundColor: "white", padding: 6, width: "40%", alignSelf: "center", borderRadius: 10, color: "green", textAlign: "center", marginTop: "10%", marginBottom: 20, fontSize: 20 }}>Request Now</Text>
+                </View>
+
+              </View>
+            </ScrollView>
+
+          </Modal>
         </View>
 
-{/* ==============================3rd end ==================== */}
+        {/* ==============================3rd end ==================== */}
 
         <View>
-          <Text style={{ textAlign: "center", marginTop: "5%", marginBottom: "10%", color: "#14466b", fontWeight: "bold", fontSize: 20,backgroundColor:"white",width:220,alignSelf:"center",padding:7,borderRadius:5}}>CHOOSE YOUR PLANS</Text>
+          <Text style={{ textAlign: "center", marginTop: "5%", marginBottom: "10%", color: "#14466b", fontWeight: "bold", fontSize: 20, backgroundColor: "white", width: 220, alignSelf: "center", padding: 7, borderRadius: 5 }}>CHOOSE YOUR PLANS</Text>
         </View>
 
 
@@ -228,7 +228,7 @@ const BuyPlans = () => {
             <Text
               style={{ backgroundColor: "white", padding: 12, color: "#14466b", borderRadius: 10, fontWeight: "bold" }}
               onPress={() => setModalVisible(true)}
-            >View More</Text>
+            >Plan Details</Text>
           </View>
         </View>
         <View style={{ height: "25%", backgroundColor: "lightgrey", marginBottom: "5%", borderRadius: 20, marginHorizontal: "3%" }}>
@@ -236,7 +236,7 @@ const BuyPlans = () => {
           <Text style={{ textAlign: "center", fontSize: 30, marginTop: "2%" }}>$200/Month</Text>
           <View style={{ flexDirection: "row", justifyContent: "space-around", marginTop: "5%" }}>
             <Text style={{ backgroundColor: "white", padding: 12, color: "#14466b", borderRadius: 10, fontWeight: "bold", }} onPress={() => setModalVisibles(true)}>Buy Now</Text>
-            <Text style={{ backgroundColor: "white", padding: 12, color: "#14466b", borderRadius: 10, fontWeight: "bold" }} onPress={() => setModalVisibles(true)}>View More</Text>
+            <Text style={{ backgroundColor: "white", padding: 12, color: "#14466b", borderRadius: 10, fontWeight: "bold" }} onPress={() => setModalVisibles(true)}>Plan Details</Text>
           </View>
         </View>
         <View style={{ height: "25%", backgroundColor: "lightgrey", marginBottom: "5%", borderRadius: 20, marginHorizontal: "3%" }}>
@@ -251,7 +251,7 @@ const BuyPlans = () => {
 
 
       </View>
-      
+
     </>
   );
 };
@@ -259,5 +259,5 @@ const BuyPlans = () => {
 export default BuyPlans;
 
 const styles = StyleSheet.create({
- 
+
 });

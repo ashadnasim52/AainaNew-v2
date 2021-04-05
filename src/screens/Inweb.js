@@ -3,6 +3,7 @@ import {
   StyleSheet,
   Text,
   View,
+  Animated,
   Image,
   Button,
   SafeAreaView,
@@ -13,15 +14,15 @@ import {
 export const Inweb = () => {
   return (
     <SafeAreaView>
-      <ScrollView style={{backgroundColor:"#14466b"}}>
+      <ScrollView style={{ backgroundColor: "#14466b" }}>
         <View>
           <Image
-            source={require('../assests/img/inweb3.png')}
-            style={{width: 360, height: 400}}
+            source={require('../assests/img/inweb10.png')}
+            style={{ width: 460, height: 350,marginLeft:-100}}
           />
           <View
             style={{
-              backgroundColor: '#b0e0e6',
+              backgroundColor: '#fff',
               margin: 25,
               borderRadius: 25,
               height: 120,
@@ -30,215 +31,41 @@ export const Inweb = () => {
             <Text
               style={{
                 fontSize: 22,
-                color: '#14466b',
+                color: 'black',
                 fontWeight: 'bold',
                 fontFamily: 'georgia',
-                margin: 10,
-                marginLeft: 25,
-                marginTop: 20,
+                margin: 40,
+                textAlign: "center"
               }}>
               In Web
             </Text>
-            <Text
-              style={{
-                fontSize: 12,
-                color: '#14466b',
-                marginLeft: 25,
-                fontFamily: 'georgia',
-                marginBottom: 10,
-              }}>
-              Indian National Bird since 1910
-            </Text>
-            <Text
-              style={{
-                fontSize: 12,
-                color: '#14466b',
-                fontFamily: 'georgia',
-                marginLeft: 25,
-              }}>
-              Indian National Park New delhi India
-            </Text>
+
           </View>
 
-          <View style={{marginLeft: 10}}>
-            <Text style={{fontFamily: 'lucida grande', fontWeight: 'bold',color:"white"}}>
-              KingFisher 21/Feb/2020
-            </Text>
-            <Text style={{marginTop: 12, fontFamily: 'lucida grande',color:"white"}}>
-              National Birds
-            </Text>
-          </View>
+
 
           <Text
             style={{
               margin: 10,
               flex: 1,
-              fontFamily: 'lucida grande',
+              fontFamily: 'roboto',
               color: 'white',
             }}>
-            Our company Product is the best Porduct in the industry of IT and
-            Fashion Appearel all Product of the Aaiena are currently in the
-            trends and providing world best Sizing Product best ever Our company
-            Product is the best Porduct in the industry of IT and Fashion
-            Appearel all Product of the Aaiena are currently in the trends and
-            providing world best Sizing Product best ever Our company Product is
-            the best Porduct in the industry of IT and Fashion Appearel all
-            Product of the Aaiena are currently in the trends and providing
-            world best Sizing Product best ever Our company Product is the best
-            Porduct in the industry of IT and Fashion Appearel all Product of
-            the Aaiena are currently in the trends and providing world best
-            Sizing Product best ever Our company Product is the best Porduct in
-            the industry of IT and Fashion Appearel all Product of the Aaiena
-            are currently in the trends and providing world best Sizing Product
-            best ever. Our company Product is the best Porduct in the industry
-            of IT and Fashion Appearel all Product of the Aaiena are currently
-            in the trends and providing world best Sizing Product best ever Our
-            company Product is the best Porduct in the industry of IT and
-            Fashion Appearel all Product of the Aaiena are currently in the
-            trends and providing world best Sizing Product best ever Our company
-            Product is the best Porduct in the industry of IT and Fashion
-            Appearel all Product of the Aaiena are currently in the trends and
-            providing world best Sizing Product best ever Our company Product is
-            the best Porduct in the industry of IT and Fashion Appearel all
-            Product of the Aaiena are currently in the trends and providing
-            world best Sizing Product best ever Our company Product is the best
-            Porduct in the industry of IT and Fashion Appearel all Product of
-            the Aaiena are currently in the trends and providing world best
-            Sizing Product best ever Our company Product is the best Porduct in
-            the industry of IT and Fashion Appearel all Product of the Aaiena
-            are currently in the trends and providing world best Sizing Product
-            best ever Our company Product is the best Porduct in the industry of
-            IT and Fashion Appearel all Product of the Aaiena are currently in
-            the trends and providing world best Sizing Product best ever Our
-            company Product is the best Porduct in the industry of IT and
-            Fashion Appearel all Product of the Aaiena are currently in the
-            trends and providing world best Sizing Product best ever Our company
-            Product is the best Porduct in the industry of IT and Fashion
-            Appearel all Product of the Aaiena are currently in the trends and
-            providing world best Sizing Product best ever Our company Product is
-            the best Porduct in the industry of IT and Fashion Appearel all
-            Product of the Aaiena are currently in the trends and providing
-            world best Sizing Product best ever Our company Product is the best
-            Porduct in the industry of IT and Fashion Appearel all Product of
-            the Aaiena are currently in the trends and providing world best
-            Sizing Product best ever Our company Product is the best Porduct in
-            the industry of IT and Fashion Appearel all Product of the Aaiena
-            are currently in the trends and providing world best Sizing Product
-            best ever Our company Product is the best Porduct in the industry of
-            IT and Fashion Appearel all Product of the Aaiena are currently in
-            the trends and providing world best Sizing Product best ever Our
-            company Product is the best Porduct in the industry of IT and
-            Fashion Appearel all Product of the Aaiena are currently in the
-            trends and providing world best Sizing Product best ever Our company
-            Product is the best Porduct in the industry of IT and Fashion
-            Appearel all Product of the Aaiena are currently in the trends and
-            providing world best Sizing Product best ever Our company Product is
-            the best Porduct in the industry of IT and Fashion Appearel all
-            Product of the Aaiena are currently in the trends and providing
-            world best Sizing Product best ever Our company Product is the best
-            Porduct in the industry of IT and Fashion Appearel all Product of
-            the Aaiena are currently in the trends and providing world best
-            Sizing Product best ever Our company Product is the best Porduct in
-            the industry of IT and Fashion Appearel all Product of the Aaiena
-            are currently in the trends and providing world best Sizing Product
-            best ever Our company Product is the best Porduct in the industry of
-            IT and Fashion Appearel all Product of the Aaiena are currently in
-            the trends and providing world best Sizing Product best ever Our
-            company Product is the best Porduct in the industry of IT and
-            Fashion Appearel all Product of the Aaiena are currently in the
-            trends and providing world best Sizing Product best ever Our company
-            Product is the best Porduct in the industry of IT and Fashion
-            Appearel all Product of the Aaiena are currently in the trends and
-            providing world best Sizing Product best ever Our company Product is
-            the best Porduct in the industry of IT and Fashion Appearel all
-            Product of the Aaiena are currently in the trends and providing
-            world best Sizing Product best ever Our company Product is the best
-            Porduct in the industry of IT and Fashion Appearel all Product of
-            the Aaiena are currently in the trends and providing world best
-            Sizing Product best ever Our company Product is the best Porduct in
-            the industry of IT and Fashion Appearel all Product of the Aaiena
-            are currently in the trends and providing world best Sizing Product
-            best ever Our company Product is the best Porduct in the industry of
-            IT and Fashion Appearel all Product of the Aaiena are currently in
-            the trends and providing world best Sizing Product best ever Our
-            company Product is the best Porduct in the industry of IT and
-            Fashion Appearel all Product of the Aaiena are currently in the
-            trends and providing world best Sizing Product best ever Our company
-            Product is the best Porduct in the industry of IT and Fashion
-            Appearel all Product of the Aaiena are currently in the trends and
-            providing world best Sizing Product best ever Our company Product is
-            the best Porduct in the industry of IT and Fashion Appearel all
-            Product of the Aaiena are currently in the trends and providing
-            world best Sizing Product best ever Our company Product is the best
-            Porduct in the industry of IT and Fashion Appearel all Product of
-            the Aaiena are currently in the trends and providing world best
-            Sizing Product best ever Our company Product is the best Porduct in
-            the industry of IT and Fashion Appearel all Product of the Aaiena
-            are currently in the trends and providing world best Sizing Product
-            best ever Our company Product is the best Porduct in the industry of
-            IT and Fashion Appearel all Product of the Aaiena are currently in
-            the trends and providing world best Sizing Product best ever Our
-            company Product is the best Porduct in the industry of IT and
-            Fashion Appearel all Product of the Aaiena are currently in the
-            trends and providing world best Sizing Product best ever Our company
-            Product is the best Porduct in the industry of IT and Fashion
-            Appearel all Product of the Aaiena are currently in the trends and
-            providing world best Sizing Product best ever Our company Product is
-            the best Porduct in the industry of IT and Fashion Appearel all
-            Product of the Aaiena are currently in the trends and providing
-            world best Sizing Product best ever Our company Product is the best
-            Porduct in the industry of IT and Fashion Appearel all Product of
-            the Aaiena are currently in the trends and providing world best
-            Sizing Product best ever Our company Product is the best Porduct in
-            the industry of IT and Fashion Appearel all Product of the Aaiena
-            are currently in the trends and providing world best Sizing Product
-            best ever Our company Product is the best Porduct in the industry of
-            IT and Fashion Appearel all Product of the Aaiena are currently in
-            the trends and providing world best Sizing Product best ever Our
-            company Product is the best Porduct in the industry of IT and
-            Fashion Appearel all Product of the Aaiena are currently in the
-            trends and providing world best Sizing Product best ever Our company
-            Product is the best Porduct in the industry of IT and Fashion
-            Appearel all Product of the Aaiena are currently in the trends and
-            providing world best Sizing Product best ever Our company Product is
-            the best Porduct in the industry of IT and Fashion Appearel all
-            Product of the Aaiena are currently in the trends and providing
-            world best Sizing Product best ever Our company Product is the best
-            Porduct in the industry of IT and Fashion Appearel all Product of
-            the Aaiena are currently in the trends and providing world best
-            Sizing Product best ever Our company Product is the best Porduct in
-            the industry of IT and Fashion Appearel all Product of the Aaiena
-            are currently in the trends and providing world best Sizing Product
-            best ever Our company Product is the best Porduct in the industry of
-            IT and Fashion Appearel all Product of the Aaiena are currently in
-            the trends and providing world best Sizing Product best ever Our
-            company Product is the best Porduct in the industry of IT and
-            Fashion Appearel all Product of the Aaiena are currently in the
-            trends and providing world best Sizing Product best ever Our company
-            Product is the best Porduct in the industry of IT and Fashion
-            Appearel all Product of the Aaiena are currently in the trends and
-            providing world best Sizing Product best ever Our company Product is
-            the best Porduct in the industry of IT and Fashion Appearel all
-            Product of the Aaiena are currently in the trends and providing
-            world best Sizing Product best ever Our company Product is the best
-            Porduct in the industry of IT and Fashion Appearel all Product of
-            the Aaiena are currently in the trends and providing world best
-            Sizing Product best ever Our company Product is the best Porduct in
-            the industry of IT and Fashion Appearel all Product of the Aaiena
-            are currently in the trends and providing world best Sizing Product
-            best ever Our company Product is the best Porduct in the industry of
-            IT and Fashion Appearel all Product of the Aaiena are currently in
-            the trends and providing world best Sizing Product best ever Our
-            company Product is the best Porduct in the industry of IT and
-            Fashion Appearel all Product of the Aaiena are currently in the
-            trends and providing world best Sizing Product best ever Our company
-            Product is the best Porduct in the industry of IT and Fashion
-            Appearel all Product of the Aaiena are currently in the trends and
-            providing world best Sizing Product best ever Our company Product is
-            the best Porduct in the industry of IT and Fashion Appearel all
-            Product of the Aaiena are currently in the trends and providing
-            world best Sizing Product best ever
-          </Text>
+         
+AAEINA becomes a handy asset as a website platform where customers virtually try-on countless apparel without rooting to unnecessary mobile apps. With virtual trial room technology, you can fabricate your virtual avatar with the snap of your fingers. AAIENA provides the customer with the necessary license to pick their favorite get-ups as per their preferences.
+         </Text>
+            <Text
+            style={{
+              margin: 10,
+              flex: 1,
+              fontFamily: 'roboto',
+              color: 'white',
+              marginBottom:20
+            }}
+            >
+  AAIENA web platform is an ideal alternative that would curb the frequent human interactions and return rates occurring due to sizing issues. Through customer insight, you could devise several business ideas through AAIENA. Thus, customers would not be in any spot of bother before purchasing the apparel.
+   </Text>
+       
         </View>
       </ScrollView>
     </SafeAreaView>

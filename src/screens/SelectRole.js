@@ -8,6 +8,7 @@ import {
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import {Button, Icon, Input, Layout, Text} from '@ui-kitten/components';
 import * as Animatable from 'react-native-animatable';
 
@@ -60,14 +61,8 @@ const SelectRole = () => {
                 <Text style={styles.cardText} category="h3">
                   B2B
                 </Text>
-                <Button
-                  accessoryRight={(props) => (
-                    <Icon {...props} name="arrow-forward" />
-                  )}
-                  style={{
-                    borderRadius: 25,
-                  }}
-                  onPress={() => {
+              <Text style={{backgroundColor:"#fff",padding:12,color:"black",borderRadius:25,color:"darkblue",fontWeight:"bold",fontSize:14}}
+                onPress={() => {
                     dispatch({
                       type: CHANGE_CLIENT_TYPE,
                       payload: true,
@@ -75,8 +70,7 @@ const SelectRole = () => {
 
                     nav.navigate('SignIn');
                   }}>
-                  Next
-                </Button>
+                 Next     <Ionicons name="arrow-forward" size={18}/>    </Text>
               </View>
             </View>
             <View

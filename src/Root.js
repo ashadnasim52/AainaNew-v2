@@ -63,7 +63,7 @@ const Root = () => {
         screenOptions={{
           header: (props) => <CustomHeader {...props} />,
         }}
-        initialRouteName="BuyPlans">
+        initialRouteName="Onboarding">
         <Stack.Screen
           name="EditPage"
           component={EditPage}
@@ -78,6 +78,14 @@ const Root = () => {
             headerShown: false,
           }}
         />
+  <Stack.Screen
+          name="B2cpagemain"
+          component={B2cpagemain}
+          options={{
+            headerShown: false,
+          }}
+        />
+
         <Stack.Screen
           name="SignUpOrganization"
           component={SignUpOrganization}
@@ -125,6 +133,27 @@ const Root = () => {
         <Stack.Screen
           name="SignIn"
           component={Signin}
+          options={{
+            headerShown: false,
+          }}
+        />
+         <Stack.Screen
+          name="Sizing"
+          component={Sizing}
+          options={{
+            headerShown: false,
+          }}
+        />
+         <Stack.Screen
+          name="Ettire"
+          component={Ettire}
+          options={{
+            headerShown: false,
+          }}
+        />
+         <Stack.Screen
+          name="Sneaky"
+          component={Sneaky}
           options={{
             headerShown: false,
           }}

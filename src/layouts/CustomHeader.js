@@ -2,6 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 // import {Avatar, Icon, Text, Layout} from '@ui-kitten/components';
 // import React from 'react';
 // import {StyleSheet, View, TouchableOpacity} from 'react-native';
+import * as RootNavigation from '../RootNavigation';
 import {DrawerActions} from '@react-navigation/native';
 import {ACCENT, PRIMARY} from '../theme/colors';
 import React from 'react';
@@ -68,6 +69,8 @@ import {Layout} from '@ui-kitten/components';
 const CustomHeader = ({navigation}) => {
   const nav = useNavigation();
   return (
+    <>
+    <TouchableOpacity onPress={() => RootNavigation.navigate('EditPage')}>
     <Layout style={{backgroundColor: '#14466b'}}>
       <View
         style={{
@@ -106,6 +109,8 @@ const CustomHeader = ({navigation}) => {
         />
       </View>
     </Layout>
+    </TouchableOpacity>
+    </>
   );
 };
 

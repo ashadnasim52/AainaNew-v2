@@ -64,14 +64,11 @@ const About = ({navigation}) => {
 
         <View style={{ marginBottom: 40}}>
           <View>
-            <Text style={{fontSize: 30, textAlign: 'center', color: 'white'}}>
-              Aaiena
+            <Text style={{fontSize: 30, textAlign: 'center', color: 'white',}}>
+             Why AAIENA ?
             </Text>
-            <Text style={{color: 'black', marginLeft: 10,color:"white"}}>
-              Our company Product is the best Porduct in the industry of IT and
-              Fashion Appearel all Product of the Aaiena are currently in the
-              trends and providing world best Sizing Product best ever Our
-              company Product is the best Porduct
+            <Text style={{color: 'black', marginLeft: 10,color:"white",marginTop:10,fontFamily:"sans-serif-light"}}>
+            AAIENA is the perfect amalgamation of Artificial Intelligence and Virtual Reality, which sprinkles its magic in the form of a contactless virtual trial room. The virtual avatar created through AAIENA is an outcome that can facilitate the trial prospect to the next level.
             </Text>
           </View>
           <View style={{inlineHeight: 40}}>
@@ -116,15 +113,13 @@ marginTop:20,
                       fontSize: 16,
                       fontWeight: 'bold',
                       color: 'green',
-                      marginTop: -10,
+                      marginTop: 0,
                       marginRight: 50,
                       color:"#14466b"
                     }}>
                     Sizing
                   </Text>
-                  <Text style={{flex: 1, marginLeft: -18}}>
-                    sizing is the product of sankshit group{' '}
-                  </Text>
+                
                 </Right>
               </CardItem>
             </Card>
@@ -133,7 +128,7 @@ marginTop:20,
 
         <View style={{marginBottom: 40}}>
           <TouchableOpacity onPress={() => navigation.navigate('Ettire')}>
-            <Card style={{marginTop: 0}}>
+            <Card style={{marginTop: 30}}>
               <CardItem
                 style={{
                   marginLeft: 20,
@@ -141,16 +136,17 @@ marginTop:20,
                   height: 30,
                   marginBottom: 30,
                 }}>
-                <Left>
+                <Left style={{backgroundColor:"#ECECF3",height:113,marginTop:-22,marginLeft:-80,borderRadius:10}}>
                   <Image
-                    source={require('../assests/img/ettire1.jpg')}
+                    source={require('../assests/img/inweb3.png')}
                     style={{
-                      width: 150,
-                      height: 130,
+                      width: 180,
+                      height: 180, 
                       marginBottom: -12,
-                      marginLeft: -40,
-                      marginTop: -35,
-                      borderRadius: 25,
+                      marginLeft:45,
+                      marginTop: -80,
+                      borderTopRightRadius:20,
+                      borderTopLeftRadius:20
                     }}
                   />
                 </Left>
@@ -160,14 +156,12 @@ marginTop:20,
                       fontSize: 16,
                       fontWeight: 'bold',
                       color:"#14466b",
-                      marginTop: -60,
+                      marginTop: -30,
                       marginRight: 50,
                     }}>
                     Ettire
                   </Text>
-                  <Text style={{flex: 1, marginLeft: -18}}>
-                    Ettire is the product of sankshit group{' '}
-                  </Text>
+                  
                 </Right>
               </CardItem>
             </Card>
@@ -176,7 +170,7 @@ marginTop:20,
 
         <View style={{marginBottom: 40}}>
           <TouchableOpacity onPress={() => navigation.navigate('Sneaky')}>
-            <Card style={{marginTop: 0}}>
+            <Card style={{marginTop: 30}}>
               <CardItem
                 style={{
                   marginLeft: 20,
@@ -203,14 +197,12 @@ marginTop:20,
                       fontSize: 16,
                       fontWeight: 'bold',
                       color: '#14466b',
-                      marginTop: -60,
+                      marginTop: -30,
                       marginRight: 50,
                     }}>
                     Sneaky
                   </Text>
-                  <Text style={{flex: 1, marginLeft: -18}}>
-                    sneak is the product of sankshit group{' '}
-                  </Text>
+                  
                 </Right>
               </CardItem>
             </Card>
@@ -225,7 +217,7 @@ marginTop:20,
 
         <View style={{marginBottom: 40}}>
           <TouchableOpacity onPress={() => navigation.navigate('Instore')}>
-            <Card style={{marginTop: 0}}>
+            <Card style={{marginTop: 30}}>
               <CardItem
                 style={{
                   marginLeft: 20,
@@ -240,24 +232,22 @@ marginTop:20,
                       marginLeft: -20,
                       fontWeight: 'bold',
                       color: '#14466b',
-                      marginTop: -80,
+                      marginTop: -20,
                       marginLeft: 0,
                     }}>
                     In Store
                   </Text>
-                  <Text style={{marginLeft: -110, marginTop: -20}}>
-                    In Store Product Aaiena
-                  </Text>
+                
                 </Left>
                 <Right>
                   <Image
-                    source={require('../assests/img/inweb.webp')}
+                    source={require('../assests/img/instore10.png')}
                     style={{
                       width: 160,
-                      height: 130,
+                      height: 900,
                       marginBottom: -12,
                       marginRight: -18,
-                      marginTop: -35,
+                      marginTop: -60,
                       borderRadius: 25,
                     }}
                   />
@@ -269,7 +259,7 @@ marginTop:20,
 
         <View style={{marginBottom: 40}}>
           <TouchableOpacity onPress={() => navigation.navigate('Inapp')}>
-            <Card style={{marginTop: 0}}>
+            <Card style={{marginTop: 30}}>
               <CardItem
                 style={{
                   marginLeft: 20,
@@ -281,24 +271,21 @@ marginTop:20,
                   <Text
                     style={{
                       fontSize: 18,
-                      marginLeft: -20,
+                      marginLeft: 10,
                       fontWeight: 'bold',
                       color: '#14466b',
-                      marginTop: -80,
-                      marginLeft: 0,
+                     marginTop:-25,
                     }}>
                     In App
                   </Text>
-                  <Text style={{marginLeft: -95, marginTop: -20}}>
-                    In App Product Aaiena
-                  </Text>
+                
                 </Left>
                 <Right>
                   <Image
-                    source={require('../assests/img/app.jpg')}
+                    source={require('../assests/img/inapp10.png')}
                     style={{
-                      width: 160,
-                      height: 130,
+                      width: 240,
+                      height: 230,
                       marginBottom: -12,
                       marginRight: -18,
                       marginTop: -35,
@@ -313,7 +300,7 @@ marginTop:20,
 
         <View style={{marginBottom: 40}}>
           <TouchableOpacity onPress={() => navigation.navigate('Inweb')}>
-            <Card style={{marginTop: 0}}>
+            <Card style={{marginTop: 30}}>
               <CardItem
                 style={{
                   marginLeft: 20,
@@ -328,23 +315,21 @@ marginTop:20,
                       marginLeft: -20,
                       fontWeight: 'bold',
                       color: '#14466b',
-                      marginTop: -80,
+                      marginTop: -20,
                       marginLeft: 0,
                     }}>
                     In Web
                   </Text>
-                  <Text style={{marginLeft: -100, marginTop: -20}}>
-                    In Web Product Aaiena
-                  </Text>
+                  
                 </Left>
                 <Right>
                   <Image
-                    source={require('../assests/img/inweb.webp')}
+                    source={require('../assests/img/inweb10.png')}
                     style={{
-                      width: 160,
-                      height: 130,
+                      width: 270,
+                      height: 200,
                       marginBottom: -12,
-                      marginRight: -18,
+                      marginRight: -15,
                       marginTop: -35,
                       borderRadius: 25,
                     }}

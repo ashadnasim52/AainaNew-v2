@@ -2,12 +2,16 @@ import React from 'react';
 import {ImageBackground, StyleSheet, View} from 'react-native';
 import {Layout, Text, Card, Icon, Avatar, Button} from '@ui-kitten/components';
 import {ACCENT, PRIMARY} from '../theme/colors';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 // import moment from 'moment';
 const DetailScreen = () => {
   return (
+
     <Layout
       style={{
         flex: 1,
+        backgroundColor:"#14466b"
       }}>
       <View>
         <ImageBackground
@@ -15,6 +19,7 @@ const DetailScreen = () => {
           style={{
             width: '100%',
             height: 350,
+            
           }}
         />
       </View>
@@ -23,6 +28,7 @@ const DetailScreen = () => {
           marginHorizontal: 20,
           borderRadius: 25,
           marginTop: -50,
+          backgroundColor:"white"
         }}>
         <View
           style={{
@@ -35,15 +41,16 @@ const DetailScreen = () => {
             <Text
               category="h6"
               style={{
-                color: PRIMARY,
-                fontFamily: 'Merriweather-Bold',
+                color:"#14466b",
+                fontFamily: 'Roboto',
+                fontSize:18,
+                fontWeight:"bold"
               }}>
-              Plane Name
+              Sizing
             </Text>
             <Text
-              category="label"
               style={{
-                fontFamily: 'Merriweather-Light',
+                fontFamily: 'Roboto',
               }}>
               Duration 5 days
             </Text>
@@ -51,8 +58,9 @@ const DetailScreen = () => {
               appearance="hint"
               category="label"
               style={{
-                fontFamily: 'Merriweather-Light',
-                marginTop: 5,
+                fontFamily: 'roboto',
+                color:'black'
+              
               }}>
               No of trials left:- 5
             </Text>
@@ -72,30 +80,31 @@ const DetailScreen = () => {
           flexDirection: 'row',
           paddingHorizontal: 20,
           paddingVertical: 5,
+          backgroundColor:"#14466b"
+          
         }}>
-        <Avatar
-          source={{
-            uri: 'https://picsum.photos/id/1005/367/267',
-          }}
-        />
+       
         <View
           style={{
             flexGrow: 1,
-            paddingLeft: 20,
+            
+            
           }}>
           <Text
-            category="p1"
             style={{
-              color: PRIMARY,
-              fontFamily: 'Merriweather-Bold',
+              color:"white",
+              fontFamily: 'Roboto',
+              fontSize:18
+              
+              
             }}>
-            Plane Name
+            Sizing
           </Text>
           <Text
-            category="label"
-            appearance="hint"
             style={{
-              fontFamily: 'Merriweather-Light',
+              fontFamily: 'Roboto',
+              
+            
             }}>
             Duration 5 days
           </Text>
@@ -109,6 +118,7 @@ const DetailScreen = () => {
         style={{
           paddingHorizontal: 20,
           flex: 1,
+          backgroundColor:"#14466b"
         }}>
         <Text>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae
@@ -124,22 +134,23 @@ const DetailScreen = () => {
           padding: 10,
           borderTopRightRadius: 25,
           borderTopLeftRadius: 25,
+          backgroundColor:"white"
         }}>
-        <Button
-          style={{
-            marginHorizontal: 20,
-            borderRadius: 15,
-          }}
-          status="primary"
-          accessoryLeft={(props) => <Icon {...props} name="heart-outline" />}
-        />
-        <Button
-          style={{
-            flexGrow: 1,
-            borderRadius: 15,
-          }}>
-          BUTTON
-        </Button>
+        <View style={{flexDirection:"row",}}>
+        <TouchableOpacity>
+        <View style={{marginLeft:"20%"}}>
+          <AntDesign name="clockcircleo" color={"#14466b"} size={40} style={{borderRadius:10,padding:5}}/>
+          </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity>
+        <View style={{backgroundColor:"green",width:200,borderRadius:10,justifyContent:"center",height:50}}>
+        
+         <Text style={{color:"white",textAlign:"center",fontSize:17}}>Email Invoice</Text>
+       </View>
+       </TouchableOpacity>
+
+       </View>
       </Layout>
     </Layout>
   );

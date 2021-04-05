@@ -5,9 +5,15 @@ import {
   DrawerItem,
   DrawerItemList,
 } from '@react-navigation/drawer';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+
+
 import {Avatar, Button, Icon, Layout, Text} from '@ui-kitten/components';
 import {PRIMARY} from '../theme/colors';
 import * as RootNavigation from '../RootNavigation';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const CustomDrawer = (props) => {
   return (
@@ -30,12 +36,14 @@ const CustomDrawer = (props) => {
             color: 'red',
           },
         }}>
+        <TouchableOpacity onPress={() => RootNavigation.navigate('EditPage')}>
         <View
           style={{
             flexDirection: 'row',
             width: '90%',
             paddingTop: 30,
             marginBottom: 20,
+            marginRight:140
           }}>
           <Avatar
            source={require('../assests/img/girl.jpg')}
@@ -61,6 +69,7 @@ const CustomDrawer = (props) => {
             </Text>
           </View>
         </View>
+        </TouchableOpacity>
       </Layout>
       {/* <DrawerItemList {...props} /> */}
       <Layout
@@ -76,7 +85,7 @@ const CustomDrawer = (props) => {
           onPress={() => RootNavigation.navigate('Home')}
           labelStyle={{color: '#fff'}}
           icon={({focused, color, size}) => (
-            <Icon style={styles.icon} fill="#fff" name="home-outline" />
+            <FontAwesome5 name="home" size={15} color="white" />
           )}
         />
         <DrawerItem
@@ -92,7 +101,7 @@ const CustomDrawer = (props) => {
           labelStyle={{color: '#fff'}}
           onPress={() => RootNavigation.navigate('B2cpagemain')}
           icon={({focused, color, size}) => (
-            <Icon style={styles.icon} fill="#fff" name="person-outline" />
+            <FontAwesome name="users" size={15} color="white" />
           )}
         />
         <DrawerItem
@@ -124,27 +133,35 @@ const CustomDrawer = (props) => {
           labelStyle={{color: '#fff'}}
           onPress={() => RootNavigation.navigate('MyPlans')}
           icon={({focused, color, size}) => (
-            <Icon style={styles.icon} fill="#8F9BB3" name="award-outline" />
+            <Icon style={styles.icon} fill="white" name="award-outline"/>
           )}
         />
       
     
 
         <DrawerItem
-          label="Setting"
-          onPress={() => RootNavigation.navigate('Setting')}
+          label="Edit Profile"
+          onPress={() => RootNavigation.navigate('EditPage')}
           labelStyle={{color: '#fff'}}
           icon={({focused, color, size}) => (
-            <Icon style={styles.icon} fill="#fff" name="settings-2-outline" />
+            <FontAwesome5 name="users-cog" size={15} color="white" />
+            
           )}
         />
-        <Button
-          style={{}}
-          onPress={() => RootNavigation.replace('SignIn')}
+
+        <View style={{alignSelf:"center",backgroundColor:"white",borderRadius:25,marginTop:20}}>
+          <Text style={{padding:10,color:"black",width:150,textAlign:"center",fontSize:17}}
+          onPress={() => RootNavigation.navigate('SignIn')}
+          >Log Out  <MaterialIcons name="logout" size={16} color="black"  /></Text>
+        </View>
+        {/* <Button
+          
+          onPress={() => RootNavigation.navigate('SignIn')}
           appearance="ghost"
           status="danger">
-          Log Out
+          Log Out  <MaterialIcons name="logout" size={18} color="white" />
         </Button>
+         */}
       </Layout>
 
     </DrawerContentScrollView>
