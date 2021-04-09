@@ -40,7 +40,8 @@ const CreateProfile = () => {
   const [hieght, setHieght] = useState(180);
   const [weight, setWeight] = useState(50);
   const [gender, setGender] = useState('male');
-
+  const [fullName, setFullName] = useState(null);
+  const [size, setSize] = useState(null);
   const requestStoragePermission = async () => {
     try {
       const granted = await PermissionsAndroid.requestMultiple([
@@ -203,7 +204,11 @@ const CreateProfile = () => {
                 marginVertical: 5,
                 paddingHorizontal: 10,
               }}>
-              <Input placeholder="Enter Full Name" />
+              <Input
+                placeholder="Enter Full Name"
+                value={fullName}
+                onChangeText={(text) => setFullName(text)}
+              />
             </Item>
             <Item
               rounded
@@ -212,12 +217,14 @@ const CreateProfile = () => {
                 paddingHorizontal: 10,
               }}>
               <RNPickerSelect
-                onValueChange={(value) => console.log(value)}
+                onValueChange={(value) => {
+                  setSize(null);
+                  setGender(value);
+                }}
                 placeholder={{label: 'Select Gender', value: 'someValue'}}
                 items={[
-                  {label: 'Football', value: 'football'},
-                  {label: 'Baseball', value: 'baseball'},
-                  {label: 'Hockey', value: 'hockey'},
+                  {label: 'Male', value: 'Male'},
+                  {label: 'Female', value: 'Female'},
                 ]}
                 style={{
                   viewContainer: {
@@ -226,28 +233,80 @@ const CreateProfile = () => {
                 }}
               />
             </Item>
-            <Item
-              rounded
-              style={{
-                marginVertical: 5,
-                paddingHorizontal: 10,
-              }}>
-              <RNPickerSelect
-                onValueChange={(value) => console.log(value)}
-                placeholder={{label: 'Select Body Size', value: 'someValue'}}
-                items={[
-                  {label: 'Football', value: 'football'},
-                  {label: 'Baseball', value: 'baseball'},
-                  {label: 'Hockey', value: 'hockey'},
-                ]}
+            {gender == 'Male' && (
+              <Item
+                rounded
                 style={{
-                  viewContainer: {
-                    width: '100%',
-                  },
-                }}
-              />
-            </Item>
+                  marginVertical: 5,
+                  paddingHorizontal: 10,
+                }}>
+                <RNPickerSelect
+                  onValueChange={(value) => setSize(value)}
+                  placeholder={{label: 'Select Body Size', value: 'someValue'}}
+                  items={[
+                    {label: 'Extra Small', value: 'Extra Small'},
+                    {label: 'Small', value: 'Small'},
+                    {label: 'Medium', value: 'Medium'},
+                    {label: 'Large', value: 'Large'},
+                    {label: 'Extra Large', value: 'Extra Large'},
+                  ]}
+                  style={{
+                    viewContainer: {
+                      width: '100%',
+                    },
+                  }}
+                />
+              </Item>
+            )}
 
+            {gender === 'Female' && (
+              <>
+                <Item
+                  rounded
+                  style={{
+                    marginVertical: 5,
+                    paddingHorizontal: 10,
+                  }}>
+                  <RNPickerSelect
+                    onValueChange={(value) => setSize(value)}
+                    placeholder={{
+                      label: 'Select Body Size',
+                      value: 'someValue',
+                    }}
+                    items={[
+                      {label: 'Triangle', value: 'Triangle'},
+                      {label: 'Diamond', value: 'Diamond'},
+                      {label: 'Inverted', value: 'Inverted'},
+                      {label: 'Rectangle', value: 'Rectangle'},
+                      {label: 'HourGlass', value: 'HourGlass'},
+                    ]}
+                    style={{
+                      viewContainer: {
+                        width: '100%',
+                      },
+                    }}
+                  />
+                </Item>
+                {size && (
+                  <View
+                    style={{
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}>
+                    <Image
+                      source={{
+                        uri: 'https://picsum.photos/id/1013/4256/2832',
+                        width: 150,
+                        height: 280,
+                      }}
+                      style={{
+                        resizeMode: 'cover',
+                      }}
+                    />
+                  </View>
+                )}
+              </>
+            )}
             <View
               style={{
                 marginVertical: 5,
