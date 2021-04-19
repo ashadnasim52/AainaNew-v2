@@ -294,7 +294,7 @@ const B2cpagemain = ({ navigation }) => {
                                             color: '#14466b',
                                             marginLeft: 0,
                                             marginRight:20
-                                        }}> Look Me </Text>
+                                        }}> Look@Me </Text>
 
                                 </Right>
                             </CardItem>

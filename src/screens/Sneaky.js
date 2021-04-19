@@ -97,6 +97,8 @@ export const Sneaky = () => {
               <Text style={{ color: "white", fontSize: 16 }}>24x7 precise outcome</Text>
             </View>
           </View>
+          
+
         </View>
       </ScrollView>
     </SafeAreaView>

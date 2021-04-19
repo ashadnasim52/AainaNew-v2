@@ -15,7 +15,10 @@ import {PRIMARY} from '../theme/colors';
 import * as RootNavigation from '../RootNavigation';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
+
 const CustomDrawer = (props) => {
+  const [image, setImage] = React.useState(null);
+
   return (
     <>
     
@@ -46,7 +49,12 @@ const CustomDrawer = (props) => {
             marginRight:140
           }}>
           <Avatar
-           source={require('../assests/img/girl.jpg')}
+        source={{
+                uri: image
+                  ? image.uri
+                  : 'https://picsum.photos/id/1005/367/267',
+                
+              }}
           />
           <View
             style={{
@@ -105,9 +113,17 @@ const CustomDrawer = (props) => {
           )}
         />
         <DrawerItem
-          label="Profile"
+          label="Body Profile"
           labelStyle={{color: '#fff'}}
           onPress={() => RootNavigation.navigate('Profile')}
+          icon={({focused, color, size}) => (
+            <Icon style={styles.icon} fill="#fff" name="person-outline" />
+          )}
+        />
+          <DrawerItem
+          label="Create Body Profile"
+          labelStyle={{color: '#fff'}}
+          onPress={() => RootNavigation.navigate('CreateProfile')}
           icon={({focused, color, size}) => (
             <Icon style={styles.icon} fill="#fff" name="person-outline" />
           )}
@@ -139,15 +155,7 @@ const CustomDrawer = (props) => {
       
     
 
-        <DrawerItem
-          label="Edit Profile"
-          onPress={() => RootNavigation.navigate('EditPage')}
-          labelStyle={{color: '#fff'}}
-          icon={({focused, color, size}) => (
-            <FontAwesome5 name="users-cog" size={15} color="white" />
-            
-          )}
-        />
+  
 
         <View style={{alignSelf:"center",backgroundColor:"white",borderRadius:25,marginTop:20}}>
           <Text style={{padding:10,color:"black",width:150,textAlign:"center",fontSize:17}}

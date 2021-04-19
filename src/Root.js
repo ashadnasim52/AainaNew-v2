@@ -46,9 +46,11 @@ import Setting from './screens/Setting';
 import Dress from './screens/Dress';
 import Virtual from './screens/Virtual';
 import EditPage from './screens/EditPage';
-
-
-
+import CreatePage from './screens/CreatePage';
+import CreateProfile1 from './screens/Createprofile1';
+import CreateProfile2 from './screens/CreateProfile2';
+import Female from './screens/Female';
+import Female1 from './screens/Female1';
 
 AsyncStorage.removeItem('@aaina_login');
 
@@ -63,10 +65,17 @@ const Root = () => {
         screenOptions={{
           header: (props) => <CustomHeader {...props} />,
         }}
-        initialRouteName="Onboarding">
+        initialRouteName="CreateProfile">
         <Stack.Screen
           name="EditPage"
           component={EditPage}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="CreatePage"
+          component={CreatePage}
           options={{
             headerShown: false,
           }}
@@ -101,7 +110,6 @@ const Root = () => {
           }}
         />
 
-
         <Stack.Screen
           name="OPTVerification"
           component={OPTVerification}
@@ -109,7 +117,7 @@ const Root = () => {
             headerShown: false,
           }}
         />
-         <Stack.Screen
+        <Stack.Screen
           name="Dress"
           component={Dress}
           options={{
@@ -174,17 +182,43 @@ const Root = () => {
           }}
         />
 
-  
+<Stack.Screen
+          name="CreateProfile1"
+          component={CreateProfile1}
+          options={{
+            headerShown: false,
+          }}
+        />
 
-            <Stack.Screen
-              name="Virtual"
-              component={Virtual}
-              options={
-                {
-                  headerShown:false,
-                }
-              }
-            />
+<Stack.Screen
+          name="CreateProfile2"
+          component={CreateProfile2}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Female"
+          component={Female}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Female1"
+          component={Female1}
+          options={{
+            headerShown: false,
+          }}
+        />
+
+        <Stack.Screen
+          name="Virtual"
+          component={Virtual}
+          options={{
+            headerShown: false,
+          }}
+        />
 
         <Stack.Screen
           name="B2C"
@@ -210,7 +244,6 @@ const Root = () => {
             headerShown: false,
           }}
         />
-    
 
         <Stack.Screen
           name="DetailScreen"
@@ -240,9 +273,6 @@ const Root = () => {
             headerShown: false,
           }}
         />
-
-      
-       
 
         <Stack.Screen
           name="Instore"
@@ -276,13 +306,14 @@ const Root = () => {
             headerShown: false,
           }}
         />
-        <Stack.Screen 
-        name="BuyPlans" 
-        component={BuyPlans}
-        options={{
+        <Stack.Screen
+          name="BuyPlans"
+          component={BuyPlans}
+          options={{
             headerShown: false,
-          }} />
-          
+          }}
+        />
+
         <Stack.Screen name="MyPlans" component={MyPlans} />
         <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="Setting" component={Setting} />

@@ -6,6 +6,7 @@ import * as RootNavigation from '../RootNavigation';
 import {DrawerActions} from '@react-navigation/native';
 import {ACCENT, PRIMARY} from '../theme/colors';
 import React from 'react';
+import ImagePicker from 'react-native-image-picker';
 import {
   Container,
   Header,
@@ -68,9 +69,60 @@ import {Layout} from '@ui-kitten/components';
 
 const CustomHeader = ({navigation}) => {
   const nav = useNavigation();
+  const [image, setImage] = React.useState(null);
+    const [isPermission, setIsPermission] = React.useState(false);
+
+  const requestStoragePermission = async () => {
+    try {
+      const granted = await PermissionsAndroid.requestMultiple([
+        PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,
+        PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
+      ]);
+
+      console.log('isG', granted);
+      console.log('isGranted', PermissionsAndroid.RESULTS.GRANTED);
+      if ('granted' == PermissionsAndroid.RESULTS.GRANTED) {
+        setIsPermission(true);
+      } else {
+        console.log('permission denied');
+        setIsPermission(false);
+      }
+    } catch (err) {
+      console.warn(err);
+    }
+  };
+
+  const pickImage = async () => {
+    if (isPermission) {
+      ImagePicker.showImagePicker(options, (response) => {
+        console.log('Response = ', response);
+
+        if (response.didCancel) {
+          console.log('User cancelled image picker');
+        } else if (response.error) {
+          console.log('ImagePicker Error: ', response.error);
+        } else if (response.customButton) {
+          console.log('User tapped custom button: ', response.customButton);
+        } else {
+          //  calling upload function to upload the selected image
+          // sending the whole image response as parameter
+
+          // setSelfie(response);
+          setImage(response);
+        }
+      });
+    } else {
+      requestStoragePermission();
+    }
+    // launchImageLibrary(mediaOpt, (res) => {
+    //   console.log(res);
+    //   setImages([...images, res]);
+    // });
+  };
+
   return (
     <>
-    <TouchableOpacity onPress={() => RootNavigation.navigate('EditPage')}>
+    
     <Layout style={{backgroundColor: '#14466b'}}>
       <View
         style={{
@@ -85,9 +137,9 @@ const CustomHeader = ({navigation}) => {
         }}>
         <TouchableOpacity
           onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}>
-          <Feather name="align-center" style={{fontSize: 30}} />
+          <Feather name="align-center" style={{fontSize: 30,marginRight:100}} />
         </TouchableOpacity>
-        <View>
+        <View style={{marginRight:60}}>
           <Text style={{alignSelf: 'center', color: 'grey'}}>Location</Text>
           <View style={{flexDirection: 'row'}}>
             <Entypo
@@ -98,8 +150,14 @@ const CustomHeader = ({navigation}) => {
             <Text style={{color: 'grey'}}>India</Text>
           </View>
         </View>
+        <TouchableOpacity onPress={() => RootNavigation.navigate('EditPage')}>
         <Image
-          source={require('../assests/img/girl.jpg')}
+         source={{
+          uri: image
+                  ? setImage
+                  : 'https://picsum.photos/id/1005/367/267'
+           
+              }}
           style={{
             width: 50,
             height: 50,
@@ -107,9 +165,10 @@ const CustomHeader = ({navigation}) => {
             borderRadius: 50,
           }}
         />
+        </TouchableOpacity>
       </View>
     </Layout>
-    </TouchableOpacity>
+   
     </>
   );
 };
