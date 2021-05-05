@@ -38,7 +38,7 @@ const EditPage = ({navigation}) => {
   const [image, setImage] = useState(null);
   const nav = useNavigation();
   const refRBSheet = useRef();
-  
+
   const requestStoragePermission = async () => {
     try {
       const granted = await PermissionsAndroid.requestMultiple([

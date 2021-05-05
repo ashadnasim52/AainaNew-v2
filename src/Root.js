@@ -55,7 +55,7 @@ const Root = () => {
         screenOptions={{
           header: (props) => <CustomHeader {...props} />,
         }}
-        initialRouteName="CreateProfile">
+        initialRouteName="B2C">
         <Stack.Screen
           name="EditPage"
           component={EditPage}
@@ -77,7 +77,7 @@ const Root = () => {
             headerShown: false,
           }}
         />
-          <Stack.Screen
+        <Stack.Screen
           name="B2cpagemain"
           component={B2cpagemain}
           options={{
@@ -135,21 +135,21 @@ const Root = () => {
             headerShown: false,
           }}
         />
-         <Stack.Screen
+        <Stack.Screen
           name="Sizing"
           component={Sizing}
           options={{
             headerShown: false,
           }}
         />
-         <Stack.Screen
+        <Stack.Screen
           name="Ettire"
           component={Ettire}
           options={{
             headerShown: false,
           }}
         />
-         <Stack.Screen
+        <Stack.Screen
           name="Sneaky"
           component={Sneaky}
           options={{
@@ -172,7 +172,7 @@ const Root = () => {
           }}
         />
 
-          <Stack.Screen
+        <Stack.Screen
           name="CreateProfile1"
           component={CreateProfile1}
           options={{
@@ -187,8 +187,7 @@ const Root = () => {
           }}
         />
 
-
-           <Stack.Screen
+        <Stack.Screen
           name="CreateProfile2"
           component={CreateProfile2}
           options={{
@@ -294,20 +293,11 @@ const Root = () => {
           }}
         />
 
-        <Stack.Screen 
-        name="Home" 
-        component={Home} 
-        />
+        <Stack.Screen name="Home" component={Home} />
 
-        <Stack.Screen 
-        name="HomeB" 
-        component={HomeB} 
-        />
+        <Stack.Screen name="HomeB" component={HomeB} />
 
-        <Stack.Screen 
-        name="Notifications" 
-        component={Notification}
-         />
+        <Stack.Screen name="Notifications" component={Notification} />
 
         <Stack.Screen
           name="Demo"
@@ -325,30 +315,19 @@ const Root = () => {
           }}
         />
 
-    <Stack.Screen 
-       name="Profile" 
-        component={Profile}
+        <Stack.Screen
+          name="Profile"
+          component={Profile}
           options={{
             headerShown: false,
-          }} 
-             />
+          }}
+        />
 
-        <Stack.Screen 
-        name="MyPlans" 
-        component={MyPlans}
-         />
-        
-        <Stack.Screen 
-        name="Setting" 
-        component={Setting}
-         />
+        <Stack.Screen name="MyPlans" component={MyPlans} />
 
-        <Stack.Screen 
-        name="About" 
-        component={About}
-         />
+        <Stack.Screen name="Setting" component={Setting} />
 
-
+        <Stack.Screen name="About" component={About} />
       </Stack.Navigator>
     </>
   );
