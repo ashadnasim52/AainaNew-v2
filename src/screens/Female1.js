@@ -13,29 +13,77 @@ import {
   Modal,
   Text,
   TextInput,
-  Input
+  Input,
+  TouchableWithoutFeedback,
+  TouchableHighlight,
 } from 'react-native';
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import ModalDropdown from 'react-native-modal-dropdown';
 
-const item = require("../assests/img/triangle.png")
+
 
 
 const Female1 = ({ navigation }) => {
   const [modalVisible, setModalVisible] = useState(false);
-  const [value1, setValue1] = useState("hello")
+  const [modalVisible1, setModalVisible1] = useState(false);
+  const [value, setValue] = useState(null)
+  const [value1, setValue1] = useState(null)
+  const [weight,setWeight]=useState(null);
+  const [height,setHeight]=useState(null)
+  const [name, setName]=useState(null)
 
-  const changer1 = (event) => {
-    setValue1(event.target.value);
+
+  const handleChange = (type) => {
+    if(type==='button1'){
+        setValue("Triangle")
+        setModalVisible(!modalVisible)
+    }
+    else if(type==='button2'){
+        setValue("Diamond")
+        setModalVisible(!modalVisible)
+    }
+    else if(type==='button3'){
+        setValue("Rectangle")
+        setModalVisible(!modalVisible)
+    }
+    else if(type==='button4'){
+      setValue("Inverted")
+      setModalVisible(!modalVisible)
   }
+  else if(type==='button5'){
+    setValue("Hourglass")
+    setModalVisible(!modalVisible)
+}
+}
 
 
+const  handleChange1 = (type) => {
+  if(type==='button10'){
+      setValue1("Extra Small")
+      setModalVisible1(!modalVisible1)
+  }
+  else if(type==='button20'){
+    setValue1("Small")
+    setModalVisible1(!modalVisible1)
+    
+  }
+  else if(type==='button30'){
+    setValue1("Medium")
+    setModalVisible1(!modalVisible1)
+  }
+  else if(type==='button40'){
+   setValue1("Large")
+   setModalVisible1(!modalVisible1)
+  }
+  else if(type==='button50'){
+    setValue1("Extra-Large")
+    setModalVisible1(!modalVisible1)
+    }
+  }
 
   return (
     <>
       <KeyboardAwareScrollView>
-
-
         <Modal
           animationType="slide"
           visible={modalVisible}
@@ -48,9 +96,6 @@ const Female1 = ({ navigation }) => {
           <View style={styles.centeredView} >
             <View style={styles.modalView}>
   <ScrollView>
-
-
-
 <View style={{ flexDirection: "row",marginTop:30}}>
              
                 <View >
@@ -65,32 +110,39 @@ const Female1 = ({ navigation }) => {
 
                 
 {/*=============2nd image========================================================*/}
-   
+<TouchableHighlight activeOpacity={.5}
+ onPress={() => handleChange( 'button1')}>
     <View>
     
          <View style={{ backgroundColor:"white",borderRadius:10 }}>
+      
             <Image
             source={require("../assests/img/triangle.png")}
             style={{ height: 150, width: 120 }}
             />
+               
           </View>
-          
          <View >
          
            <Text style={{textAlign:"center",color:"black",marginTop:5,fontSize:19,marginTop:-30}}
-           onPress={()=>setModalVisible(!modalVisible)}
+           onPress={() => handleChange( 'button1')}
            >Triangle</Text>
           
         </View>
       
 
     </View>
+    </TouchableHighlight>
+ 
 
                  
 </View>
 
+
+
 <View style={{ flexDirection: "row",marginTop:20}}>
-             
+<TouchableHighlight activeOpacity={.5}
+onPress={() => handleChange( 'button2')}>    
                 <View>
 
                   <View style={{ backgroundColor:"white",marginRight:20,borderRadius:10}}>
@@ -101,15 +153,16 @@ const Female1 = ({ navigation }) => {
                   </View>
                   <View>
                     <Text style={{textAlign:"center",color:"black",marginTop:5,fontSize:19,marginTop:-30,marginLeft:-10}}
-                    onPress={()=>setModalVisible(!modalVisible)}
+                 
                     >Diamond</Text>
                   </View>
 
                 </View>
-
-
+                </TouchableHighlight>
                 
 {/*=============2nd image========================================================*/}
+<TouchableHighlight activeOpacity={.5} 
+onPress={() => handleChange( 'button3')}> 
     <View>
          <View style={{ backgroundColor:"white",borderRadius:10 }}>
             <Image
@@ -119,16 +172,19 @@ const Female1 = ({ navigation }) => {
           </View>
          <View>
            <Text style={{textAlign:"center",color:"black",marginTop:5,fontSize:19,marginTop:-30}}
-           onPress={()=>setModalVisible(!modalVisible)}
+        
            >Rectangle</Text>
         </View>
 
     </View>
+    </TouchableHighlight>
                  
 </View>
 
 <View style={{ flexDirection: "row",marginTop:20}}>
              
+<TouchableHighlight activeOpacity={.5}
+ onPress={() => handleChange( 'button4')} > 
                 <View>
 
                   <View style={{ backgroundColor:"white",marginRight:20,borderRadius:10}}>
@@ -139,15 +195,18 @@ const Female1 = ({ navigation }) => {
                   </View>
                   <View>
                     <Text style={{textAlign:"center",color:"black",marginTop:5,fontSize:19,marginTop:-30,marginLeft:-10}}
-                    onPress={()=>setModalVisible(!modalVisible)}
+                    onPress={() => handleChange( 'button4')}
                     >Inverted</Text>
                   </View>
 
                 </View>
+                </TouchableHighlight>
 
 
                 
 {/*=============2nd image========================================================*/}
+<TouchableHighlight activeOpacity={.5}
+onPress={() => handleChange( 'button5')} >
     <View>
          <View style={{ backgroundColor:"white",borderRadius:10 }}>
             <Image
@@ -157,20 +216,14 @@ const Female1 = ({ navigation }) => {
           </View>
          <View>
            <Text style={{textAlign:"center",color:"black",marginTop:5,fontSize:19,marginTop:-30}}
-           onPress={()=>setModalVisible(!modalVisible)}
+        
            >Hourglass</Text>
         </View>
 
     </View>
+    </TouchableHighlight>
                  
 </View>
-
-
-               
-                
-
-
-
 
               </ScrollView>
 
@@ -179,37 +232,119 @@ const Female1 = ({ navigation }) => {
             </View>
           </View>
         </Modal>
+
+{/* ===========================2nd modal start from here================================================================= */}
+
+<Modal
+                    animationType="slide"
+                    visible={modalVisible1}
+                    transparent={true}
+                    onRequestClose={() => {setModalVisible1(!modalVisible1); }}>
+                    <View style={styles.centeredView}>
+                        <View   style={styles.modalView1}>
+                        <ScrollView>
+                   <Text
+                                onPress={() => handleChange1( 'button10')}
+                                style={styles.text1}
+                                >Extra Small</Text>
+                   
+                   <Text 
+                               onPress={() => handleChange1( 'button20')}
+                                style={styles.text1}
+                                onChange={e => setValue1(e.target.value)}
+                                >Small</Text>
+
+<Text  
+                               onPress={() => handleChange1( 'button30')}
+                                style={styles.text1}
+                                onChange={e => setValue1(e.target.value)} 
+                                >Medium</Text>
+
+<Text  
+                               onPress={() => handleChange1( 'button40')}
+                                style={styles.text1}
+                                onChange={e => setValue1(e.target.value)}
+                                >Large</Text>
+
+<Text   
+                               onPress={() => handleChange1( 'button50')}
+                                style={styles.text1}
+                                onChange={e => setValue1(e.target.value)}
+                                >Extra Large</Text>                              
+</ScrollView>
+                            <View >
+                            </View>
+                        </View>
+                    </View>
+                </Modal>
+
+
+{/* ===============================2nd modal ends here ===================================================================== */}
+
+
+
         <View style={{}}>
           <Image
             source={require("../assests/img/FEMALE.jpg")}
-            style={{ width: 360, height: 250, }}
+            style={{ width: "100%", height: 250, }}
           />
-          <TextInput style={{ marginTop: 40, borderBottomWidth: 1, marginLeft: 20, marginRight: 10 }} placeholder="Enter Your Name" />
+          <TextInput 
+          onChangeText={setName}
+          style={{ marginTop: 40, borderBottomWidth: 1, marginLeft: 20, marginRight: 10 }} 
+          placeholder="Enter Your Name" />
 
           <View style={{ marginTop: 30, marginLeft: 20, }}>
 
             <View style={{ flexDirection: "row" }}>
               <View>
                 <Text style={{ width: 150 }}>Your Weight</Text>
-                <TextInput style={{ borderBottomWidth: 1, marginTop: -20 }} />
+                <TextInput 
+                onChangeText={setWeight}
+                style={{ borderBottomWidth: 1, marginTop: -20 }} />
               </View>
               <View style={{ marginLeft: 30, width: 150 }}>
                 <Text >Your height</Text>
-                <TextInput style={{ borderBottomWidth: 1, marginTop: -20 }} />
+                <TextInput 
+                onChangeText={setHeight}
+                style={{ borderBottomWidth: 1, marginTop: -20 }} />
               </View>
             </View>
 
+            <View style={{flexDirection:"row",justifyContent:"space-between"}}>
+
             <TouchableOpacity onPress={() => setModalVisible(true)} >
-              <View style={{ marginTop: 30, marginBottom: 50, }}>
+              <View style={{ marginTop: 30, marginBottom:50  }}>
                 <Text>Your Body Shape <AntDesign name="caretdown" /></Text>
+                <Text>{value}</Text>
               </View>
             </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => setModalVisible1(true)} >
+              <View style={{ marginTop: 30,marginRight:"10%",marginBottom:50 }}>
+                <Text>Your Body Size <AntDesign name="caretdown" /></Text>
+                <Text>{value1}</Text>
+              </View>
+            </TouchableOpacity>
+
+</View>
           </View>
-          <TouchableOpacity onPress={() => navigation.navigate("Female")}>
-            <View style={{ marginTop: 10, backgroundColor: "#D6415C", marginHorizontal: 90, height: 50, paddingTop: 10, borderRadius: 10 }}>
+
+<View>
+  {
+    (value==null || value1==null || weight==null || height==null || name==null)?    <TouchableOpacity onPress={() => alert("*All Fields Should Be Filled")}>
+            <View style={{ marginTop: 0, backgroundColor: "#D6415C", marginHorizontal: 90, height: 50, paddingTop: 10, borderRadius: 10 }}>
               <Text style={{ textAlign: "center", fontSize: 20, color: "white" }}>Continue <AntDesign name="arrowright" size={16} /></Text>
             </View>
           </TouchableOpacity>
+           :<TouchableOpacity onPress={() => navigation.navigate("Female")}>
+            <View style={{ marginTop: 0, backgroundColor: "#D6415C", marginHorizontal: 90, height: 50, paddingTop: 10, borderRadius: 10 }}>
+              <Text style={{ textAlign: "center", fontSize: 20, color: "white" }}>Continue <AntDesign name="arrowright" size={16} /></Text>
+            </View>
+          </TouchableOpacity>
+  }
+</View>
+
+          
 
         </View>
       </KeyboardAwareScrollView>
@@ -239,7 +374,23 @@ const styles = StyleSheet.create({
     shadowOffset: {
       width: 0,
       height: 2
-    }
+    },
+  },
+
+  modalView1: {
+    margin: 30,
+    backgroundColor: "#14466b",
+    borderRadius: 20,
+    padding: 10,
+    alignItems: "center",
+    shadowColor: "#000",
+    width: 340,
+    height: 230,
+    marginBottom: 0,
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
   },
   text1: {
     fontSize: 15,

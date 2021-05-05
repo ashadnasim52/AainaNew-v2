@@ -25,7 +25,7 @@ const BuyPlans = () => {
             animationType="slide"
             visible={modalVisible}
             transparent={false}
-
+            onRequestClose={() => {setModalVisible(!modalVisible) }}
 
           >
             <View style={{ backgroundColor: "white", }}>

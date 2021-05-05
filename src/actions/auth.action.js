@@ -17,6 +17,7 @@ import {
 } from './action.types';
 import {useContext} from 'react';
 import {AuthContext} from '../context/context';
+
 export const signUp = async (_obj) => {
   try {
     const {data} = await Axios.post('/api/v1/auth/signup', _obj);

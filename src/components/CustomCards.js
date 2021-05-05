@@ -4,7 +4,7 @@ import {Card, Icon, Text} from '@ui-kitten/components';
 import {PRIMARY} from '../theme/colors';
 import {useNavigation} from '@react-navigation/native';
 
-const CustomCards = () => {
+const CustomCards = (props) => {
   const nav = useNavigation();
   return (
     <>
@@ -14,7 +14,7 @@ const CustomCards = () => {
         <View style={styles.cardRight}>
           <Image
             style={styles.image}
-            source={require('../assests/temp.jpeg')}
+            source={props.imgsrc}
           />
         </View>
         <View style={[styles.cardLeft]}>
@@ -34,7 +34,7 @@ const CustomCards = () => {
                   fontFamily: 'roboto-Bold',
                   marginLeft:15
                 }}>
-                Sizing
+                {props.plan}
               </Text>
               <Text
                 category="label"

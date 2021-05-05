@@ -14,11 +14,11 @@ import {
 export const Inweb = () => {
   return (
     <SafeAreaView>
-      <ScrollView style={{ backgroundColor: "#14466b" }}>
+      <ScrollView style={{ backgroundColor: "#14466b",height:1200 }}>
         <View>
           <Image
             source={require('../assests/img/inweb10.png')}
-            style={{ width: 460, height: 350,marginLeft:-100}}
+            style={{ width:"100%", height: 350,}}
           />
           <View
             style={{

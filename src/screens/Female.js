@@ -3,25 +3,111 @@ import React, { useState,useEffect} from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {
   StyleSheet,
-  PermissionsAndroid,
   View,
   Image,
   ImageBackground,
   Modal,
-  Text
+  Text,
+  SafeAreaView,
+  PermissionsAndroid,
 } from 'react-native';
 import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
+import ImagePicker from 'react-native-image-picker';
+import {Avatar} from '@ui-kitten/components';
+import {options} from '../utils/option';
 
+const image1 = require("../assests/img/girl.jpg");
 
 const Female =({navigation})=>{
+  const [isPermission, setIsPermission] = useState(false);
+  const [image, setImage] = useState();
+  const [image2, setImage2] = useState();
+
+  const requestStoragePermission = async () => {
+    try {
+      const granted = await PermissionsAndroid.requestMultiple([
+        PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,
+        PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
+      ]);
+
+      console.log('isG', granted);
+      console.log('isGranted', PermissionsAndroid.RESULTS.GRANTED);
+      if ('granted' == PermissionsAndroid.RESULTS.GRANTED) {
+        setIsPermission(true);
+      } else {
+        console.log('permission denied');
+        setIsPermission(false);
+      }
+    } catch (err) {
+      console.warn(err);
+    }
+  };
+
+  const pickImage = async () => {
+    if (isPermission) {
+      ImagePicker.showImagePicker(options, (response) => {
+        console.log('Response = ', response);
+
+        if (response.didCancel) {
+          console.log('User cancelled image picker');
+        } else if (response.error) {
+          console.log('ImagePicker Error: ', response.error);
+        } else if (response.customButton) {
+          console.log('User tapped custom button: ', response.customButton);
+        } else {
+          //  calling upload function to upload the selected image
+          // sending the whole image response as parameter
+
+          // setSelfie(response);
+          setImage(response);
+        }
+      });
+    } else {
+      requestStoragePermission();
+    }
+    // launchImageLibrary(mediaOpt, (res) => {
+    //   console.log(res);
+    //   setImages([...images, res]);
+    // });
+  };
+
+
+  const pickImage2 = async () => {
+    if (isPermission) {
+      ImagePicker.showImagePicker(options, (response) => {
+        console.log('Response = ', response);
+
+        if (response.didCancel) {
+          console.log('User cancelled image picker');
+        } else if (response.error) {
+          console.log('ImagePicker Error: ', response.error);
+        } else if (response.customButton) {
+          console.log('User tapped custom button: ', response.customButton);
+        } else {
+          //  calling upload function to upload the selected image
+          // sending the whole image response as parameter
+
+          // setSelfie(response);
+          setImage2(response);
+        }
+      });
+    } else {
+      requestStoragePermission();
+    }
+    // launchImageLibrary(mediaOpt, (res) => {
+    //   console.log(res);
+    //   setImages([...images, res]);
+    // });
+  };
 
   return(
     <>
+    <SafeAreaView>
     <View>
     <View>
        <Image 
-         source={require("../assests/img/girl.jpg")}
-         style={{width:360,height:210,}}
+         source={image1}
+         style={{width:"100%",height:210,resizeMode:"cover"}}
        />
      </View>
      <View style={{marginTop:30}}>
@@ -30,11 +116,17 @@ const Female =({navigation})=>{
        </Text>
      </View>
 <View style={{flexDirection:"row",justifyContent:"space-around",marginTop:30}}>
-     <TouchableOpacity>
+     <TouchableOpacity onPress={pickImage}>
       <View >
-          <View style={{width:150,height:150,backgroundColor:"green",borderRadius:10}}>
-             <Image 
-              source={require("../assests/img/girl.jpg")}
+          <View style={{width:150,height:150,backgroundColor:"white",borderRadius:10}}>
+          <Image 
+          source = { image 
+          ? 
+          { uri: image.uri } 
+          : 
+           require('../assests/img/front.png')
+          } 
+          
               style={{width:150,height:150,borderRadius:10}}
               />
            </View>
@@ -42,11 +134,17 @@ const Female =({navigation})=>{
      </View>
      </TouchableOpacity> 
 
-<TouchableOpacity>
+<TouchableOpacity onPress={pickImage2}>
       <View>
-      <View style={{width:150,height:150,backgroundColor:"green",borderRadius:10}}>
+      <View style={{width:150,height:150,backgroundColor:"white",borderRadius:10}}>
       <Image 
-       source={require("../assests/img/girl.jpg")}
+          source = { image2 
+          ? 
+          { uri: image2.uri } 
+          : 
+           require('../assests/img/front.png')
+          } 
+          
          style={{width:150,height:150,borderRadius:10}}
        />
        </View>
@@ -62,7 +160,7 @@ const Female =({navigation})=>{
 </TouchableOpacity>
 
      </View>
-    
+     </SafeAreaView>
     </>
   )
 }

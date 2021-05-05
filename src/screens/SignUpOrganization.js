@@ -72,7 +72,7 @@ const Signup = ({navigation}) => {
           <Text style={{ fontSize: 20, marginLeft: 20, color: "grey" }}>Sign Up as Organization</Text>
         </View>
        <View style={{marginTop:20}}>
-     
+{/*      
        <RNPickerSelect
             onValueChange={(value) => console.log(value)}
             useNativeAndroidPickerStyle={false}
@@ -83,7 +83,7 @@ const Signup = ({navigation}) => {
                 { label: 'Female', value: 'Female' },
                 { label: 'Others', value: 'Others' },
             ]}
-        />
+        /> */}
 
 
        <TextInput 

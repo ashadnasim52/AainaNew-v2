@@ -79,7 +79,7 @@ const Dress = ({ navigation }) => {
                     <View style={{ marginTop: 15,marginRight:10 }}>
 
                         <TouchableOpacity onPress={() => setModalVisible(true)} >
-                            <Text style={{ backgroundColor: "#293c5d", color: "white", height: 40, width: 150, padding: 10, borderRadius: 5, fontSize: 14,textAlign:"center" }} >Change Dress Size</Text>
+                            <Text style={{ backgroundColor: "#293c5d", color: "white", height: 40, width: 150, padding: 10, borderRadius: 5, fontSize: 14,textAlign:"center" }} >Change Size</Text>
                         </TouchableOpacity>
 
                         <TouchableOpacity onPress={()=>navigation.navigate("Profile")}>

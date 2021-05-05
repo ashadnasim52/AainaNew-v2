@@ -16,12 +16,13 @@ import Logo from '../assests/welcome.png';
 const Choose = ({navigation}) => {
   return (
     <>
+    <StatusBar backgroundColor="#419474" />
       <View>
         <ImageBackground
           source={require('../assests/img/welcome.png')}
           style={{
-            width: 360,
-            height: 760,
+            width: "100%",
+            height: "100%",
             resizeMode: "cover",
             justifyContent:"center",
             alignItems:"center"

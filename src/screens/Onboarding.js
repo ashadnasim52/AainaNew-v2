@@ -17,7 +17,7 @@ import LOGO from '../assests/logo.png';
 import StepOne from '../assests/onboarding/step1.png';
 import StepTwo from '../assests/onboarding/step2.png';
 import StepThree from '../assests/onboarding/step3.png';
-import StepFour from '../assests/onboarding/step5.png';
+import StepFour from '../assests/img/sizing1.gif';
 import StepFive from '../assests/onboarding/step5.png';
 import {PRIMARY} from '../theme/colors';
 import {useNavigation} from '@react-navigation/native';
@@ -49,7 +49,8 @@ const slides = [
     text: 'Now know your tailored shoulder, chest, waist & hips size.',
     image: StepFour,
     id: '4',
-    backgroundColor: '#A289BB',
+    backgroundColor: '#4E9258',
+    
   },
   {
     title: 'You are good to go!',
@@ -210,16 +211,21 @@ const styles = StyleSheet.create({
     borderRadius: 25,
   },
   carouselImage: {
-    height: 210,
+    height: 290,
     width: '100%',
     resizeMode: 'contain',
+    
+    
+  
   },
   title: {
     color: '#fff',
     textAlign: 'center',
+    marginTop:20
   },
   text: {
     color: '#fff',
     textAlign: 'center',
+    marginTop:20
   },
 });

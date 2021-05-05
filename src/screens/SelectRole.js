@@ -19,6 +19,7 @@ import {useNavigation} from '@react-navigation/native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {CHANGE_CLIENT_TYPE} from '../actions/action.types';
 import {AuthContext} from '../context/context';
+import CustomDrawer from '../layouts/CustomDrawer';
 
 const SelectRole = () => {
   const nav = useNavigation();
@@ -26,7 +27,7 @@ const SelectRole = () => {
 
   return (
     <>
-      <StatusBar backgroundColor={ACCENT} />
+      <StatusBar backgroundColor="#419474" />
       <KeyboardAwareScrollView
         resetScrollToCoords={{x: 0, y: 0}}
         contentContainerStyle={{
@@ -118,6 +119,7 @@ const SelectRole = () => {
               </View>
             </View>
           </View>
+        
         </Layout>
       </KeyboardAwareScrollView>
     </>

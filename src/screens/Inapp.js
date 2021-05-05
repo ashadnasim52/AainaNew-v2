@@ -18,7 +18,7 @@ export const Inapp = () => {
         <View>
           <Image
             source={require('../assests/img/inapp10.png')}
-            style={{ width: 360, height: 330,marginLeft:-5}}
+            style={{ width:"100%", height: 330,marginLeft:-5}}
           />
           <View
             style={{

@@ -1,213 +1,130 @@
+
+import React, { useState, useEffect } from 'react';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import {
-  Container,
+  StyleSheet,
+  View,
+  Image,
+  ImageBackground,
+  Modal,
   Text,
-  Content,
-  H3,
-  Row,
-  Col,
-  H1,
-  H2,
-  Card,
-  CardItem,
-} from 'native-base';
-import React from 'react';
-import {Image, StyleSheet, ScrollView} from 'react-native';
-import {PRIMARY} from '../theme/colors';
+  SafeAreaView,
+  PermissionsAndroid,
+} from 'react-native';
+import { FlatList, ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
+import ImagePicker from 'react-native-image-picker';
+import { Avatar } from '@ui-kitten/components';
+import { options } from '../utils/option';
+import CreatePage from './CreatePage';
+import { Container, Content, Left, Right, Thumbnail } from 'native-base';
+const image1 = require("../assests/img/girl.jpg");
 
-const data = [
-  {
-    no: '1',
-    parameter: 'Full Name',
-    value: 'Ravin',
-  },
-  {
-    no: '2',
-    parameter: 'Gender',
-    value: 'Male',
-  },
-  {
-    no: '3',
-    parameter: 'Height',
-    value: '5 ft 10 in / 177 cm',
-  },
-  {
-    no: '4',
-    parameter: 'Weight',
-    value: '71 kg',
-  },
-  {
-    no: '5',
-    parameter: 'Body Mass Index (BMI)',
-    value: '22.33',
-  },
-  {
-    no: '6',
-    parameter: 'Neck',
-    value: '15.19 inch/ 5.98. cm',
-  },
-  {
-    no: '7',
-    parameter: 'Waist',
-    value: '38.63 inch/ 15.21.cm',
-  },
-  {
-    no: '8',
-    parameter: 'Hips',
-    value: '38.63 inch/ 15.21.cm',
-  },
-];
+const Profile = ({ route, navigation }) => {
 
-const Profile = () => {
+  const [isPermission, setIsPermission] = useState(false);
+  const [image, setImage] = useState();
+  const [image2, setImage2] = useState();
+
+  const { value1 } = route.params;
+  const { weight } = route.params;
+  const { height } = route.params;
+  const { name } = route.params;
+  const { value } = route.params;
+  const { image1 } = route.params;
+  const { image3 } = route.params;
+
   return (
-    <ScrollView
-      contentContainerStyle={{
-        flex: 1,
-      }}>
-      <Container
-        style={{
-          flex: 1,
-        }}>
-        <Content padder>
-          <H3
-            style={{
-              fontWeight: '800',
-            }}>
-            Body Profile
-          </H3>
+    <>
+      <SafeAreaView>
+        <ScrollView>
+          <View>
+            <View style={{ marginTop: 30 }}>
+              <Text style={{
+                textAlign: "center", fontSize: 20, backgroundColor: "#14466b", marginHorizontal: "30%", borderRadius: 10
+                , padding: 4, color: "white", fontWeight: "bold"
+              }}>Body Profile</Text>
+            </View>
+            <View style={{ flexDirection: "row", justifyContent: "space-around", marginTop: 30 }}>
 
-          <Text style={{marginTop: 5}}>
-            Following are the body profile parameters such as height, weight,
-            bmi, neck, shoulder, chest, waist, hips, body front photo and body
-            side photo These body profile paramets have been calculated by
-            Aaiena's state-of-the-art Artificial Intelligence system
-          </Text>
-
-          <Row
-            style={{
-              marginVertical: 20,
-            }}>
-            <Col
-              style={{
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}>
-              <Card
-                style={{
-                  borderRadius: 15,
-                  overflow: 'hidden',
-                }}>
-                <CardItem cardBody>
+              <View >
+                <View style={{ width: 150, height: 150, backgroundColor: "orange", borderRadius: 10, }}>
                   <Image
-                    source={{
-                      uri: 'https://picsum.photos/id/1005/5760/3840',
-                      height: 190,
-                      width: '100%',
-                    }}
-                  />
-                </CardItem>
-              </Card>
-              <Text
-                style={{
-                  marginVertical: 10,
-                  color: PRIMARY,
-                }}>
-                Front Body Photo
-              </Text>
-            </Col>
-            <Col
-              style={{
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}>
-              <Card
-                style={{
-                  borderRadius: 15,
-                  overflow: 'hidden',
-                }}>
-                <CardItem cardBody>
-                  <Image
-                    source={{
-                      uri: 'https://picsum.photos/id/1005/5760/3840',
-                      height: 190,
-                      width: '100%',
-                    }}
-                  />
-                </CardItem>
-              </Card>
-              <Text
-                style={{
-                  marginVertical: 10,
-                  color: PRIMARY,
-                }}>
-                Side Body Photo
-              </Text>
-            </Col>
-          </Row>
+                    source={image1
+                      ?
+                      { uri: image1.uri }
+                      :
+                      require('../assests/img/front.png')
+                    }
 
-          <Row>
-            <Col size={1}>
-              <H2> # </H2>
-            </Col>
-            <Col
-              size={6}
-              style={{
-                alignItems: 'center',
-              }}>
-              <H2> Parameter</H2>
-            </Col>
-            <Col
-              size={6}
-              style={{
-                alignItems: 'center',
-              }}>
-              <H2> Value</H2>
-            </Col>
-          </Row>
-          {data.map((singleData) => (
-            <Row
-              style={{
-                marginVertical: 10,
-              }}>
-              <Col size={1}>
-                <Text
-                  style={{
-                    fontSize: 14,
-                  }}>
-                  {singleData.no}
-                </Text>
-              </Col>
-              <Col
-                size={6}
-                style={{
-                  alignItems: 'center',
-                }}>
-                <Text
-                  style={{
-                    fontSize: 14,
-                  }}>
-                  {singleData.parameter}
-                </Text>
-              </Col>
-              <Col
-                size={6}
-                style={{
-                  alignItems: 'center',
-                }}>
-                <Text
-                  style={{
-                    fontSize: 14,
-                  }}>
-                  {singleData.value}
-                </Text>
-              </Col>
-            </Row>
-          ))}
-        </Content>
-      </Container>
-    </ScrollView>
-  );
-};
+                    style={{ width: 150, height: 150, borderRadius: 10 }}
+                  />
+                </View>
+                <Text style={{ textAlign: "center", marginTop: 10 }}>Front Photo</Text>
+              </View>
+
+              <View>
+                <View style={{ width: 150, height: 150, backgroundColor: "orange", borderRadius: 10 }}>
+                  <Image
+                    source={image3
+                      ?
+                      { uri: image3.uri }
+                      :
+                      require('../assests/img/side.png')
+                    }
+
+                    style={{ width: 150, height: 150, borderRadius: 10 }}
+                  />
+                </View>
+                <Text style={{ textAlign: "center", marginTop: 10 }}>Side Photo</Text>
+              </View>
+            </View>
+
+            <View style={{ flexDirection: "row", marginTop: 40 }}>
+              <View style={{ marginRight: "10%", marginLeft: 20 }}>
+                <Text style={{ marginBottom: 20, fontSize: 18, color: "darkorange", fontWeight: "bold", textDecorationLine: "underline" }}>Parameter</Text>
+                <Text style={styles.text}>fullname</Text>
+                <Text style={styles.text}>Gender</Text>
+                <Text style={styles.text}>Height</Text>
+                <Text style={styles.text}>Weight</Text>
+                <Text style={styles.text}>Size</Text>
+                <Text style={styles.text}>Body Mass Index (BMI)</Text>
+                <Text style={styles.text}>Neck</Text>
+                <Text style={styles.text}>Chest</Text>
+                <Text style={styles.text}>Waist</Text>
+                <Text style={styles.text}>Hips</Text>
+              </View>
+              <View>
+                <Text style={{ marginBottom: 20, fontSize: 18, color: "darkorange", fontWeight: "bold", textDecorationLine: "underline" }}>Value</Text>
+                <Text style={styles.text1}>{JSON.stringify(name)}</Text>
+                <Text style={styles.text1}>{JSON.stringify(value)}</Text>
+                <Text style={styles.text1}>{JSON.stringify(height)}</Text>
+                <Text style={styles.text1}>{JSON.stringify(weight)}</Text>
+                <Text style={styles.text1}>{JSON.stringify(value1)}</Text>
+                <Text style={styles.text1}>15.43</Text>
+                <Text style={styles.text1}>	15.36 inch / 6.05 cm</Text>
+                <Text style={styles.text1}>	38.99 inch / 15.35 cm</Text>
+                <Text style={styles.text1}>33.46 inch / 13.17 cm</Text>
+                <Text style={styles.text1}>36.03 inch / 14.19 cm</Text>
+              </View>
+            </View>
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </>
+  )
+}
 
 export default Profile;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  text: {
+    marginBottom: 20,
+    color: "green"
+  },
+  text1: {
+    marginBottom: 20,
+    color: 'grey'
+
+
+  }
+})

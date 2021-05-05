@@ -1,15 +1,5 @@
 import React, {useReducer, useEffect} from 'react';
-import {StatusBar} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import {AuthContext} from './context/context';
-import authInitialState from './state/authState';
-import authReducer from './reducer/authReducer';
-
-import {PRIMARY} from './theme/colors';
-import Axios from 'axios';
-import {API} from './utils/Base';
-import {checkAuth} from './actions/auth.action';
 import AsyncStorage from '@react-native-community/async-storage';
 import Signin from './screens/Signin';
 import Signup from './screens/Signup';
@@ -20,6 +10,7 @@ import OPTVerification from './screens/OTPVerification';
 import SelectRole from './screens/SelectRole';
 import CreateProfile from './screens/CreateProfile';
 import Home from './screens/Home';
+import HomeB from './screens/HomeB';
 import SignUpOrganization from './screens/SignUpOrganization';
 import CustomHeader from './layouts/CustomHeader';
 import DetailScreen from './screens/DetailScreen';
@@ -51,21 +42,20 @@ import CreateProfile1 from './screens/Createprofile1';
 import CreateProfile2 from './screens/CreateProfile2';
 import Female from './screens/Female';
 import Female1 from './screens/Female1';
+import WeeklyReport from './screens/WeeklyReport';
 
 AsyncStorage.removeItem('@aaina_login');
 
 const Stack = createStackNavigator();
 
 const Root = () => {
-  // console.log(authState.isAuthenticated);
-
   return (
     <>
       <Stack.Navigator
-        screenOptions={{
-          header: (props) => <CustomHeader {...props} />,
-        }}
-        initialRouteName="CreateProfile">
+        screenOptions={{header: (props) => <CustomHeader {...props} />,}}
+        initialRouteName="Home">
+
+
         <Stack.Screen
           name="EditPage"
           component={EditPage}
@@ -87,7 +77,7 @@ const Root = () => {
             headerShown: false,
           }}
         />
-  <Stack.Screen
+          <Stack.Screen
           name="B2cpagemain"
           component={B2cpagemain}
           options={{
@@ -182,15 +172,23 @@ const Root = () => {
           }}
         />
 
-<Stack.Screen
+          <Stack.Screen
           name="CreateProfile1"
           component={CreateProfile1}
           options={{
             headerShown: false,
           }}
         />
+        <Stack.Screen
+          name="WeeklyReport"
+          component={WeeklyReport}
+          options={{
+            headerShown: false,
+          }}
+        />
 
-<Stack.Screen
+
+           <Stack.Screen
           name="CreateProfile2"
           component={CreateProfile2}
           options={{
@@ -296,8 +294,21 @@ const Root = () => {
           }}
         />
 
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Notifications" component={Notification} />
+        <Stack.Screen 
+        name="Home" 
+        component={Home} 
+        />
+
+        <Stack.Screen 
+        name="HomeB" 
+        component={HomeB} 
+        />
+
+        <Stack.Screen 
+        name="Notifications" 
+        component={Notification}
+         />
+
         <Stack.Screen
           name="Demo"
           component={Demo}
@@ -314,10 +325,30 @@ const Root = () => {
           }}
         />
 
-        <Stack.Screen name="MyPlans" component={MyPlans} />
-        <Stack.Screen name="Profile" component={Profile} />
-        <Stack.Screen name="Setting" component={Setting} />
-        <Stack.Screen name="About" component={About} />
+    <Stack.Screen 
+       name="Profile" 
+        component={Profile}
+          options={{
+            headerShown: false,
+          }} 
+             />
+
+        <Stack.Screen 
+        name="MyPlans" 
+        component={MyPlans}
+         />
+        
+        <Stack.Screen 
+        name="Setting" 
+        component={Setting}
+         />
+
+        <Stack.Screen 
+        name="About" 
+        component={About}
+         />
+
+
       </Stack.Navigator>
     </>
   );

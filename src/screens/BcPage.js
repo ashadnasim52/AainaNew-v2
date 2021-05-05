@@ -2,6 +2,7 @@ import React, { Component,useState } from 'react';
 import { Image, View, Text, ScrollView, Button, TextInput, Alert,ImageBackground } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {widthToDp, heightToDp} from "./Responsive"
 
 
 
@@ -42,9 +43,9 @@ const handleButton_3 = () =>{
           }}>
           <Icon
             name="search"
-            style={{ paddingRight: 10, paddingLeft: 8, fontSize: 17 }}
+            style={{paddingRight: widthToDp(number=3), paddingLeft: widthToDp(number=3), fontSize: widthToDp(number=4) }}
           />
-          <TextInput placeholder="Search Any Products  here....." />
+          <TextInput placeholder="Search Any Product" />
         </View>
       </View>
 
@@ -52,12 +53,12 @@ const handleButton_3 = () =>{
 
 
 
-        <View style={{ marginTop: 10 }}>
+        <View style={{ marginTop: heightToDp(number=2) }}>
           <Image
             source={require('../assests/img/Deepak_Garments.jpg')}
             style={{
-              width: 360,
-              height: 250,
+              width: "100%",
+              height: heightToDp(number=35),
               justifyContent: 'center',
             }}
           />
@@ -65,21 +66,21 @@ const handleButton_3 = () =>{
 
         <View>
 
-          <View style={{marginTop:10}}>
-                 <Text style={{color:"white",fontSize:24,textAlign:"center",textDecorationLine:"underline"}}>About Deepak Garments</Text>
-                 <Text style={{color:"lightgrey",fontSize:15,marginLeft:10,marginTop:10}}>Shopping never goes in vain with Deepak Garments, which provides its customers with T-shirts, jeans, undergarments, sportswear, and much more.</Text>
+          <View style={{marginTop:widthToDp(number=2)}}>
+                 <Text style={{color:"white",fontSize:widthToDp(number=7),textAlign:"center",textDecorationLine:"underline"}}>About Deepak Garments</Text>
+                 <Text style={{color:"lightgrey",fontSize:widthToDp(number=4),marginLeft:10,marginTop:10}}>Shopping never goes in vain with Deepak Garments, which provides its customers with T-shirts, jeans, undergarments, sportswear, and much more.</Text>
           </View>
-          <View style={{flexDirection:"row",justifyContent:"space-around",marginTop:20,marginBottom:20,marginHorizontal:60}}>
+          <View style={{flexDirection:"row",justifyContent:"space-around",marginTop:heightToDp(number=3),marginBottom:heightToDp(number=3),marginHorizontal:widthToDp(number=10)}}>
             <TouchableOpacity onPress={()=>handleButton_3()}>
-            <Text style={{color:"black",backgroundColor:"white",width:60,lineHeight:30,textAlign:'center',borderRadius:10}}>All</Text>
+            <Text style={{color:"black",backgroundColor:"white",width:widthToDp(number=16),lineHeight:heightToDp(number=4),textAlign:'center',borderRadius:10}}>All</Text>
 </TouchableOpacity>
 
 <TouchableOpacity onPress={()=>handleButton_1()}>
-            <Text style={{color:"black",backgroundColor:"white",width:60,lineHeight:30,textAlign:'center',borderRadius:10}}>Men</Text>
+            <Text style={{color:"black",backgroundColor:"white",width:widthToDp(number=16),lineHeight:heightToDp(number=4),textAlign:'center',borderRadius:10}}>Men</Text>
 </TouchableOpacity>
 
 <TouchableOpacity onPress={()=>handleButton_2()}>
-            <Text style={{color:"black",backgroundColor:"white",width:60,lineHeight:30,textAlign:'center',borderRadius:10}}>Women</Text>
+            <Text style={{color:"black",backgroundColor:"white",width:widthToDp(number=16),lineHeight:heightToDp(number=4),textAlign:'center',borderRadius:10}}>Women</Text>
             </TouchableOpacity>
           </View>
           </View>

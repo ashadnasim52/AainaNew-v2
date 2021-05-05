@@ -19,7 +19,7 @@ export const Ettire = () => {
         <View>
           <Image
             source={require('../assests/img/Ettire10.jpg')}
-            style={{ width: 360, height: 400 }}
+            style={{ width:"100%", height: 400 }}
           />
           <View
             style={{
