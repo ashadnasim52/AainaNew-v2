@@ -52,10 +52,10 @@ const Root = () => {
   return (
     <>
       <Stack.Navigator
-        screenOptions={{header: (props) => <CustomHeader {...props} />,}}
-        initialRouteName="Home">
-
-
+        screenOptions={{
+          header: (props) => <CustomHeader {...props} />,
+        }}
+        initialRouteName="CreateProfile">
         <Stack.Screen
           name="EditPage"
           component={EditPage}
