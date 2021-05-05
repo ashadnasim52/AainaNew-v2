@@ -143,7 +143,7 @@ const BcPage = ({navigation}) => {
               <View
                 style={{
                   flexDirection: 'row',
-                  justifyContent: 'space-around',
+                  justifyContent: 'space-between',
                   marginTop: 10,
                 }}>
                 <View
@@ -152,7 +152,6 @@ const BcPage = ({navigation}) => {
                     height: 300,
                     marginLeft: 6,
                     borderRadius: 10,
-                    overflow: 'hidden',
                   }}>
                   <ImageBackground
                     source={require('../assests/deepak_garments/men/25.jpg')}
@@ -162,12 +161,12 @@ const BcPage = ({navigation}) => {
                       justifyContent: 'center',
                     }}>
                     <Text
-                      numberOfLines={1}
                       style={{
                         color: 'white',
                         textAlign: 'center',
                         backgroundColor: 'rgba(55, 81, 126, 0.8)',
                         marginTop: 200,
+                        height: 50,
                         opacity: 0.9,
                       }}>
                       Black Colour Full Sleeve T-Shirt with Print on Chest
@@ -227,12 +226,12 @@ const BcPage = ({navigation}) => {
                       justifyContent: 'center',
                     }}>
                     <Text
-                      numberOfLines={2}
                       style={{
                         color: 'white',
                         textAlign: 'center',
                         backgroundColor: 'rgba(55, 81, 126, 0.8)',
                         marginTop: 200,
+                        height: 50,
                         opacity: 0.9,
                       }}>
                       Black half T-shirt with Print in Round Neck
