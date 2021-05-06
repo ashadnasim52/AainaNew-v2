@@ -12,7 +12,7 @@ const CreateProfile = ({navigation}) => {
 
 
   const obj1 = {
-    value: value,
+    value: value, 
   }
 
   const handleChange = (type) => {
