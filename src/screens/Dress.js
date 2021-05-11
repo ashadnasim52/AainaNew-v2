@@ -60,116 +60,122 @@ const Dress = ({navigation}) => {
           </View>
         </Modal>
 
-        <View style={{marginTop: 30}}>
-          <Text
-            style={{
-              alignSelf: 'center',
-              color: 'black',
-              fontWeight: 'bold',
-              fontSize: 17,
-            }}>
-            Dress Fitting Rating{' '}
-          </Text>
-        </View>
-        <View style={{flexDirection: 'row', marginTop: 20}}>
-          <View style={{margin: 10}}>
-            <Image
-              source={require('../assests/temp.jpeg')}
-              style={{width: 180, height: 240, borderRadius: 10}}
-            />
-            <View>
-              <Text
-                style={{
-                  fontSize: 20,
-                  marginTop: 10,
-                  color: 'darkorange',
-                  marginLeft: 15,
-                }}>
-                Ravin Kumar
-              </Text>
-            </View>
-          </View>
-          <View style={{marginTop: 15, marginRight: 10}}>
-            <TouchableOpacity onPress={() => setModalVisible(true)}>
-              <Text
-                style={{
-                  backgroundColor: '#293c5d',
-                  color: 'white',
-                  height: 40,
-                  width: 150,
-                  padding: 10,
-                  borderRadius: 5,
-                  fontSize: 14,
-                  textAlign: 'center',
-                }}>
-                Change Size
-              </Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
-              <Text
-                style={{
-                  backgroundColor: '#f7941e',
-                  marginTop: 10,
-                  color: 'white',
-                  height: 40,
-                  width: 150,
-                  padding: 10,
-                  borderRadius: 5,
-                  fontSize: 14,
-                  textAlign: 'center',
-                }}>
-                Change Body Profile
-              </Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity onPress={() => navigation.navigate('Virtual')}>
-              <Text
-                style={{
-                  backgroundColor: '#810541',
-                  marginTop: 105,
-                  color: 'white',
-                  height: 40,
-                  width: 150,
-                  padding: 10,
-                  borderRadius: 5,
-                  fontSize: 13,
-                  textAlign: 'center',
-                }}>
-                Virtual Trial Room{' '}
-                <AntDesign name="arrowright" style={{fontSize: 13}} />{' '}
-              </Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-        <View style={{flexDirection: 'row'}}>
-          <View style={{marginLeft: 30, justifyContent: 'space-between'}}>
-            <View>
-              <Text style={styles.text}>Shoulder:17.87</Text>
-            </View>
-            <View>
-              <Text style={styles.text}>Waiest:32.87</Text>
-            </View>
-            <View>
-              <Text style={styles.text}>Chest:38.63</Text>
-            </View>
-            <View>
-              <Text style={styles.text}>Hips:37.89</Text>
-            </View>
-            <View>
-              <Text style={styles.text}>BMI:22.66</Text>
-            </View>
-          </View>
-          <View>
-            <Image
-              source={require('../assests/temp.jpeg')}
+        <View
+          style={{
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <View style={{marginTop: 30}}>
+            <Text
               style={{
-                width: 150,
-                height: 150,
-                borderRadius: 10,
-                marginLeft: 40,
-              }}
-            />
+                alignSelf: 'center',
+                color: 'black',
+                fontWeight: 'bold',
+                fontSize: 17,
+              }}>
+              Dress Fitting Rating{' '}
+            </Text>
+          </View>
+          <View style={{flexDirection: 'row', marginTop: 20}}>
+            <View style={{margin: 10}}>
+              <Image
+                source={require('../assests/temp.jpeg')}
+                style={{width: 180, height: 240, borderRadius: 10}}
+              />
+              <View>
+                <Text
+                  style={{
+                    fontSize: 20,
+                    marginTop: 10,
+                    color: 'darkorange',
+                    marginLeft: 15,
+                  }}>
+                  Ravin Kumar
+                </Text>
+              </View>
+            </View>
+            <View style={{marginTop: 15, marginRight: 10}}>
+              <TouchableOpacity onPress={() => setModalVisible(true)}>
+                <Text
+                  style={{
+                    backgroundColor: '#293c5d',
+                    color: 'white',
+                    height: 40,
+                    width: 150,
+                    padding: 10,
+                    borderRadius: 5,
+                    fontSize: 14,
+                    textAlign: 'center',
+                  }}>
+                  Change Size
+                </Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
+                <Text
+                  style={{
+                    backgroundColor: '#f7941e',
+                    marginTop: 10,
+                    color: 'white',
+                    height: 40,
+                    width: 150,
+                    padding: 10,
+                    borderRadius: 5,
+                    fontSize: 14,
+                    textAlign: 'center',
+                  }}>
+                  Change Body Profile
+                </Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity onPress={() => navigation.navigate('Virtual')}>
+                <Text
+                  style={{
+                    backgroundColor: '#810541',
+                    marginTop: 105,
+                    color: 'white',
+                    height: 40,
+                    width: 150,
+                    padding: 10,
+                    borderRadius: 5,
+                    fontSize: 13,
+                    textAlign: 'center',
+                  }}>
+                  Virtual Trial Room{' '}
+                  <AntDesign name="arrowright" style={{fontSize: 13}} />{' '}
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+          <View style={{flexDirection: 'row'}}>
+            <View style={{marginLeft: 30, justifyContent: 'space-between'}}>
+              <View>
+                <Text style={styles.text}>Shoulder:17.87</Text>
+              </View>
+              <View>
+                <Text style={styles.text}>Waiest:32.87</Text>
+              </View>
+              <View>
+                <Text style={styles.text}>Chest:38.63</Text>
+              </View>
+              <View>
+                <Text style={styles.text}>Hips:37.89</Text>
+              </View>
+              <View>
+                <Text style={styles.text}>BMI:22.66</Text>
+              </View>
+            </View>
+            <View>
+              <Image
+                source={require('../assests/temp.jpeg')}
+                style={{
+                  width: 150,
+                  height: 150,
+                  borderRadius: 10,
+                  marginLeft: 40,
+                }}
+              />
+            </View>
           </View>
         </View>
 
@@ -587,7 +593,8 @@ const Dress = ({navigation}) => {
 
                       <Text
                         style={{
-                          fontSize: 11,fontWeight:"bold",
+                          fontSize: 11,
+                          fontWeight: 'bold',
                           color: 'green',
                           marginTop: -12,
                           marginLeft: 10,
@@ -621,7 +628,8 @@ const Dress = ({navigation}) => {
 
                       <Text
                         style={{
-                          fontSize: 11,fontWeight:"bold",
+                          fontSize: 11,
+                          fontWeight: 'bold',
                           color: 'green',
                           marginTop: -12,
                           marginLeft: 10,
@@ -645,7 +653,8 @@ const Dress = ({navigation}) => {
                         <Text
                           numberOfLines={1}
                           style={{
-                            fontSize: 11,fontWeight:"bold",
+                            fontSize: 11,
+                            fontWeight: 'bold',
                             color: 'green',
                             marginLeft: 10,
                           }}>
@@ -701,7 +710,8 @@ const Dress = ({navigation}) => {
 
                   <Text
                     style={{
-                      fontSize: 11,fontWeight:"bold",
+                      fontSize: 11,
+                      fontWeight: 'bold',
                       color: 'green',
                       marginTop: -12,
                       marginLeft: 10,
@@ -735,7 +745,8 @@ const Dress = ({navigation}) => {
 
                   <Text
                     style={{
-                      fontSize: 11,fontWeight:"bold",
+                      fontSize: 11,
+                      fontWeight: 'bold',
                       color: 'green',
                       marginTop: -12,
                       marginLeft: 10,
@@ -777,7 +788,8 @@ const Dress = ({navigation}) => {
 
                       <Text
                         style={{
-                          fontSize: 11,fontWeight:"bold",
+                          fontSize: 11,
+                          fontWeight: 'bold',
                           color: 'green',
                           marginTop: -12,
                           marginLeft: 10,
@@ -811,7 +823,8 @@ const Dress = ({navigation}) => {
 
                       <Text
                         style={{
-                          fontSize: 11,fontWeight:"bold",
+                          fontSize: 11,
+                          fontWeight: 'bold',
                           color: 'green',
                           marginTop: -12,
                           marginLeft: 10,
@@ -846,7 +859,8 @@ const Dress = ({navigation}) => {
 
                     <Text
                       style={{
-                        fontSize: 11,fontWeight:"bold",
+                        fontSize: 11,
+                        fontWeight: 'bold',
                         color: 'green',
                         marginTop: -12,
                         marginLeft: 10,
@@ -882,7 +896,8 @@ const Dress = ({navigation}) => {
 
                   <Text
                     style={{
-                      fontSize: 11,fontWeight:"bold",
+                      fontSize: 11,
+                      fontWeight: 'bold',
                       color: 'green',
                       marginTop: -12,
                       marginLeft: 10,
@@ -917,7 +932,8 @@ const Dress = ({navigation}) => {
 
                   <Text
                     style={{
-                      fontSize: 11,fontWeight:"bold",
+                      fontSize: 11,
+                      fontWeight: 'bold',
                       color: 'green',
                       marginTop: -12,
                       marginLeft: 10,
@@ -973,7 +989,8 @@ const Dress = ({navigation}) => {
 
                       <Text
                         style={{
-                          fontSize: 11,fontWeight:"bold",
+                          fontSize: 11,
+                          fontWeight: 'bold',
                           color: 'green',
                           marginTop: -12,
                           marginLeft: 10,
@@ -1007,7 +1024,8 @@ const Dress = ({navigation}) => {
 
                       <Text
                         style={{
-                          fontSize: 11,fontWeight:"bold",
+                          fontSize: 11,
+                          fontWeight: 'bold',
                           color: 'green',
                           marginTop: -12,
                           marginLeft: 10,
@@ -1042,7 +1060,8 @@ const Dress = ({navigation}) => {
 
                     <Text
                       style={{
-                        fontSize: 11,fontWeight:"bold",
+                        fontSize: 11,
+                        fontWeight: 'bold',
                         color: 'green',
                         marginTop: -12,
                         marginLeft: 10,
@@ -1079,7 +1098,8 @@ const Dress = ({navigation}) => {
 
                   <Text
                     style={{
-                      fontSize: 11,fontWeight:"bold",
+                      fontSize: 11,
+                      fontWeight: 'bold',
                       color: 'green',
                       marginTop: -12,
                       marginLeft: 10,
@@ -1113,7 +1133,8 @@ const Dress = ({navigation}) => {
 
                   <Text
                     style={{
-                      fontSize: 11,fontWeight:"bold",
+                      fontSize: 11,
+                      fontWeight: 'bold',
                       color: 'green',
                       marginTop: -12,
                       marginLeft: 10,
@@ -1155,7 +1176,8 @@ const Dress = ({navigation}) => {
 
                       <Text
                         style={{
-                          fontSize: 11,fontWeight:"bold",
+                          fontSize: 11,
+                          fontWeight: 'bold',
                           color: 'green',
                           marginTop: -12,
                           marginLeft: 10,
@@ -1189,7 +1211,8 @@ const Dress = ({navigation}) => {
 
                       <Text
                         style={{
-                          fontSize: 11,fontWeight:"bold",
+                          fontSize: 11,
+                          fontWeight: 'bold',
                           color: 'green',
                           marginTop: -12,
                           marginLeft: 10,
@@ -1224,7 +1247,8 @@ const Dress = ({navigation}) => {
 
                     <Text
                       style={{
-                        fontSize: 11,fontWeight:"bold",
+                        fontSize: 11,
+                        fontWeight: 'bold',
                         color: 'green',
                         marginTop: -12,
                         marginLeft: 10,
@@ -1260,7 +1284,8 @@ const Dress = ({navigation}) => {
 
                   <Text
                     style={{
-                      fontSize: 11,fontWeight:"bold",
+                      fontSize: 11,
+                      fontWeight: 'bold',
                       color: 'green',
                       marginTop: -12,
                       marginLeft: 10,
@@ -1295,7 +1320,8 @@ const Dress = ({navigation}) => {
 
                   <Text
                     style={{
-                      fontSize: 11,fontWeight:"bold",
+                      fontSize: 11,
+                      fontWeight: 'bold',
                       color: 'green',
                       marginTop: -12,
                       marginLeft: 10,
@@ -1351,7 +1377,8 @@ const Dress = ({navigation}) => {
 
                       <Text
                         style={{
-                          fontSize: 11,fontWeight:"bold",
+                          fontSize: 11,
+                          fontWeight: 'bold',
                           color: 'green',
                           marginTop: -12,
                           marginLeft: 10,
@@ -1385,7 +1412,8 @@ const Dress = ({navigation}) => {
 
                       <Text
                         style={{
-                          fontSize: 11,fontWeight:"bold",
+                          fontSize: 11,
+                          fontWeight: 'bold',
                           color: 'green',
                           marginTop: -12,
                           marginLeft: 10,
@@ -1420,7 +1448,8 @@ const Dress = ({navigation}) => {
 
                     <Text
                       style={{
-                        fontSize: 11,fontWeight:"bold",
+                        fontSize: 11,
+                        fontWeight: 'bold',
                         color: 'green',
                         marginTop: -12,
                         marginLeft: 10,
@@ -1457,7 +1486,8 @@ const Dress = ({navigation}) => {
 
                   <Text
                     style={{
-                      fontSize: 11,fontWeight:"bold",
+                      fontSize: 11,
+                      fontWeight: 'bold',
                       color: 'green',
                       marginTop: -12,
                       marginLeft: 10,
@@ -1491,7 +1521,8 @@ const Dress = ({navigation}) => {
 
                   <Text
                     style={{
-                      fontSize: 11,fontWeight:"bold",
+                      fontSize: 11,
+                      fontWeight: 'bold',
                       color: 'green',
                       marginTop: -12,
                       marginLeft: 10,
@@ -1533,7 +1564,8 @@ const Dress = ({navigation}) => {
 
                       <Text
                         style={{
-                          fontSize: 11,fontWeight:"bold",
+                          fontSize: 11,
+                          fontWeight: 'bold',
                           color: 'green',
                           marginTop: -12,
                           marginLeft: 10,
@@ -1567,7 +1599,8 @@ const Dress = ({navigation}) => {
 
                       <Text
                         style={{
-                          fontSize: 11,fontWeight:"bold",
+                          fontSize: 11,
+                          fontWeight: 'bold',
                           color: 'green',
                           marginTop: -12,
                           marginLeft: 10,
@@ -1602,7 +1635,8 @@ const Dress = ({navigation}) => {
 
                     <Text
                       style={{
-                        fontSize: 11,fontWeight:"bold",
+                        fontSize: 11,
+                        fontWeight: 'bold',
                         color: 'green',
                         marginTop: -12,
                         marginLeft: 10,
@@ -1638,7 +1672,8 @@ const Dress = ({navigation}) => {
 
                   <Text
                     style={{
-                      fontSize: 11,fontWeight:"bold",
+                      fontSize: 11,
+                      fontWeight: 'bold',
                       color: 'green',
                       marginTop: -12,
                       marginLeft: 10,
@@ -1673,7 +1708,8 @@ const Dress = ({navigation}) => {
 
                   <Text
                     style={{
-                      fontSize: 11,fontWeight:"bold",
+                      fontSize: 11,
+                      fontWeight: 'bold',
                       color: 'green',
                       marginTop: -12,
                       marginLeft: 10,
@@ -1729,7 +1765,8 @@ const Dress = ({navigation}) => {
 
                       <Text
                         style={{
-                          fontSize: 11,fontWeight:"bold",
+                          fontSize: 11,
+                          fontWeight: 'bold',
                           color: 'green',
                           marginTop: -12,
                           marginLeft: 10,
@@ -1763,7 +1800,8 @@ const Dress = ({navigation}) => {
 
                       <Text
                         style={{
-                          fontSize: 11,fontWeight:"bold",
+                          fontSize: 11,
+                          fontWeight: 'bold',
                           color: 'green',
                           marginTop: -12,
                           marginLeft: 10,
@@ -1798,7 +1836,8 @@ const Dress = ({navigation}) => {
 
                     <Text
                       style={{
-                        fontSize: 11,fontWeight:"bold",
+                        fontSize: 11,
+                        fontWeight: 'bold',
                         color: 'green',
                         marginTop: -12,
                         marginLeft: 10,
@@ -1834,7 +1873,8 @@ const Dress = ({navigation}) => {
 
                   <Text
                     style={{
-                      fontSize: 11,fontWeight:"bold",
+                      fontSize: 11,
+                      fontWeight: 'bold',
                       color: 'green',
                       marginTop: -12,
                       marginLeft: 10,
@@ -1868,7 +1908,8 @@ const Dress = ({navigation}) => {
 
                   <Text
                     style={{
-                      fontSize: 11,fontWeight:"bold",
+                      fontSize: 11,
+                      fontWeight: 'bold',
                       color: 'green',
                       marginTop: -12,
                       marginLeft: 10,
@@ -1910,7 +1951,8 @@ const Dress = ({navigation}) => {
 
                       <Text
                         style={{
-                          fontSize: 11,fontWeight:"bold",
+                          fontSize: 11,
+                          fontWeight: 'bold',
                           color: 'green',
                           marginTop: -12,
                           marginLeft: 10,
@@ -1944,7 +1986,8 @@ const Dress = ({navigation}) => {
 
                       <Text
                         style={{
-                          fontSize: 11,fontWeight:"bold",
+                          fontSize: 11,
+                          fontWeight: 'bold',
                           color: 'green',
                           marginTop: -12,
                           marginLeft: 10,
@@ -1979,7 +2022,8 @@ const Dress = ({navigation}) => {
 
                     <Text
                       style={{
-                        fontSize: 11,fontWeight:"bold",
+                        fontSize: 11,
+                        fontWeight: 'bold',
                         color: 'green',
                         marginTop: -12,
                         marginLeft: 10,
@@ -2015,7 +2059,8 @@ const Dress = ({navigation}) => {
 
                   <Text
                     style={{
-                      fontSize: 11,fontWeight:"bold",
+                      fontSize: 11,
+                      fontWeight: 'bold',
                       color: 'green',
                       marginTop: -12,
                       marginLeft: 10,
@@ -2049,7 +2094,8 @@ const Dress = ({navigation}) => {
 
                   <Text
                     style={{
-                      fontSize: 11,fontWeight:"bold",
+                      fontSize: 11,
+                      fontWeight: 'bold',
                       color: 'green',
                       marginTop: -12,
                       marginLeft: 10,
