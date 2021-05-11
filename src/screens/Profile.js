@@ -82,7 +82,7 @@ const Profile = ({ route, navigation }) => {
             <View style={{ flexDirection: "row", marginTop: 40 }}>
               <View style={{ marginRight: "10%", marginLeft: 20 }}>
                 <Text style={{ marginBottom: 20, fontSize: 18, color: "darkorange", fontWeight: "bold", textDecorationLine: "underline" }}>Parameter</Text>
-                <Text style={styles.text}>fullname</Text>
+                <Text style={styles.text}>Fullname</Text>
                 <Text style={styles.text}>Gender</Text>
                 <Text style={styles.text}>Height</Text>
                 <Text style={styles.text}>Weight</Text>
@@ -97,8 +97,8 @@ const Profile = ({ route, navigation }) => {
                 <Text style={{ marginBottom: 20, fontSize: 18, color: "darkorange", fontWeight: "bold", textDecorationLine: "underline" }}>Value</Text>
                 <Text style={styles.text1}>{JSON.stringify(name)}</Text>
                 <Text style={styles.text1}>{JSON.stringify(value)}</Text>
-                <Text style={styles.text1}>{JSON.stringify(height)}</Text>
-                <Text style={styles.text1}>{JSON.stringify(weight)}</Text>
+                <Text style={styles.text1}>{JSON.stringify(height)} cm</Text>
+                <Text style={styles.text1}>{JSON.stringify(weight)} Kg</Text>
                 <Text style={styles.text1}>{JSON.stringify(value1)}</Text>
                 <Text style={styles.text1}>15.43</Text>
                 <Text style={styles.text1}>	15.36 inch / 6.05 cm</Text>

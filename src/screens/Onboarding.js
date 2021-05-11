@@ -49,7 +49,7 @@ const slides = [
     text: 'Now know your tailored shoulder, chest, waist & hips size.',
     image: StepFour,
     id: '4',
-    backgroundColor: '#4E9258',
+    backgroundColor: '#12BFC2',
     
   },
   {

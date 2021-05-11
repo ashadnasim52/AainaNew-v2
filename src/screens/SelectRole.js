@@ -37,16 +37,14 @@ const SelectRole = () => {
       >
         <Layout style={styles.container}>
         <ImageBackground
-          source={require('../assests/img/select1.jpg')}
+          source={require('../assests/img/Prism-Background.jpg')}
           style={{
             width: "100%",
             height: "100%",
             resizeMode: "cover",
             justifyContent:"center",
             alignItems:"center",
-            
-            
-            
+            opacity:0.9   
           }}
         >
       
@@ -60,7 +58,7 @@ const SelectRole = () => {
               <View
                 style={[
                   {
-                    backgroundColor: 'orange',
+                    backgroundColor: '#12BFC2',
                   },
                   styles.card,
                   

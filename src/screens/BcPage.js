@@ -170,6 +170,7 @@ const BcPage = ({navigation}) => {
                         marginTop: 200,
                         height: 50,
                         opacity: 0.9,
+                        fontSize:14
                       }}>
                       Black Colour Full Sleeve T-Shirt with Print on Chest
                     </Text>
@@ -235,6 +236,7 @@ const BcPage = ({navigation}) => {
                         marginTop: 200,
                         height: 50,
                         opacity: 0.9,
+                        fontSize:14
                       }}>
                       Black half T-shirt with Print in Round Neck
                     </Text>
@@ -311,6 +313,7 @@ const BcPage = ({navigation}) => {
                         marginTop: 200,
                         height: 50,
                         opacity: 0.9,
+                        fontSize:14
                       }}>
                       Peach Colour Half Sleeve T-shirt with Block Prints
                     </Text>
@@ -375,6 +378,7 @@ const BcPage = ({navigation}) => {
                         marginTop: 200,
                         height: 50,
                         opacity: 0.9,
+                        fontSize:14
                       }}>
                       Sleeveless Jackets in Three Colours Yellow, White and Sky
                       Blue with Front Zip
@@ -452,6 +456,7 @@ const BcPage = ({navigation}) => {
                         marginTop: 200,
                         height: 50,
                         opacity: 0.9,
+                        fontSize:14
                       }}>
                       Polo T-Shirt with Half Sleeve, Yellow Colour
                     </Text>
@@ -516,6 +521,7 @@ const BcPage = ({navigation}) => {
                         marginTop: 200,
                         height: 50,
                         opacity: 0.9,
+                        fontSize:14
                       }}>
                       Narrow Fitted Blue Jeans
                     </Text>
@@ -598,6 +604,7 @@ const BcPage = ({navigation}) => {
                             marginTop: 200,
                             height: 50,
                             opacity: 0.9,
+                            fontSize:14
                           }}>
                           Free Size Half Sleeve T-shirt in Two Colours Right and
                           Light Sky Colour
@@ -663,6 +670,7 @@ const BcPage = ({navigation}) => {
                             marginTop: 200,
                             height: 50,
                             opacity: 0.9,
+                            fontSize:14
                           }}>
                           Red Colour Sheath Dress with Side Pocket, Collar and
                           Waist band
@@ -740,6 +748,7 @@ const BcPage = ({navigation}) => {
                             marginTop: 200,
                             height: 50,
                             opacity: 0.9,
+                            fontSize:14
                           }}>
                           White Round Neck T-Shirt with Quarter Sleeve
                         </Text>
@@ -804,6 +813,7 @@ const BcPage = ({navigation}) => {
                             marginTop: 200,
                             height: 50,
                             opacity: 0.9,
+                            fontSize:14
                           }}>
                           Blue Half Sleeve Polo T-Shirt
                         </Text>
@@ -880,6 +890,7 @@ const BcPage = ({navigation}) => {
                             marginTop: 200,
                             height: 50,
                             opacity: 0.9,
+                            fontSize:14
                           }}>
                           Light Blue Short with Side Pockets
                         </Text>
@@ -944,6 +955,7 @@ const BcPage = ({navigation}) => {
                             marginTop: 200,
                             height: 50,
                             opacity: 0.9,
+                            fontSize:14
                           }}>
                           Peach Colour Half Sleeve Polo T-Shirt
                         </Text>
@@ -1049,6 +1061,7 @@ const BcPage = ({navigation}) => {
                                 marginTop: 200,
                                 height: 50,
                                 opacity: 0.9,
+                                fontSize:14
                               }}>
                               Black Colour Full Sleeve T-Shirt with Print on
                               Chest
@@ -1114,6 +1127,7 @@ const BcPage = ({navigation}) => {
                                 marginTop: 200,
                                 height: 50,
                                 opacity: 0.9,
+                                fontSize:14
                               }}>
                               Black Colour Full Sleeve T-Shirt with Print on
                               Chest
@@ -1193,6 +1207,7 @@ const BcPage = ({navigation}) => {
                                   marginTop: 200,
                                   height: 50,
                                   opacity: 0.9,
+                                  fontSize:14
                                 }}>
                                 Black Colour Full Sleeve T-Shirt with Print on
                                 Chest
@@ -1258,6 +1273,7 @@ const BcPage = ({navigation}) => {
                                   marginTop: 200,
                                   height: 50,
                                   opacity: 0.9,
+                                  fontSize:14
                                 }}>
                                 Black Colour Full Sleeve T-Shirt with Print on
                                 Chest
@@ -1340,6 +1356,7 @@ const BcPage = ({navigation}) => {
                                 marginTop: 200,
                                 height: 50,
                                 opacity: 0.9,
+                                fontSize:14
                               }}>
                               Black Colour Full Sleeve T-Shirt with Print on
                               Chest
@@ -1405,6 +1422,7 @@ const BcPage = ({navigation}) => {
                                 marginTop: 200,
                                 height: 50,
                                 opacity: 0.9,
+                                fontSize:14
                               }}>
                               Black half T-shirt with Print in Round Neck
                             </Text>
@@ -1484,6 +1502,7 @@ const BcPage = ({navigation}) => {
                                   marginTop: 200,
                                   height: 50,
                                   opacity: 0.9,
+                                  fontSize:14
                                 }}>
                                 Peach Colour Half Sleeve T-shirt with Block
                                 Prints
@@ -1549,6 +1568,7 @@ const BcPage = ({navigation}) => {
                                   marginTop: 200,
                                   height: 50,
                                   opacity: 0.9,
+                                  fontSize:14
                                 }}>
                                 Sleeveless Jackets in Three Colours Yellow,
                                 White and Sky Blue with Front Zip
@@ -1630,6 +1650,7 @@ const BcPage = ({navigation}) => {
                                   marginTop: 200,
                                   height: 50,
                                   opacity: 0.9,
+                                  fontSize:14
                                 }}>
                                 Polo T-Shirt with Half Sleeve, Yellow Colour
                               </Text>
@@ -1694,6 +1715,7 @@ const BcPage = ({navigation}) => {
                                   marginTop: 200,
                                   height: 50,
                                   opacity: 0.9,
+                                  fontSize:14
                                 }}>
                                 Narrow Fitted Blue Jeans
                               </Text>
@@ -1774,6 +1796,7 @@ const BcPage = ({navigation}) => {
                                   marginTop: 200,
                                   height: 50,
                                   opacity: 0.9,
+                                  fontSize:14
                                 }}>
                                 Free Size Half Sleeve T-shirt in Two Colours
                                 Right and Light Sky Colour
@@ -1839,6 +1862,7 @@ const BcPage = ({navigation}) => {
                                   marginTop: 200,
                                   height: 50,
                                   opacity: 0.9,
+                                  fontSize:14
                                 }}>
                                 Red Colour Sheath Dress with Side Pocket, Collar
                                 and Waist band
@@ -1920,6 +1944,7 @@ const BcPage = ({navigation}) => {
                                   marginTop: 200,
                                   height: 50,
                                   opacity: 0.9,
+                                  fontSize:14
                                 }}>
                                 White Round Neck T-Shirt with Quarter Sleeve
                               </Text>
@@ -1984,6 +2009,7 @@ const BcPage = ({navigation}) => {
                                   marginTop: 200,
                                   height: 50,
                                   opacity: 0.9,
+                                  fontSize:14
                                 }}>
                                 Blue Half Sleeve Polo T-Shirt
                               </Text>
@@ -2064,6 +2090,7 @@ const BcPage = ({navigation}) => {
                                   marginTop: 200,
                                   height: 50,
                                   opacity: 0.9,
+                                  fontSize:14
                                 }}>
                                 Light Blue Short with Side Pockets
                               </Text>
@@ -2128,6 +2155,7 @@ const BcPage = ({navigation}) => {
                                   marginTop: 200,
                                   height: 50,
                                   opacity: 0.9,
+                                  fontSize:14
                                 }}>
                                 Peach Colour Half Sleeve Polo T-Shirt
                               </Text>
