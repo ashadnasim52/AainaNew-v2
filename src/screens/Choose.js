@@ -10,7 +10,7 @@ import {
   ImageBackground,
   TouchableOpacity
 } from 'react-native';
-import Logo from '../assests/welcome.png';
+
 
 
 const Choose = ({navigation}) => {
@@ -38,11 +38,11 @@ const Choose = ({navigation}) => {
          <View>
 
           <TouchableOpacity onPress={() =>navigation.navigate("SignUp")}>
-          <Text style={{color:"white",fontSize:20,backgroundColor:"#14466b",width:300,textAlign:"center",padding:13,borderRadius:10,marginTop:10,fontSize:16}}>SIGN UP</Text>
+          <Text style={{color:"white",fontSize:20,backgroundColor:"darkorange",width:300,textAlign:"center",padding:13,borderRadius:10,marginTop:10,fontSize:16}}>SIGN UP</Text>
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() =>navigation.navigate("SelectRole")}>
-            <Text style={{marginTop:20,color:"white",fontSize:20,backgroundColor:"darkorange",width:300,textAlign:"center",padding:13,borderRadius:10,fontSize:16}}>SIGN IN</Text>
+            <Text style={{marginTop:20,color:"white",fontSize:20,backgroundColor:"#14466b",width:300,textAlign:"center",padding:13,borderRadius:10,fontSize:16}}>SIGN IN</Text>
             </TouchableOpacity>
             
 

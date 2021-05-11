@@ -1,4 +1,4 @@
-import React, { useState, useContext, useRef } from 'react';
+import React, { useState, useContext, useRef,useEffect } from 'react';
 import {
   Image,
   StatusBar,
@@ -8,7 +8,8 @@ import {
   Text,
   Input,
   TextInput,
-  Button
+  Button,
+  ActivityIndicator,
 } from 'react-native';
 import {  Layout,} from '@ui-kitten/components';
 import RBSheet from 'react-native-raw-bottom-sheet';
@@ -21,13 +22,24 @@ import { AuthContext } from '../context/context';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { color } from 'react-native-reanimated';
 
+import {
+  GoogleSignin,
+  GoogleSigninButton,
+  statusCodes,
+} from 'react-native-google-signin';
+
+
 const Signin = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [secureTextEntry, setSecureTextEntry] = useState(true);
+  const [userInfo, setUserInfo] = useState(null);
+  const [gettingLoginStatus, setGettingLoginStatus] = useState(true);
 
   const {state, dispatch} = useContext(AuthContext);
+  
   console.log(state.isB2B);
+
   const toggleSecureEntry = () => {
     setSecureTextEntry(!secureTextEntry);
   };
@@ -40,6 +52,96 @@ const Signin = ({navigation}) => {
   const nav = useNavigation();
   const refRBSheet = useRef();
 
+
+  useEffect(() => {
+    // Initial configuration
+    GoogleSignin.configure({
+      // Mandatory method to call before calling signIn()
+      scopes: ['https://www.googleapis.com/auth/drive.readonly'],
+      // Repleace with your webClientId
+      // Generated from Firebase console
+      webClientId: 'REPLACE_YOUR_WEB_CLIENT_ID_HERE',
+    });
+    // Check if user is already signed in
+    _isSignedIn();
+  }, []);
+
+  const _isSignedIn = async () => {
+    const isSignedIn = await GoogleSignin.isSignedIn();
+    if (isSignedIn) {
+      alert('User is already signed in');
+      // Set User Info if user is already signed in
+      _getCurrentUserInfo();
+    } else {
+      console.log('Please Login');
+    }
+    setGettingLoginStatus(false);
+  };
+
+  const _getCurrentUserInfo = async () => {
+    try {
+      let info = await GoogleSignin.signInSilently();
+      console.log('User Info --> ', info);
+      setUserInfo(info);
+    } catch (error) {
+      if (error.code === statusCodes.SIGN_IN_REQUIRED) {
+        alert('User has not signed in yet');
+        console.log('User has not signed in yet');
+      } else {
+        alert("Unable to get user's info");
+        console.log("Unable to get user's info");
+      }
+    }
+  };
+  const _signIn = async () => {
+    // It will prompt google Signin Widget
+    try {
+      await GoogleSignin.hasPlayServices({
+        // Check if device has Google Play Services installed
+        // Always resolves to true on iOS
+        showPlayServicesUpdateDialog: true,
+      });
+      const userInfo = await GoogleSignin.signIn();
+      console.log('User Info --> ', userInfo);
+      setUserInfo(userInfo);
+    } catch (error) {
+      console.log('Message', JSON.stringify(error));
+      if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+        alert('User Cancelled the Login Flow');
+      } else if (error.code === statusCodes.IN_PROGRESS) {
+        alert('Signing In');
+      } else if (
+          error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE
+        ) {
+        alert('Play Services Not Available or Outdated');
+      } else {
+        alert(error.message);
+      }
+    }
+  };  
+
+
+  const _signOut = async () => {
+    setGettingLoginStatus(true);
+    // Remove user session from the device.
+    try {
+      await GoogleSignin.revokeAccess();
+      await GoogleSignin.signOut();
+      // Removing user Info
+      setUserInfo(null); 
+    } catch (error) {
+      console.error(error);
+    }
+    setGettingLoginStatus(false);
+  };
+
+  if (gettingLoginStatus) {
+    return (
+      <View >
+        <ActivityIndicator size="large" color="#0000ff" />
+      </View>
+    );
+  } else {
 
   return (
     <>
@@ -101,7 +203,7 @@ const Signin = ({navigation}) => {
        </TouchableOpacity>
           </View>
           
-          <TouchableOpacity>
+          <TouchableOpacity onPress={_signIn}>
           <View style={{alignSelf:"center",flexDirection:"row",marginTop:20,backgroundColor:"#ebeef4",borderWidth:1,width:320,borderRadius:10,paddingLeft:60,padding:11,borderColor:"white"}}>
           <Image 
             source={require('../assests/img/google1.png')}
@@ -312,5 +414,6 @@ backgroundColor:"white",
     }
     </>
   )
+}
 }
 export default Signin;

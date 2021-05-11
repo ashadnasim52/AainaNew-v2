@@ -7,6 +7,7 @@ import {
   StyleSheet,
   TouchableWithoutFeedback,
   View,
+  ImageBackground,
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {Button, Icon, Input, Layout, Text} from '@ui-kitten/components';
@@ -32,8 +33,22 @@ const SelectRole = () => {
         resetScrollToCoords={{x: 0, y: 0}}
         contentContainerStyle={{
           flexGrow: 1,
-        }}>
+        }}
+      >
         <Layout style={styles.container}>
+        <ImageBackground
+          source={require('../assests/img/select1.jpg')}
+          style={{
+            width: "100%",
+            height: "100%",
+            resizeMode: "cover",
+            justifyContent:"center",
+            alignItems:"center",
+            
+            
+            
+          }}
+        >
       
       <Image 
       style={{width:170,height:70,alignSelf:"center",marginBottom:30}}
@@ -41,7 +56,7 @@ const SelectRole = () => {
       />    
 
           <View style={styles.row}>
-            <View>
+            <View style={{marginRight:5,}}>
               <View
                 style={[
                   {
@@ -74,10 +89,13 @@ const SelectRole = () => {
                  Next     <Ionicons name="arrow-forward" size={18}/>    </Text>
               </View>
             </View>
+
             <View
               style={{
                 // flex: 0.5,
                 alignSelf: 'flex-end',
+                marginBottom:5
+                
               }}>
               <View
                 style={[
@@ -119,6 +137,7 @@ const SelectRole = () => {
               </View>
             </View>
           </View>
+          </ImageBackground>
         
         </Layout>
       </KeyboardAwareScrollView>
@@ -131,14 +150,14 @@ export default SelectRole;
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
-    padding: 10,
-    backgroundColor:"white"
+    padding: 0,
+    backgroundColor:"transparent"
   },
 
   card: {
     flexDirection: 'column',
     height: 350,
-    width: (Dimensions.get('screen').width - 30) / 2,
+    width: (Dimensions.get('screen').width - 20) / 2,
     shadowOffset: {width: 10, height: 10},
     shadowOpacity: 1,
     shadowColor: 'grey',

@@ -102,6 +102,7 @@ const BuyPlans = () => {
             animationType="slide"
             visible={modalVisibles}
             transparent={false}
+            onRequestClose={() => {setModalVisibles(!modalVisibles) }}
 
           >
             <View style={{ backgroundColor: "white", }}>
@@ -166,6 +167,7 @@ const BuyPlans = () => {
             animationType="slide"
             visible={modalVisibless}
             transparent={false}
+            onRequestClose={() => {setModalVisibless(!modalVisibless) }}
 
           >
             <View style={{ backgroundColor: "white", }}>

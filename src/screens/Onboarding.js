@@ -129,7 +129,7 @@ const Onboarding = () => {
                     );
                   }}
                   sliderWidth={Dimensions.get('window').width}
-                  itemWidth={Dimensions.get('window').width - 30}
+                  itemWidth={Dimensions.get('window').width-40}
                   loop={false}
                   onSnapToItem={(index) => setActiveSlide(index)}
                   inactiveSlideOpacity={1}
@@ -166,14 +166,14 @@ const Onboarding = () => {
                     height: 10,
                     borderRadius: 5,
                     marginHorizontal: 8,
-                    backgroundColor: PRIMARY,
+                    backgroundColor:"#14466b",
                   }}
                   inactiveDotStyle={
                     {
                       // Define styles for inactive dots here
                     }
                   }
-                  inactiveDotOpacity={0.4}
+                  inactiveDotOpacity={0.5}
                   inactiveDotScale={0.6}
                 />
               )}

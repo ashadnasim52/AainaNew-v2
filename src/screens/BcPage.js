@@ -19,6 +19,7 @@ const BcPage = ({navigation}) => {
   const handleButton_1 = () => {
     setShowDataByButton_1(true);
     setShowDataByButton_2(false);
+   
   };
   const handleButton_2 = () => {
     setShowDataByButton_1(false);
@@ -116,7 +117,8 @@ const BcPage = ({navigation}) => {
                 color: 'black',
                 backgroundColor: 'white',
               }}
-              lightonPress={() => handleButton_1()}>
+              light 
+              onPress={() => handleButton_1()}>
               <Text>Men</Text>
             </Button>
             <Button
