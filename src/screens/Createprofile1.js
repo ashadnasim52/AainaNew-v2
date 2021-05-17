@@ -1,11 +1,10 @@
 import { FlexStyleProps, PropsService } from '@ui-kitten/components/devsupport';
 import React, { useState } from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 import {
   StyleSheet,
-  PermissionsAndroid,
   View,
   Image,
   ImageBackground,

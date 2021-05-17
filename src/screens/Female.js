@@ -18,10 +18,30 @@ import {options} from '../utils/option';
 
 const image1 = require("../assests/img/girl.jpg");
 
-const Female =({navigation})=>{
+const Female =({route,navigation})=>{
+
+  const { value1 } = route.params;
+  const { weight } = route.params;
+  const { height } = route.params;
+  const { name } = route.params;
+  const { value } = route.params;
+  const { values } = route.params;
+
   const [isPermission, setIsPermission] = useState(false);
-  const [image, setImage] = useState();
+  const [images, setImages] = useState();
   const [image2, setImage2] = useState();
+
+  
+  const obj33 ={
+    value1: value1,
+    weight:weight,
+    height:height,
+    name:name,
+    value:value,
+    values:values,
+    images:images,
+    image2:image2
+  }
 
   const requestStoragePermission = async () => {
     try {
@@ -59,7 +79,7 @@ const Female =({navigation})=>{
           // sending the whole image response as parameter
 
           // setSelfie(response);
-          setImage(response);
+          setImages(response);
         }
       });
     } else {
@@ -120,9 +140,9 @@ const Female =({navigation})=>{
       <View >
           <View style={{width:150,height:150,backgroundColor:"white",borderRadius:10}}>
           <Image 
-          source = { image 
+          source = { images
           ? 
-          { uri: image.uri } 
+          { uri: images.uri } 
           : 
            require('../assests/img/front.png')
           } 
@@ -153,7 +173,7 @@ const Female =({navigation})=>{
        </TouchableOpacity>
 
 </View>
-<TouchableOpacity >
+<TouchableOpacity onPress={()=>navigation.navigate("Profile",obj33)} >
        <View style={{marginTop:60,backgroundColor:"#D6415C",marginHorizontal:90,height:50,paddingTop:10,borderRadius:10}}>
        <Text style={{textAlign:"center",fontSize:20,color:"white"}}>Continue <AntDesign name="arrowright" size={16}/></Text>
        </View>

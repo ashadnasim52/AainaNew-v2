@@ -70,7 +70,7 @@ const CreateProfile = ({navigation}) => {
      {(value==null)? <Text style={{marginTop:20,fontSize:20,textAlign:"center",backgroundColor:"#D6415C",padding:10,height:50,marginHorizontal:90,borderRadius:20,color:"white",}} id="button3" onPress={()=>alert("Please Select Your Gender")}>Continue <AntDesign name="arrowright" size={16}/></Text>:
 
    <View >
-      {(value=="Male")? <Text style={{marginTop:20,fontSize:20,textAlign:"center",backgroundColor:"#D6415C",padding:10,height:50,marginHorizontal:90,borderRadius:20,color:"white",}} onPress={()=>navigation.navigate("CreateProfile1",obj1)} id="button3">Continue <AntDesign name="arrowright" size={16}/></Text>:<Text style={{marginTop:20,fontSize:20,textAlign:"center",backgroundColor:"#D6415C",padding:10,color:"white",height:50,marginHorizontal:90,borderRadius:20}} onPress={()=>navigation.navigate("Female1")} >Continue <AntDesign name="arrowright" size={16}/></Text>}
+      {(value=="Male")? <Text style={{marginTop:20,fontSize:20,textAlign:"center",backgroundColor:"#D6415C",padding:10,height:50,marginHorizontal:90,borderRadius:20,color:"white",}} onPress={()=>navigation.navigate("CreateProfile1",obj1)} id="button3">Continue <AntDesign name="arrowright" size={16}/></Text>:<Text style={{marginTop:20,fontSize:20,textAlign:"center",backgroundColor:"#D6415C",padding:10,color:"white",height:50,marginHorizontal:90,borderRadius:20}} onPress={()=>navigation.navigate("Female1",obj1)} >Continue <AntDesign name="arrowright" size={16}/></Text>}
   </View>
      }
   </View>

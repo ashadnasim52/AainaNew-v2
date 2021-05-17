@@ -23,35 +23,47 @@ import ModalDropdown from 'react-native-modal-dropdown';
 
 
 
-const Female1 = ({ navigation }) => {
+const Female1 = ({ route, navigation }) => {
+  const { value } = route.params;
+
   const [modalVisible, setModalVisible] = useState(false);
   const [modalVisible1, setModalVisible1] = useState(false);
-  const [value, setValue] = useState(null)
+  const [values, setValues] = useState(null)
   const [value1, setValue1] = useState(null)
   const [weight,setWeight]=useState(null);
   const [height,setHeight]=useState(null)
   const [name, setName]=useState(null)
 
+  const obj22 = {
+    value1: value1,
+    weight: weight,
+    height: height,
+    name: name,
+    value: value,
+    values: values
+
+  }
+
 
   const handleChange = (type) => {
     if(type==='button1'){
-        setValue("Triangle")
+        setValues("Triangle")
         setModalVisible(!modalVisible)
     }
     else if(type==='button2'){
-        setValue("Diamond")
+        setValues("Diamond")
         setModalVisible(!modalVisible)
     }
     else if(type==='button3'){
-        setValue("Rectangle")
+        setValues("Rectangle")
         setModalVisible(!modalVisible)
     }
     else if(type==='button4'){
-      setValue("Inverted")
+      setValues("Inverted")
       setModalVisible(!modalVisible)
   }
   else if(type==='button5'){
-    setValue("Hourglass")
+    setValues("Hourglass")
     setModalVisible(!modalVisible)
 }
 }
@@ -288,39 +300,44 @@ onPress={() => handleChange( 'button5')} >
             source={require("../assests/img/FEMALE.jpg")}
             style={{ width: "100%", height: 250, }}
           />
+          <View style={{ marginTop: 50, marginHorizontal: 20 }}>
           <TextInput 
           onChangeText={setName}
-          style={{ marginTop: 40, borderBottomWidth: 1, marginLeft: 20, marginRight: 10 }} 
+          style={{ borderBottomWidth: 1, marginTop: -10, height: 30, paddingBottom: 0 }} 
           placeholder="Enter Your Name" />
+          </View>
 
           <View style={{ marginTop: 30, marginLeft: 20, }}>
 
             <View style={{ flexDirection: "row" }}>
               <View>
-                <Text style={{ width: 150 }}>Your Weight</Text>
+                <Text style={{ width: 150 }}>Your Weight (in Kg)</Text>
                 <TextInput 
                 onChangeText={setWeight}
-                style={{ borderBottomWidth: 1, marginTop: -20 }} />
+                style={{ borderBottomWidth: 1, marginTop: -10, height: 30, paddingBottom: 0 }}
+                keyboardType='numeric' />
               </View>
               <View style={{ marginLeft: 30, width: 150 }}>
-                <Text >Your height</Text>
+                <Text >Your height (in cm)</Text>
                 <TextInput 
                 onChangeText={setHeight}
-                style={{ borderBottomWidth: 1, marginTop: -20 }} />
+                style={{ borderBottomWidth: 1, marginTop: -10, height: 30, paddingBottom: 0 }}
+                  keyboardType='numeric'
+                />
               </View>
             </View>
 
-            <View style={{flexDirection:"row",justifyContent:"space-between"}}>
+            <View style={{flexDirection:"row",}}>
 
             <TouchableOpacity onPress={() => setModalVisible(true)} >
-              <View style={{ marginTop: 30, marginBottom:50  }}>
+              <View style={{ marginTop: 30, marginBottom:50,marginRight:60  }}>
                 <Text>Your Body Shape <AntDesign name="caretdown" /></Text>
-                <Text>{value}</Text>
+                <Text>{values}</Text>
               </View>
             </TouchableOpacity>
 
             <TouchableOpacity onPress={() => setModalVisible1(true)} >
-              <View style={{ marginTop: 30,marginRight:"10%",marginBottom:50 }}>
+              <View style={{ marginTop: 30,marginBottom:50, }}>
                 <Text>Your Body Size <AntDesign name="caretdown" /></Text>
                 <Text>{value1}</Text>
               </View>
@@ -331,12 +348,12 @@ onPress={() => handleChange( 'button5')} >
 
 <View>
   {
-    (value==null || value1==null || weight==null || height==null || name==null)?    <TouchableOpacity onPress={() => alert("*All Fields Should Be Filled")}>
+    (values==null || value1==null || weight==null || height==null || name==null)?    <TouchableOpacity onPress={() => alert("*All Fields Should Be Filled")}>
             <View style={{ marginTop: 0, backgroundColor: "#D6415C", marginHorizontal: 90, height: 50, paddingTop: 10, borderRadius: 10 }}>
               <Text style={{ textAlign: "center", fontSize: 20, color: "white" }}>Continue <AntDesign name="arrowright" size={16} /></Text>
             </View>
           </TouchableOpacity>
-           :<TouchableOpacity onPress={() => navigation.navigate("Female")}>
+           :<TouchableOpacity onPress={() => navigation.navigate("Female",obj22)}>
             <View style={{ marginTop: 0, backgroundColor: "#D6415C", marginHorizontal: 90, height: 50, paddingTop: 10, borderRadius: 10 }}>
               <Text style={{ textAlign: "center", fontSize: 20, color: "white" }}>Continue <AntDesign name="arrowright" size={16} /></Text>
             </View>

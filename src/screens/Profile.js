@@ -25,14 +25,16 @@ const image1 = require('../assests/img/girl.jpg');
 const Profile = ({route, navigation}) => {
   const [isPermission, setIsPermission] = useState(false);
   const [image, setImage] = useState();
-  const [image2, setImage2] = useState();
 
   const {value1} = route.params;
   const {weight} = route.params;
   const {height} = route.params;
   const {name} = route.params;
   const {value} = route.params;
+  const {values} = route.params;
+  const {images} = route.params;
   const {image1} = route.params;
+  const {image2} = route.params;
   const {image3} = route.params;
 
   return (
@@ -55,6 +57,9 @@ const Profile = ({route, navigation}) => {
                 Body Profile
               </Text>
             </View>
+            {
+              (value=="Male")? 
+           
             <View
               style={{
                 flexDirection: 'row',
@@ -104,7 +109,60 @@ const Profile = ({route, navigation}) => {
                   Side Photo
                 </Text>
               </View>
+            </View> 
+
+            :
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-around',
+                marginTop: 30,
+              }}>
+              <View>
+                <View
+                  style={{
+                    width: 150,
+                    height: 150,
+                    backgroundColor: 'orange',
+                    borderRadius: 10,
+                  }}>
+                  <Image
+                    source={
+                      images
+                        ? {uri: images.uri}
+                        : require('../assests/img/front.png')
+                    }
+                    style={{width: 150, height: 150, borderRadius: 10}}
+                  />
+                </View>
+                <Text style={{textAlign: 'center', marginTop: 10}}>
+                  Front Photo
+                </Text>
+              </View>
+
+              <View>
+                <View
+                  style={{
+                    width: 150,
+                    height: 150,
+                    backgroundColor: 'orange',
+                    borderRadius: 10,
+                  }}>
+                  <Image
+                    source={
+                      image2
+                        ? {uri: image2.uri}
+                        : require('../assests/img/side.png')
+                    }
+                    style={{width: 150, height: 150, borderRadius: 10}}
+                  />
+                </View>
+                <Text style={{textAlign: 'center', marginTop: 10}}>
+                  Side Photo
+                </Text>
+              </View>
             </View>
+            }
 
             <View style={{ flexDirection: "row", marginTop: 40 }}>
               <View style={{ marginRight: "10%", marginLeft: 20 }}>
