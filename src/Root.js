@@ -55,7 +55,7 @@ const Root = () => {
         screenOptions={{
           header: (props) => <CustomHeader {...props} />,
         }}
-        initialRouteName="CreateProfile">
+        initialRouteName="Female1">
         <Stack.Screen
           name="EditPage"
           component={EditPage}
