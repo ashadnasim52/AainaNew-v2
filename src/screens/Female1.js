@@ -329,7 +329,10 @@ const Female1 = ({route, navigation}) => {
           />
           <View style={{marginTop: 50, marginHorizontal: 20}}>
             <TextInput
-              onChangeText={setName}
+              value={name}
+              onChangeText={(text) => {
+                setName(text.replace(/[^A-Za-z]/g, ''));
+              }}
               style={{
                 borderBottomWidth: 1,
                 marginTop: -10,
